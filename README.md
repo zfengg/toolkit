@@ -1,2 +1,2 @@
 # toolkit
- A personal toolkit.
+To store dotfiles, templates...
