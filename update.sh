@@ -1,4 +1,4 @@
-#!/usr/env bash
+#!/usr/bin/env bash
 
 # A simple shell script to automate the `copy' workflow in this Repo.
 
@@ -15,4 +15,3 @@ for i in {5..6}
 do 
   cp ~/.julia/environments/v1.$i/* juliaSetup/v1.$i/
 done
-# cp ~/.julia/environments/v1.6/* juliaSetup/v1.6/

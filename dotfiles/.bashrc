@@ -117,11 +117,11 @@ if ! shopt -oq posix; then
 fi
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH" 
+export PATH="$PATH:$HOME/gems/bin" 
 
 source "$HOME/.cargo/env"
 
-PATH="/home/zfeng/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PATH="${PATH:+${PATH}:}/home/zfeng/perl5/bin"; export PATH;
 PERL5LIB="/home/zfeng/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/zfeng/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/zfeng/perl5\""; export PERL_MB_OPT;
