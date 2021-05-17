@@ -1,0 +1,254 @@
+%	Filename: myabeamer.tex
+%   Version: 1.0
+%	Date: 12/11/2020
+%	e-mail: zfeng@math.cuhk.edu.hk 
+
+%   A prefered beamer template for daily tasks. 
+
+
+%=====================================Preamble=========================================%
+\documentclass{beamer}
+%[handout]
+%\usepackage{pgfpages}
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+% \pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]
+
+%---------------------------themes and packages---------------------------------------%
+\usetheme{Warsaw} % Madrid/default/Darmstadt/Boadilla/Antibes/Hannover/Singapore/Warsaw/Malmoe/Luebeck
+
+
+%\usecolortheme{crane}	% crane/orchid/whale
+\useinnertheme{circles} % circles/rectangles/rounded/inmargin
+%\useoutertheme{serif}
+%\usefonttheme{shadow} 	% tree
+
+%\setbeamercolor{myheadline}{fg=white,bg=blue}
+%\setbeamertemplate{headline}
+%{%
+%	\leavevmode%
+%	\begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=1.125ex]{frametitle}%
+%	\centering \footnotesize\color{blue!70!green}\insertsection\par
+%	\end{beamercolorbox}%
+%}
+
+\beamertemplatenavigationsymbolsempty 						% Remove the navigation bar
+% \setbeamertemplate{navigation symbols}{}					% headline, symbols
+%\setbeamertemplate{footline}{}								% remove headline
+\setbeamertemplate{headline}{}								% remove footline
+
+%\setbeamertemplate{section in toc}[sections numbered]		% style of section in toc
+%\setbeamertemplate{subsection in toc}[triangle unnumbered] % style of subsection in toc, ball/square/circle/default 
+%\setbeamertemplate{sections/subsections in toc}[circle]	% style of sec/subsec in toc
+% \setbeamertemplate{items}[default] 						% chevron/default
+
+\hypersetup{colorlinks=true,citecolor=green,linkcolor=black}% style of hyperref links
+
+%\usepackage{tikz}											% draw advanced graphics in latex
+%\pgfdeclareimage[height=0.5cm]{university−logo}{.data/MapQM.pdf}
+%\logo{\pgfuseimage{university−logo}}
+
+%\usepackage[orientation=landscape,size=custom,width=16,height=9.75,scale=0.5,debug]{beamerposter} % change the size of beamer
+
+%---------------------------------environments---------------------------------------%
+\newtheorem{conjecture}{Conjecture}
+
+%----------------------------------fast-typing---------------------------------------%
+
+%------------------------------------titlepage---------------------------------------%
+\title[Short Title]{My Beamer Template}
+\subtitle{A subtitle}
+\author[Z. Feng]{Zhou Feng}
+\institute[]{The Chinese University of Hong Kong}
+\date{\today}
+
+%====================================main-body==========================================%
+\begin{document}
+	
+	
+
+\begin{frame}[plain]
+    \maketitle
+\end{frame}
+
+\begin{frame}\label{contents}
+	\frametitle{Outline}
+	\tableofcontents
+\end{frame}
+
+
+
+\section{Hello world}
+\subsection{Basic Environments}
+\begin{frame}
+\frametitle{List}
+	\begin{itemize}
+		\item Point A
+		\item Point B \cite{Falconer2003}
+		\begin{itemize}
+			\item Subpoint C
+		\end{itemize}
+	\end{itemize}
+	
+	\begin{enumerate}
+		\item Point 1 \pause
+		\item Point 2 
+		\begin{enumerate}[I]
+			\item Analysis
+			\item Algebra
+			\item Geometry
+			\item Combinatorics
+		\end{enumerate}
+		\item 
+		\begin{enumerate}[i]
+			\item $ \alpha $
+			\item $ \beta $
+		\end{enumerate}
+	\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Description}
+	\begin{description}
+		\item[API] Application programming interface
+		\item[LAN] Local Area Network
+		\item[ASCII] American Standard Code for Information Interchange 
+	\end{description}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Tables}
+	\begin{table}
+		\centering
+		\begin{tabular}{l | c | c | c | c }
+			Competitor Name & Swim & Cycle & Run & Total \\
+			\hline \hline
+			John T & 13:04 & 24:15 & 18:34 & 55:53 \\ 
+			Norman P & 8:00 & 22:45 & 23:02 & 53:47\\
+			Alex K & 14:00 & 28:00 & n/a & n/a\\
+			Sarah H & 9:22 & 21:10 & 24:03 & 54:35 
+		\end{tabular}
+		\caption{Triathlon results}
+	\end{table}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Blocks}
+	\begin{block}<1->{Block Title}
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+		sed do eiusmod tempor incididunt ut labore et 
+		dolore magna aliqua.
+	\end{block}
+	\begin{alertblock}<3->{Block Title}
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+		sed do eiusmod tempor incididunt ut labore et 
+		dolore magna aliqua.
+	\end{alertblock}
+	\begin{definition}
+		A prime number is a number that...
+	\end{definition}
+	\begin{example}<2->
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+		sed do eiusmod tempor incididunt ut labore et
+		dolore magna aliqua.
+	\end{example}
+\end{frame}
+
+
+\begin{frame}{Theorems and Corollaries}
+
+\begin{theorem}[Pythagoras] 
+	$ a^2 + b^2 = c^2$
+\end{theorem}
+\begin{corollary}
+	$ x + y = y + x  $
+\end{corollary}
+\begin{proof}
+	$\omega +\phi = \epsilon $
+\end{proof}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Columns}
+	\begin{columns}
+		\column{0.5\textwidth}
+		Classical Mechanics, Electricmagnetism, Special Relativity, General Relativity, Quantum Mechanics, Thermodynamics, Statistical Mechanics.
+		
+		\column{0.5\textwidth} 
+		\begin{figure}
+			\centering
+			\includegraphics[width=\columnwidth]{./data/MapQM.jpg}
+		\end{figure}
+		
+	\end{columns}
+
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Buttons}
+	\hyperlink{contents}{\beamerbutton{contents page}}	
+	\hyperlink{contents}{\beamergotobutton{columns page}}
+	\hyperlink{contents}{\beamerskipbutton{pictures page}}
+	\hyperlink{contents}{\beamerreturnbutton{pictures page}}
+\end{frame}
+
+
+
+\section{Animation}
+
+
+\begin{frame}
+	\frametitle{Overlays}
+	\onslide<1->{First Line of Text}
+	
+	\onslide<2->{Second Line of Text}
+	
+	\onslide<3->{Third Line of Text}
+\end{frame}
+
+\setbeamercovered{transparent}
+\begin{frame}
+	\frametitle{Overlays}
+	\uncover<1->{First Line of Text}
+	
+	\uncover<2->{Second Line of Text}
+	
+	\uncover<3->{Third Line of Text}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Overlays}
+	\only<1>{First Line of Text}
+	
+	\only<2>{Second Line of Text}
+	
+	\only<3>{Third Line of Text}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Text formatting}
+	\textbf<2>{Example Text}
+	
+	\textit<2>{Example Text}
+	
+	\textsl<2>{Example Text}
+	
+	\textrm<2>{Example Text}
+	
+	\textsf<2>{Example Text}
+	
+	\textcolor<2>{orange}{Example Text}
+	
+	\alert<2>{Example Text}
+	
+	\structure<2>{Example Text}
+\end{frame}
+%====================================Reference==========================================% 
+\bibliographystyle{amsalpha}
+\bibliography{mybeamer}
+
+\end{document}

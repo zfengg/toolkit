@@ -1,0 +1,16 @@
+{
+    "abbrev": "thm",
+    "description": [
+        "The lemma environment"
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "env_lemma",
+    "shortcut": "shift+alt+L",
+    "tag": [
+        "\\begin{lemma}",
+        "",
+        "\\end{lemma}"
+    ],
+    "trigger": ""
+}

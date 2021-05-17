@@ -1,0 +1,411 @@
+%	Filename: myarticle.tex
+%   Version: 1.0
+%	Date: 08/11/2020
+%	e-mail: zfeng@math.cuhk.edu.hk 
+
+%   An all-in-one (most features from amsmath userguide) article template for daily tasks. 
+
+%========================================================== Preamble ==============================================================%
+\documentclass[12pt]{amsart} 
+% leqno; reqno for changing the position of number of equations
+
+%-------------------------------------------------------- Pacakges ----------------------------------------------------------------%
+% packages for symbolics
+\usepackage{amsmath} 
+\usepackage{amsfonts} 			  	% \mathscr \mathbb \mathfrak 
+\usepackage{amssymb} 			 	% special symbols
+\usepackage{mathrsfs}
+\usepackage{savesym}
+\usepackage{color} 				  	% colors
+\usepackage{graphicx} 			  	% include figures
+\usepackage{caption} 	 		  	% caption dealing
+\usepackage{colonequals} 		  	% command `\colonequals`
+\usepackage{amscd} 		 		  	% basic commutative diagrams; complex ones: kuvio, XY-pic
+\usepackage{float} 		 		  	% table figure positioning
+\usepackage[numbers,sort]{natbib} 	% automatically sort the citations
+%\usepackage{booktabs} 			  	% thick rules
+%\usepackage{fullpage} 				% fit more on a page without having to set margins manually
+%---list environments---%
+\usepackage[shortlabels,inline]{enumitem} % smart enumeration
+%\newlist{inlinelist}{enumerate*}{1}
+%---diagram drawing---%
+\usepackage{tikz}    % picture drawing
+\usepackage{tikz-cd} % powerful commutative diagrams
+
+%--------------layout--------------%
+\textheight 8.0in
+%\setlength{\textheight}{22.0cm}
+\textwidth 6.0in
+%\topmargin -0.25in
+\oddsidemargin 0.25in
+\evensidemargin 0.25in
+\parskip 1.0ex
+\baselineskip 15.2pt
+\footskip 4.0ex
+%\topmargin -0.25in
+%\oddsidemargin 0.25in
+%\evensidemargin 0.25in
+%\usepackage[textheight=8.0in,textwidth=6.0in]{geometry} 
+
+%----------fonts and colors---------%
+%\usepackage{fontspec}% Then you can use the fonts installed at your device. 
+%\setmainfont{Times New Roman}
+%\setsansfont{Times New Roman}
+%\setmonofont{Times New Roman}
+%\setsansfont{[foo.ttf]} % for the fonts at this default path.
+%\usepackage{xcolor}
+%\definecolor{MSBlue}{rgb}{.204,.353,.541}
+%\definecolor{MSLightBlue}{rgb}{.31,.506,.741}
+
+%------header and footer-----%
+%\usepackage{fancyhdr}
+%%headstyle
+%\newcommand{\headstyle}{
+%	\fancyhead[L]{}
+%	\fancyhead[C]{}
+%	\fancyhead[R]{}
+%}
+%% footstyle
+%\newcommand{\footstyle}{
+%	\fancyfoot[L]{}
+%	\fancyfoot[C]{\thepage}
+%	\fancyfoot[R]{}
+%}
+%\pagestyle{fancy}  % Set pagestyle for the document
+%\fancyhf{} %Clear the orginal headfoot style
+%\headstyle %set the new head style
+%\footstyle %set the new foot style
+%% Define a new pagestyle for main pages
+%\fancypagestyle{main}{%
+%	\fancyhf{} %Clear the orginal pagestyle
+%	\headstyle
+%	\footstyle
+%}
+%% For the first page
+%\fancypagestyle{firstpage}{%
+%	\fancyhf{} %Clear the orginal pagestyle
+%	\fancyhead[L]{\small\itshape Curriculum Vitae}
+%	\fancyhead[C]{}
+%	\fancyhead[R]{}
+%	\fancyfoot[L]{}
+%	\fancyfoot[C]{\thepage}
+%	\fancyfoot[R]{}
+%}
+%\renewcommand{\headrulewidth}{0pt}
+%%\renewcommand{\footrulewidth}{0.4pt}
+%%\renewcommand{\headrule}{\rule{\textwidth}{0.4pt}}
+
+%-------reference style-----------%
+%\usepackage[msc-links]{amsrefs}
+
+%------hyperlinks, bookmarks-------%
+\usepackage{aliascnt} % for auto reference of difference environments with the same counter
+\usepackage[bookmarks=true,colorlinks,linkcolor=blue,pagebackref,citecolor=blue,urlcolor=black]{hyperref}
+
+%--------environments---------%
+\usepackage{amsthm}
+\newtheorem{dummy}{***}[section]
+
+\theoremstyle{plain}
+\newaliascnt{theorem}{dummy}
+\newtheorem{theorem}[theorem]{Theorem}
+\aliascntresetthe{theorem}
+\providecommand*{\theoremautorefname}{Theorem} 
+\newaliascnt{proposition}{dummy}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+\providecommand*{\propositionautorefname}{Proposition} 
+\newaliascnt{corollary}{dummy}
+\newtheorem{corollary}[corollary]{Corollary}
+\aliascntresetthe{corollary}
+\providecommand*{\corollaryautorefname}{Corollary} 
+\newaliascnt{lemma}{dummy}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+\providecommand*{\lemmaautorefname}{Lemma} 
+\newaliascnt{conjecture}{dummy}
+\newtheorem{conjecture}[conjecture]{Conjecture}
+\aliascntresetthe{conjecture}
+\providecommand*{\conjectureautorefname}{Conjecture}
+
+\theoremstyle{definition}
+\newaliascnt{definition}{dummy}
+\newtheorem{definition}[definition]{Definition}
+\aliascntresetthe{definition}
+\providecommand*{\definitionautorefname}{Definition} 
+\newaliascnt{example}{dummy}
+\newtheorem{example}[example]{Example}
+\aliascntresetthe{example}
+\providecommand*{\exampleautorefname}{Example} 
+
+\theoremstyle{remark}
+\newaliascnt{remark}{dummy}
+\newtheorem{remark}[remark]{Remark}
+\aliascntresetthe{remark}
+\providecommand*{\remarkautorefname}{Remark} 
+
+
+%-----counters-----%
+\numberwithin{equation}{section} % \numberwithin also works for other counters
+%\setcounter{MaxMatrixCols}{11} % the maximal cols that a matrix can have
+
+%-----pagestyle-----%
+%\pagestyle{plain}
+
+%---cross reference---%
+%\usepackage[nameinlink]{cleveref} % change the reference style, cleveref must load the last
+\renewcommand{\sectionautorefname}{Section}
+%\renewcommand{\equationautorefname}{Equation}	
+
+%-------------------------------------------------------- For Fast-typing ---------------------------------------------------------%
+% cali characters
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calL}{\mathcal{L}}
+% scurf characters
+\newcommand{\scrB}{\mathscr{B}}
+\newcommand{\scrD}{\mathscr{D}}
+\newcommand{\scrP}{\mathscr{P}}
+\newcommand{\scrA}{\mathscr{A}}
+\newcommand{\scrE}{\mathscr{E}}
+\newcommand{\scrC}{\mathscr{C}}
+\newcommand{\scrT}{\mathscr{T}}
+\newcommand{\scrQ}{\mathscr{Q}}
+% blackboad characters
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbP}{\mathbb{P}}
+% frak characters
+\newcommand{\frX}{\mathfrak{X}}
+% rome characters
+\newcommand{\rmN}{\mathrm{N}}
+\newcommand{\rmR}{\mathrm{R}}
+% math operators
+\DeclareMathOperator*{\Lim}{Lim}
+\DeclareMathOperator*{\intersect}{\cap}
+\DeclareMathOperator*{\Intersect}{\bigcap}
+\DeclareMathOperator*{\union}{\cup}
+\DeclareMathOperator*{\Union}{\bigcup}
+\DeclareMathOperator{\ex}{ex}
+\DeclareMathOperator{\co}{conv}
+\DeclareMathOperator{\hdim}{dim_{H}}
+\DeclareMathOperator{\diam}{diam}
+% commonly used
+\newcommand{\Ndash}{\nobreakdash--}
+\newcommand{\sigmaAlgebra}{$\sigma$\nobreakdash-algebra}
+\providecommand{\abs}[1]{|#1|}
+\providecommand{\Abs}[1]{\left| #1\right|}
+\providecommand{\norm}[2][]{\| #2 \|_{#1}}
+\providecommand{\Norm}[2][]{\left \| #2 \right \|_{#1}}
+\newcommand{\ndiml}[1][n]{$#1$\nobreakdash-dim}
+\newcommand{\padic}{$p$\nobreakdash-adic} % for p-adic typing
+\newcommand{\euclid}[1][d]{\mathbb{R}^{#1}}
+%\genfrac{left-delim}{right-delim}{thickness}{mathstyle}{numerator}{denominator}
+
+% special for this article
+\newcommand{\measureMu}[1][\lambda]{\mu_{#1}}
+\newcommand{\dimmeasureMu}[1][\lambda]{\dim\mu_{#1}}
+
+
+%----------------------------------------------------------Title Page -------------------------------------------------------------%
+\title[small title]{My Article}
+% remove any unused author tags.
+% author one information
+\author{Zhou Feng}
+\address{	Department of Mathematics\\
+	The Chinese University of Hong Kong\\
+	Shatin,  Hong Kong}
+\curraddr{}
+\email{\href{mailto: zfeng@math.cuhk.edu.hk}{zfeng@math.cuhk.edu.hk}}
+\thanks{}
+
+%% author two information
+%\author{}
+%\address{}
+%\curraddr{}
+%\email{}
+%\thanks{}
+
+%----for the footnotes of titlepage-----%
+%\subjclass[2010]{Primary 28A80, 42A85} 
+%\keywords{Self-similar measure}
+%\date{}
+%\dedicatory{}
+%\thanks{}
+
+
+%======================================================MainBody========================================================%
+\begin{document}
+%\begin{abstract}
+%	 
+%\end{abstract}
+\baselineskip 15.2pt
+\maketitle
+
+%---------------------------------------------------------Introduction------------------------------------------------------------%
+%\setcounter{section}{0}
+%\section{Introduction}\label{sec:Introduction}
+%\subsection{Background}\label{subsec:Background}
+%
+%\subsection{Results}\label{subsec:Results}
+%
+%\subsection{Strategy of the proof}\label{subsec:Strategy}
+%
+%\subsection{Notations}\label{subsec:Notations}
+%
+%\subsection*{Structure of the paper}\label{subsec:StructurePaper}
+%
+%\subsection*{Acknowledgement}\label{subsec:Acknowledgement}
+
+
+\section{Introduction}\label{sec:intro}
+A good introduction to fractal geometry is Falconer~\cite{Falconer2003}. There is \verb|smallmatrix| environment (e.g, $\big(\begin{smallmatrix}
+			a & b\\ c&d
+		\end{smallmatrix}\big)$). It is recommended to use $ \dotsc, \dotsb, \dotsm, \dotsi, \dotso $ instead of $ \ldots \text{and} \cdots$. Then we test the \verb|\nobreakdash|: \padic, page 1\Ndash9, \ndiml, \ndiml[1], \sigmaAlgebra.
+What about a text-mode fractional: $ \tfrac{\log_{k} H}{1212} $.\\[20pt]
+Then for the \verb|\xleftarrow|:
+
+\begin{equation}\label{eq:arrow}
+	A \xleftarrow{n+\mu-1} B \xrightarrow[T]{n\pm i-1 \text{bla, bla, bla}}	C \intersect_{i\geq 1} A_{i} \Union_{k=1}^{100}\Upsilon_{k}
+\end{equation}
+\[ \Leftarrow \mspace{-18.0mu} \Rightarrow \] % 18mu=1em
+
+Compare the \verb|\choose| and \verb|\binom| : $ {n \choose k} \binom{n}{k}$. $ \abs{z}, \norm{v}, \norm[\infty]{v} $.
+
+About the user-defined math operators:
+\[ \ex(\co(A_{i})) \operatorname*{abc}_{x\to 0} \Lim_{n\to \infty}\]
+Then the \verb|mod|: $ \gcd(n,m\bmod n); \quad x \equiv y \pmod b, x \equiv y \mod c, x \equiv y \pod d $.
+
+See the following default math environments:
+
+\begin{multline}\label{eq:newton}
+	\vec{F} = m\vec{a} \\
+	\vec{F} = G \dfrac{m_{1}m_{2}}{r^{2}}
+\end{multline}
+
+\begin{subequations}\label{eq:maxwell}
+	\begin{gather}
+		\nabla\cdot \vec{E} = \varepsilon_{0}\rho \\
+		\nabla \cdot \vec{B} = 0 \\
+		\nabla \times \vec{E} = -\dfrac{\partial \vec{B}}{\partial t}\\
+		\nabla \times \vec{B} = \mu_{0}\varepsilon_{0} \vec{J} + \dfrac{\partial \vec{E}}{\partial t}
+	\end{gather}
+\end{subequations}
+
+\begin{equation}\label{eq:einstein}
+	\begin{split}
+		E& =\gamma mc^{2}
+		\\
+		\calR_{\mu\nu} - \dfrac{\calR}{2}g_{\mu\nu} + \Lambda g_{\mu\nu} & = \dfrac{8\pi G}{c^{4}} T_{\mu\nu}
+	\end{split}
+\end{equation}
+
+$\bullet$ \verb|\substack{}| and \verb|\begin{subarray}|
+\begin{gather}
+	\Lim_{\substack{0\leq i \leq m\\ 0<j<n} } P(i,j)\\
+	\sum_{\begin{subarray}{r}
+			i\in \Lambda \\ 0<j<n
+		\end{subarray}} P(i,j)
+\end{gather}
+
+$\heartsuit$ \verb|\sideset{text}{right}{symbol}|
+
+\[
+	a_0+\cfrac{1}{a_1+\cfrac{1}{a_2+\cfrac{1}{a_3+\cdots}}}
+\]
+
+\begin{equation}
+	\sideset{_\ast^\ast}{_\ast^\ast}\prod_{n=1}^{\infty} \left.	\begin{aligned}
+		\begin{bmatrix}
+			\sideset{_\ast^\ast}{_\ast^\ast}\prod_{n=1}^{\infty} & \sum & \prod_{n=1}^{\infty} \\
+			                                                     & \ex  & \lim_{n\to \infty}
+		\end{bmatrix}
+	\end{aligned} \right \rbrace \lim_{n\to \infty} \text{Quantum Computing}
+\end{equation}
+
+The \verb|\mathbf| command is commonly used to obtain bold Latin letters in math, but for most other kinds of math symbols it has no effect.
+
+\verb|\mid| and \verb|\mathbin{}|	:$ P(A \mid B) P(A \mathbin{\vert} B )  P(A | B)  $
+\begin{enumerate}[(a)]
+	\item \verb|f : X\to Y| vs. \verb|f\colon X\to Y|: $ f : X\to Y $ vs. $ f\colon X\to Y $.
+
+	\item \verb|:=| vs. \verb|\colonequals| : $ :=  $ vs. $ \colonequals $.
+
+	\item $ \lbrace z : z \in \bbZ \rbrace $ vs. $ \lbrace z \colon z \in \bbZ \rbrace $.
+
+	\item $ v_{1}, v_{2}, \dotsc,v_{n} $ vs. $ v_{1},\dotsc,v_{n} $.
+
+	\item $ f(n) = O(n) $ vs. $ f(n) \text{ is } O(n)$ or $ f(n)\in O(n) $.
+
+	\item $ A\setminus B $ vs. $ A\backslash B $ vs. $ A-B $.
+
+	\item There is a \verb|\,| spacing between integrand and measure
+	      \[ \int_{a}^{b} x^2 \,dx \]
+\end{enumerate}
+
+Here is some practical suggestions for mathematical writting.
+\begin{enumerate}
+	\item The structures for conditional sentences: \verb|If| \ldots\verb|, then|\ldots; \verb|When|\ldots, \ldots; \verb|For| \ldots, \ldots. No \verb|Let|\ldots. \verb|Then|\ldots!
+
+	\item Avoid using \verb|as| and \verb|for| to introduce reasons after some conclusion.
+
+	\item \verb|Hence|, \verb|Thus|, and \verb|Therefore,| .
+
+	\item \verb|, so| is informal and should be used when the conclusion is short.
+
+	\item A statement that is \verb|assumed| is an axiom, and throughout to be true. Something \verb|supposed| is a hypothesis and more appropriate to introduce a case or an argument by contradition. For example, \verb|Suppose to the contrary that| and \verb|Toward a contradiction, suppose that|.
+
+	\item No $ v $\verb|'s| or $ a_{i} $\verb|'s|.
+
+	\item No \textit{nested} proof environments.
+
+	\item \verb|We induct on n| vs. \verb|We use induction on n|.
+
+	\item Prefer \verb|pairwise| to \verb|mutually|.
+
+	\item No contractions like \verb|can't|, \verb|won't|, etc.
+
+\end{enumerate}
+
+\section{Commutative diagrams}
+
+Arrows \verb|@>>>| \verb|@<<<| \verb|@VVV| \verb|@AAA|. Double lines: \verb|@=|. Null arrows: \verb|@|
+\begin{equation}\label{key}
+	\begin{CD}
+		S^{{\mathcal{W}}_{\Lambda}\otimes T} @>j>> T\\
+		@|  @VV{\operatorname{End} P}V\\
+		(S\otimes T)/I  @= (Z\otimes T)/J
+	\end{CD}
+\end{equation}
+
+
+\verb|tikzcd| is the ultimate answer to a commutative diagram in \TeX.
+\[ \begin{tikzcd}
+		A \arrow[rd] \arrow[r, "\phi"] & B \\
+		& C
+	\end{tikzcd}  \]
+
+
+%======================================================== References ============================================================%
+\bibliographystyle{abbrv}
+\bibliography{myarticle}\label{sec：ref}
+
+% otherwise
+%\begin{thebibliography}{99999}
+%	
+%	\bibitem{Falconer2003}K. J. Falconer.
+%	{\em Fractal geometry. Mathematical foundations and applications.}  Wiley, 2003.
+%		
+%\end{thebibliography}
+
+
+\end{document}
