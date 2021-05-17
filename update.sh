@@ -10,8 +10,8 @@ cp ~/.bash_aliases dotfiles/
 cp ~/.vimrc dotfiles/
 
 # juliaSetup
-cp ~/.julia/config/startup.jl juliaSetup/
+cp ~/.julia/config/startup.jl julia_setup/
 for i in {5..6}
 do 
-  cp ~/.julia/environments/v1.$i/* juliaSetup/v1.$i/
+  cp ~/.julia/environments/v1.$i/* julia_setup/v1.$i/
 done
