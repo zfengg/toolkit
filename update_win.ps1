@@ -1,0 +1,1 @@
+cp $PROFILE dotfiles/
