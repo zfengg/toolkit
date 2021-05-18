@@ -121,6 +121,7 @@ export PATH="$PATH:$HOME/gems/bin"
 
 source "$HOME/.cargo/env"
 
+# perl
 PATH="${PATH:+${PATH}:}/home/zfeng/perl5/bin"; export PATH;
 PERL5LIB="/home/zfeng/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/zfeng/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
