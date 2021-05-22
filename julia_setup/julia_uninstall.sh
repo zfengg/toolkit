@@ -4,7 +4,7 @@ PATH_USRBIN="/usr/local/bin"
 DIR_INSTALL="/opt"
 
 sudo rm -rf "$DIR_INSTALL/julia-$1"
-echo "install directory removed!"
+echo "installation dir: $DIR_INSTALL/julia-$1 removed!"
 
 sudo rm "$PATH_USRBIN/julia$1"
-echo "symbolic link removed!"
+echo "symbolic link: $PATH_USRBIN/julia$1 removed!"

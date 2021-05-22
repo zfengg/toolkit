@@ -13,7 +13,7 @@ echo "downloading the julia tar-ball:"
 wget --directory-prefix $PATH_DOWNLOAD $linkDownload
 echo ":) download finished!"
 
-echo ">>> unpack tarball to the dirIntall"
+echo ">>> unpacking tarball to $DIR_INSTALL :"
 sudo tar -xvzf "$PATH_DOWNLOAD/$tarball" --directory=$DIR_INSTALL
 echo ":) julia tarball unpacked at $DIR_INSTALL/julia-$1/ !"
 

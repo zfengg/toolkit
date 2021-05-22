@@ -50,7 +50,7 @@ jlinstall() {
 	wget --directory-prefix $PATH_DOWNLOAD $linkDownload
 	echo ":) download finished!"
 
-	echo ">>> unpack tarball to the dirIntall"
+	echo ">>> unpacking tarball to $DIR_INSTALL :"
 	sudo tar -xvzf "$PATH_DOWNLOAD/$tarball" --directory=$DIR_INSTALL
 	echo ":) julia tarball unpacked at $DIR_INSTALL/julia-$1/ !"
 
@@ -68,7 +68,7 @@ jlinstall() {
 	echo ":) tarball removed!"
 
 	if [ -n "$2" ]; then
-		echo ":) All finished!!! Please check by running: julia$1 or julia "
+		echo ":) All finished!!! Please check by running: julia$1 or $2 "
 	else
 		echo ":) All finished!!! Please check by running: julia$1 "
 	fi
@@ -79,10 +79,10 @@ jluninstall() {
 	local DIR_INSTALL="/opt"
 
 	sudo rm -rf "$DIR_INSTALL/julia-$1"
-	echo "install directory removed!"
+	echo "installation dir: $DIR_INSTALL/julia-$1 removed!"
 
 	sudo rm "$PATH_USRBIN/julia$1"
-	echo "symbolic link removed!"
+	echo "symbolic link: $PATH_USRBIN/julia$1 removed!"
 }
 
 jlsetbin() {
