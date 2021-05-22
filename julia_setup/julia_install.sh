@@ -31,7 +31,7 @@ rm "$PATH_DOWNLOAD/$tarball"
 echo ":) tarball removed!"
 
 if [ -n "$2" ]; then
-        echo ":) All finished!!! Please check by running: julia$1 or julia "
+        echo ":) All finished!!! Please check by running: julia$1 or $2 "
 else
         echo ":) All finished!!! Please check by running: julia$1 "
 fi
