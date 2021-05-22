@@ -64,3 +64,5 @@ call plug#end()
 set nobackup
 set nowritebackup
 
+" custom setups 
+" set number
