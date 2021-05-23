@@ -15,3 +15,10 @@ for i in {5..6}
 do 
   cp ~/.julia/environments/v1.$i/* julia_setup/v1.$i/
 done
+
+# cp things to TA_Stuff
+ext4cp='tex pdf'
+for extTmp in $ext4cp
+do
+	cp tex_templates/mysolution/*.$extTmp TA_stuff/tex/solution/TAsol.$extTmp
+done
