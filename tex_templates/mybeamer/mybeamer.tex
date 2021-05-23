@@ -63,11 +63,11 @@
 
 %====================================main-body==========================================%
 \begin{document}
-	
-	
+
+
 
 \begin{frame}[plain]
-    \maketitle
+	\maketitle
 \end{frame}
 
 \begin{frame}\label{contents}
@@ -80,29 +80,29 @@
 \section{Hello world}
 \subsection{Basic Environments}
 \begin{frame}
-\frametitle{List}
+	\frametitle{List}
 	\begin{itemize}
 		\item Point A
 		\item Point B \cite{Falconer2003}
-		\begin{itemize}
-			\item Subpoint C
-		\end{itemize}
+		      \begin{itemize}
+			      \item Subpoint C
+		      \end{itemize}
 	\end{itemize}
-	
+
 	\begin{enumerate}
 		\item Point 1 \pause
-		\item Point 2 
-		\begin{enumerate}[I]
-			\item Analysis
-			\item Algebra
-			\item Geometry
-			\item Combinatorics
-		\end{enumerate}
-		\item 
-		\begin{enumerate}[i]
-			\item $ \alpha $
-			\item $ \beta $
-		\end{enumerate}
+		\item Point 2
+		      \begin{enumerate}[I]
+			      \item Analysis
+			      \item Algebra
+			      \item Geometry
+			      \item Combinatorics
+		      \end{enumerate}
+		\item
+		      \begin{enumerate}[i]
+			      \item $ \alpha $
+			      \item $ \beta $
+		      \end{enumerate}
 	\end{enumerate}
 
 \end{frame}
@@ -112,7 +112,7 @@
 	\begin{description}
 		\item[API] Application programming interface
 		\item[LAN] Local Area Network
-		\item[ASCII] American Standard Code for Information Interchange 
+		\item[ASCII] American Standard Code for Information Interchange
 	\end{description}
 \end{frame}
 
@@ -121,35 +121,35 @@
 	\begin{table}
 		\centering
 		\begin{tabular}{l | c | c | c | c }
-			Competitor Name & Swim & Cycle & Run & Total \\
+			Competitor Name & Swim  & Cycle & Run   & Total \\
 			\hline \hline
-			John T & 13:04 & 24:15 & 18:34 & 55:53 \\ 
-			Norman P & 8:00 & 22:45 & 23:02 & 53:47\\
-			Alex K & 14:00 & 28:00 & n/a & n/a\\
-			Sarah H & 9:22 & 21:10 & 24:03 & 54:35 
+			John T          & 13:04 & 24:15 & 18:34 & 55:53 \\
+			Norman P        & 8:00  & 22:45 & 23:02 & 53:47 \\
+			Alex K          & 14:00 & 28:00 & n/a   & n/a   \\
+			Sarah H         & 9:22  & 21:10 & 24:03 & 54:35
 		\end{tabular}
 		\caption{Triathlon results}
 	\end{table}
-	
+
 \end{frame}
 
 \begin{frame}
 	\frametitle{Blocks}
 	\begin{block}<1->{Block Title}
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-		sed do eiusmod tempor incididunt ut labore et 
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+		sed do eiusmod tempor incididunt ut labore et
 		dolore magna aliqua.
 	\end{block}
 	\begin{alertblock}<3->{Block Title}
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-		sed do eiusmod tempor incididunt ut labore et 
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+		sed do eiusmod tempor incididunt ut labore et
 		dolore magna aliqua.
 	\end{alertblock}
 	\begin{definition}
 		A prime number is a number that...
 	\end{definition}
 	\begin{example}<2->
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit,
 		sed do eiusmod tempor incididunt ut labore et
 		dolore magna aliqua.
 	\end{example}
@@ -158,15 +158,15 @@
 
 \begin{frame}{Theorems and Corollaries}
 
-\begin{theorem}[Pythagoras] 
-	$ a^2 + b^2 = c^2$
-\end{theorem}
-\begin{corollary}
-	$ x + y = y + x  $
-\end{corollary}
-\begin{proof}
-	$\omega +\phi = \epsilon $
-\end{proof}
+	\begin{theorem}[Pythagoras]
+		$ a^2 + b^2 = c^2$
+	\end{theorem}
+	\begin{corollary}
+		$ x + y = y + x  $
+	\end{corollary}
+	\begin{proof}
+		$\omega +\phi = \epsilon $
+	\end{proof}
 \end{frame}
 
 
@@ -175,13 +175,13 @@
 	\begin{columns}
 		\column{0.5\textwidth}
 		Classical Mechanics, Electricmagnetism, Special Relativity, General Relativity, Quantum Mechanics, Thermodynamics, Statistical Mechanics.
-		
-		\column{0.5\textwidth} 
+
+		\column{0.5\textwidth}
 		\begin{figure}
 			\centering
 			\includegraphics[width=\columnwidth]{./data/MapQM.jpg}
 		\end{figure}
-		
+
 	\end{columns}
 
 \end{frame}
@@ -189,7 +189,7 @@
 
 \begin{frame}
 	\frametitle{Buttons}
-	\hyperlink{contents}{\beamerbutton{contents page}}	
+	\hyperlink{contents}{\beamerbutton{contents page}}
 	\hyperlink{contents}{\beamergotobutton{columns page}}
 	\hyperlink{contents}{\beamerskipbutton{pictures page}}
 	\hyperlink{contents}{\beamerreturnbutton{pictures page}}
@@ -203,9 +203,9 @@
 \begin{frame}
 	\frametitle{Overlays}
 	\onslide<1->{First Line of Text}
-	
+
 	\onslide<2->{Second Line of Text}
-	
+
 	\onslide<3->{Third Line of Text}
 \end{frame}
 
@@ -213,18 +213,18 @@
 \begin{frame}
 	\frametitle{Overlays}
 	\uncover<1->{First Line of Text}
-	
+
 	\uncover<2->{Second Line of Text}
-	
+
 	\uncover<3->{Third Line of Text}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Overlays}
 	\only<1>{First Line of Text}
-	
+
 	\only<2>{Second Line of Text}
-	
+
 	\only<3>{Third Line of Text}
 \end{frame}
 
@@ -232,19 +232,19 @@
 \begin{frame}
 	\frametitle{Text formatting}
 	\textbf<2>{Example Text}
-	
+
 	\textit<2>{Example Text}
-	
+
 	\textsl<2>{Example Text}
-	
+
 	\textrm<2>{Example Text}
-	
+
 	\textsf<2>{Example Text}
-	
+
 	\textcolor<2>{orange}{Example Text}
-	
+
 	\alert<2>{Example Text}
-	
+
 	\structure<2>{Example Text}
 \end{frame}
 %====================================Reference==========================================% 

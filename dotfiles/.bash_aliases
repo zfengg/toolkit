@@ -38,7 +38,7 @@ barename() {
 	basename $1 | sed 's/\(.*\)\..*/\1/'
 }
 
-# julia installing workflow
+## julia installing workflow
 jlinstall() {
 	local PATH_DOWNLOAD="$HOME/Downloads"
 	local PATH_USRBIN="/usr/local/bin"
@@ -93,4 +93,15 @@ jlsetbin() {
 	sudo ln -s "$DIR_INSTALL/julia-$1/bin/julia" "$PATH_USRBIN/julia"
 
 	echo "Please check by running: julia"
+}
+
+## latex
+texindent() {
+	# autoindent .tex files
+	 find $1 -name '*.tex' -exec latexindent -w -s {} \;
+}
+
+texrmbak() {
+	# remove *.bak* files
+	find $1 -name '*.bak*' -exec rm {} \;
 }
