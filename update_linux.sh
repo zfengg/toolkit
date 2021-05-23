@@ -13,11 +13,12 @@ cp ~/.vimrc dotfiles/
 cp ~/.julia/config/startup.jl julia_setup/
 for i in {5..6}
 do 
-  cp ~/.julia/environments/v1.$i/* julia_setup/v1.$i/
+	mkdir -p julia_setup/v1.$i && cp ~/.julia/environments/v1.$i/* julia_setup/v1.$i/
 done
 
 # cp things to TA_Stuff
 ext4cp='tex pdf'
+mkdir -p TA_stuff/tex/solution
 for extTmp in $ext4cp
 do
 	cp tex_templates/mysolution/*.$extTmp TA_stuff/tex/solution/TAsol.$extTmp
