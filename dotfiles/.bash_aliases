@@ -125,5 +125,4 @@ mkmytex() {
 }
 
 # export the path to repo: toolkit
-PATHrepo=`pwd`
-export PATHtoolkit=$PATHrepo
+export PATHtoolkit=$(dirname `pwd`)
