@@ -1,0 +1,84 @@
+\documentclass[12pt]{report}
+
+%------------------packages----------------%
+\usepackage{amsmath} 
+\usepackage{amsfonts} 			  	% \mathscr \mathbb \mathfrak 
+\usepackage{amssymb} 			 	% special symbols
+\usepackage{mathrsfs}
+\usepackage{savesym}
+\usepackage{color} 				  	% colors
+\usepackage{caption} 	 		  	% caption dealing
+\usepackage{colonequals} 		  	% command `\colonequals`
+\usepackage{amscd} 		 		  	% basic commutative diagrams; complex ones: kuvio, XY-pic
+\usepackage{float} 		 		  	% table figure positioning
+\usepackage[numbers,sort]{natbib} 	% automatically sort the citations
+%\usepackage{booktabs} 			  	% thick rules
+%\usepackage{fullpage} 				% fit more on a page without having to set margins manually
+%---list environments---%
+\usepackage[shortlabels,inline]{enumitem} % smart enumeration
+%\newlist{inlinelist}{enumerate*}{1}
+%---diagram drawing---%
+\usepackage{tikz}    % picture drawing
+\usepackage{tikz-cd} % powerful commutative diagrams
+\usepackage{graphicx} 			  	% include figures
+\graphicspath{ {img/} }
+
+
+
+%------------------titlepage----------------%
+%\newcommand{\titlepage}{
+%	{\thispagestyle{empty}
+%	\centering{\Large\bfseries \title}
+%	\\
+%	\author \\
+%	\titledescription \\
+%	\institution \\
+%	\date}
+%}
+
+%\thispagestyle{empty}
+%\begin{center}
+%	\Large\bfseries \title
+%\end{center}
+%\vspace{20mm}
+%\begin{center}
+%	\author
+%\end{center}
+%\vspace{20mm}
+%\begin{center}
+%	A Thesis Submitted in Partial Fulfilment \\
+%	of the Requirements for the Degree of \\
+%	Master of Philosophy \\
+%	in \\
+%	Mathematics
+%\end{center}
+%\vspace{20mm}
+%\begin{center}
+%	\institution \\ \date
+%\end{center}
+%\newpage
+
+
+%------------------meta-info----------------%
+
+\title{Thesis title}
+\author{LAST, First}
+\date{Month, \the\year}
+\newcommand{\institution}{Institution Name}
+\newcommand{\titledescription}{A Thesis Submitted in Partial Fulfilment \\
+	of the Requirements for the Degree of \\
+	Master of Philosophy \\
+	in \\
+	Mathematics}
+
+
+
+
+
+%-----------------document-----------------%
+\begin{document}
+	
+	
+	\maketitle
+
+\end{document}
