@@ -125,4 +125,5 @@ mkmytex() {
 }
 
 # export the path to repo: toolkit
-export PATHtoolkit=/home/zfeng/Documents/GitHub/toolkit
+PATHrepo=`pwd`
+export PATHtoolkit=$PATHrepo
