@@ -10,6 +10,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias cdgh='cd ~/Documents/GitHub/'
+alias cdtoolkit="cd $PATHtoolkit"
 
 # git
 alias gadcm='git add -A && git commit -m'
