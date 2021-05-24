@@ -1,7 +1,5 @@
 # set customized aliases here
 # shortcuts
-alias cdgh='cd ~/Documents/GitHub/'
-alias gadcm='git add -A && git commit -m'
 alias bashrc='vim ~/.bashrc'
 alias bashalias='vim ~/.bash_aliases'
 alias vimrc='vim ~/.vimrc'
@@ -11,6 +9,11 @@ alias mathfortune='fortune math | cowsay'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+alias cdgh='cd ~/Documents/GitHub/'
+
+# git
+alias gadcm='git add -A && git commit -m'
+alias gupignore='git rm -r --cached . ; git add . &&  git commit -m "update .gitignore"'
 
 # some simple functions
 mks() {
@@ -105,3 +108,21 @@ texrmbak() {
 	# remove *.bak* files
 	find $1 -name '*.bak*' -exec rm {} \;
 }
+
+export PATHtoolkit="$HOME/Documents/GitHub/toolkit"
+mkmytex() {
+	# create a .tex from myarticle.tex
+	local default3=`pwd`
+	local default2=`basename $default3`
+	local ext4cp='tex bib'
+	for extTmp in $ext4cp
+	do
+		if [[ -f "$PATHtoolkit/tex/my$1/my$1.$extTmp" ]]; then
+			cp $PATHtoolkit/tex/my$1/my$1.$extTmp ${3:-$default3}/$default2.$extTmp
+		fi
+	done
+	# cp $PATHtoolkit/tex/my$1/*.{tex,pdf} ${2:-$default2}/$default3
+}
+
+# export the path to repo: toolkit
+export PATHtoolkit=/home/zfeng/Documents/GitHub/toolkit

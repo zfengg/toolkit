@@ -10,16 +10,22 @@ cp ~/.bash_aliases dotfiles/
 cp ~/.vimrc dotfiles/
 
 # juliaSetup
-cp ~/.julia/config/startup.jl julia_setup/
+cp ~/.julia/config/startup.jl julia/
 for i in {5..6}
 do 
-	mkdir -p julia_setup/v1.$i && cp ~/.julia/environments/v1.$i/* julia_setup/v1.$i/
+	mkdir -p julia/v1.$i && cp ~/.julia/environments/v1.$i/* julia/v1.$i/
 done
 
 # cp things to TA_Stuff
 ext4cp='tex pdf'
-mkdir -p TA_stuff/tex/solution
+mkdir -p TA/tex/solution
 for extTmp in $ext4cp
 do
-	cp tex_templates/mysolution/mysolution.$extTmp TA_stuff/tex/solution/TAsol.$extTmp
+	cp tex/mysolution/mysolution.$extTmp TA/tex/solution/TAsol.$extTmp
 done
+
+# add path to this repo to .bash_aliaes
+PATHrepo=`pwd`
+echo  >> dotfiles/.bash_aliases
+echo "# export the path to repo: toolkit" >> dotfiles/.bash_aliases
+echo "export PATHtoolkit=$PATHrepo" >> dotfiles/.bash_aliases

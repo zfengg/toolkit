@@ -5,11 +5,11 @@
 
 %   An all-in-one (most features from amsmath userguide) article template for daily tasks. 
 
-%========================================================== Preamble ==============================================================%
+%============== preamble =================%
 \documentclass[12pt]{amsart} 
 % leqno; reqno for changing the position of number of equations
 
-%-------------------------------------------------------- Pacakges ----------------------------------------------------------------%
+%----------- Pacakges ----------%
 % packages for symbolics
 \usepackage{amsmath}
 \usepackage{amsfonts} 			  	% \mathscr \mathbb \mathfrak 
@@ -81,7 +81,7 @@
 %	\headstyle
 %	\footstyle
 %}
-%% For the first page
+%% for the first page
 %\fancypagestyle{firstpage}{%
 %	\fancyhf{} %Clear the orginal pagestyle
 %	\fancyhead[L]{\small\itshape Curriculum Vitae}
@@ -98,7 +98,7 @@
 %-------reference style-----------%
 %\usepackage[msc-links]{amsrefs}
 
-%------hyperlinks, bookmarks-------%
+%------hyperlinks & bookmarks-------%
 \usepackage{aliascnt} % for auto reference of difference environments with the same counter
 \usepackage[bookmarks=true,colorlinks,linkcolor=blue,pagebackref,citecolor=blue,urlcolor=black]{hyperref}
 
@@ -157,7 +157,7 @@
 \renewcommand{\sectionautorefname}{Section}
 %\renewcommand{\equationautorefname}{Equation}	
 
-%-------------------------------------------------------- For Fast-typing ---------------------------------------------------------%
+%-------------- fast-typing -----------------%
 % cali characters
 \newcommand{\calF}{\mathcal{F}}
 \newcommand{\calB}{\mathcal{B}}
@@ -216,7 +216,7 @@
 \newcommand{\dimmeasureMu}[1][\lambda]{\dim\mu_{#1}}
 
 
-%----------------------------------------------------------Title Page -------------------------------------------------------------%
+%----------------title Page -------------------%
 \title[small title]{My Article}
 % remove any unused author tags.
 % author one information
@@ -243,7 +243,7 @@
 %\thanks{}
 
 
-%======================================================MainBody========================================================%
+%===================document=======================%
 \begin{document}
 %\begin{abstract}
 %	 
@@ -251,7 +251,7 @@
 \baselineskip 15.2pt
 \maketitle
 
-%---------------------------------------------------------Introduction------------------------------------------------------------%
+%------------introduction---------------%
 %\setcounter{section}{0}
 %\section{Introduction}\label{sec:Introduction}
 %\subsection{Background}\label{subsec:Background}
@@ -395,11 +395,11 @@ Arrows \verb|@>>>| \verb|@<<<| \verb|@VVV| \verb|@AAA|. Double lines: \verb|@=|.
 	\end{tikzcd}  \]
 
 
-%======================================================== References ============================================================%
+%=================references=====================%
 \bibliographystyle{abbrv}
 \bibliography{myarticle}\label{sec:ref}
 
-% otherwise
+% otherwise, copy .bbl file to here
 %\begin{thebibliography}{99999}
 %	
 %	\bibitem{Falconer2003}K. J. Falconer.
