@@ -21,5 +21,5 @@ ext4cp='tex pdf'
 mkdir -p TA_stuff/tex/solution
 for extTmp in $ext4cp
 do
-	cp tex_templates/mysolution/*.$extTmp TA_stuff/tex/solution/TAsol.$extTmp
+	cp tex_templates/mysolution/mysolution.$extTmp TA_stuff/tex/solution/TAsol.$extTmp
 done
