@@ -109,8 +109,8 @@ texrmbak() {
 	find $1 -name '*.bak*' -exec rm {} \;
 }
 
-export PATHtoolkit="$HOME/Documents/GitHub/toolkit"
-alias cdtoolkit="cd $PATHtoolkit"
+export TOOLKIT="$HOME/Documents/GitHub/toolkit"
+alias cdtoolkit="cd $TOOLKIT"
 mkmytex() {
 	# create a .tex from myarticle.tex
 	local default3=`pwd`
@@ -118,12 +118,11 @@ mkmytex() {
 	local ext4cp='tex bib'
 	for extTmp in $ext4cp
 	do
-		if [[ -f "$PATHtoolkit/tex/my$1/my$1.$extTmp" ]]; then
-			cp $PATHtoolkit/tex/my$1/my$1.$extTmp ${3:-$default3}/$default2.$extTmp
+		if [[ -f "$TOOLKIT/tex/my$1/my$1.$extTmp" ]]; then
+			cp $TOOLKIT/tex/my$1/my$1.$extTmp ${3:-$default3}/$default2.$extTmp
 		fi
 	done
 }
 
 # export the path to repo: toolkit
-export PATHtoolkit=`dirname $(dirname $BASH_SOURCE[0])`
-alias cdtoolkit="cd $PATHtoolkit"
+export TOOLKIT=`dirname $(dirname $BASH_SOURCE[0])`

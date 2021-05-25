@@ -26,6 +26,6 @@ done
 
 # add path to this repo to .bash_aliaes
 echo  >> dotfiles/.bash_aliases
-echo "# export the path to repo: toolkit" >> dotfiles/.bash_aliases
-echo "export PATHtoolkit=\`dirname \$(dirname \$BASH_SOURCE[0])\`" >> dotfiles/.bash_aliases
-echo "alias cdtoolkit=\"cd \$PATHtoolkit\"">> dotfiles/.bash_aliases
+echo "# export the path of current repo" >> dotfiles/.bash_aliases
+echo "export TOOLKIT=\`dirname \$(dirname \$BASH_SOURCE[0])\`" >> dotfiles/.bash_aliases
+echo "alias cdtoolkit=\"cd \$TOOLKIT\"">> dotfiles/.bash_aliases
