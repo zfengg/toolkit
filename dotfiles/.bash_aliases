@@ -112,17 +112,18 @@ texrmbak() {
 export TOOLKIT="$HOME/Documents/GitHub/toolkit"
 alias cdtoolkit="cd $TOOLKIT"
 mkmytex() {
-	# create a .tex from myarticle.tex
-	local default3=`pwd`
-	local default2=`basename $default3`
-	local ext4cp='tex bib'
-	for extTmp in $ext4cp
-	do
-		if [[ -f "$TOOLKIT/tex/my$1/my$1.$extTmp" ]]; then
-			cp $TOOLKIT/tex/my$1/my$1.$extTmp ${3:-$default3}/$default2.$extTmp
-		fi
-	done
+        # create a .tex from myarticle.tex
+        local default3=`pwd`
+        local default2=`basename $default3`
+        local ext4cp='tex bib'
+        for extTmp in $ext4cp
+        do
+                if [[ -f "$TOOLKIT/tex/my$1/my$1.$extTmp" ]]; then
+                        cp $TOOLKIT/tex/my$1/my$1.$extTmp ${3:-$default3}/$default2.$extTmp
+                fi
+        done
 }
 
-# export the path to repo: toolkit
+# export the path of current repo
 export TOOLKIT=`dirname $(dirname $BASH_SOURCE[0])`
+alias cdtoolkit="cd $TOOLKIT"
