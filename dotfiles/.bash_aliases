@@ -125,5 +125,5 @@ mkmytex() {
 }
 
 # export the path to repo: toolkit
-export PATHtoolkit=$(dirname `pwd`)
+export PATHtoolkit=`dirname $(dirname $BASH_SOURCE[0])`
 alias cdtoolkit="cd $PATHtoolkit"
