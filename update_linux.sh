@@ -28,3 +28,4 @@ done
 echo  >> dotfiles/.bash_aliases
 echo "# export the path to repo: toolkit" >> dotfiles/.bash_aliases
 echo "export PATHtoolkit=\$(dirname \`pwd\`)" >> dotfiles/.bash_aliases
+echo "alias cdtoolkit=\"cd \$PATHtoolkit\"">> dotfiles/.bash_aliases

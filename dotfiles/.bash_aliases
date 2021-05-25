@@ -10,7 +10,6 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias cdgh='cd ~/Documents/GitHub/'
-alias cdtoolkit="cd $PATHtoolkit"
 
 # git
 alias gadcm='git add -A && git commit -m'
@@ -111,6 +110,7 @@ texrmbak() {
 }
 
 export PATHtoolkit="$HOME/Documents/GitHub/toolkit"
+alias cdtoolkit="cd $PATHtoolkit"
 mkmytex() {
 	# create a .tex from myarticle.tex
 	local default3=`pwd`
@@ -126,3 +126,4 @@ mkmytex() {
 
 # export the path to repo: toolkit
 export PATHtoolkit=$(dirname `pwd`)
+alias cdtoolkit="cd $PATHtoolkit"
