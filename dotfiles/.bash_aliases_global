@@ -1,6 +1,6 @@
 # export the path of current repo
-export TOOLKIT=`dirname $(dirname $BASH_SOURCE[0])`
-export GITHUB=`dirname $TOOLKIT`
+export TOOLKIT=$(dirname $(dirname $BASH_SOURCE[0]))
+export GITHUB=$(dirname $TOOLKIT)
 alias cdtoolkit="cd $TOOLKIT"
 alias cdgh="cd $GITHUB"
 
@@ -25,7 +25,7 @@ alias gupignore='git rm -r --cached . ; git add . &&  git commit -m "update .git
 mks() {
 	# make a runnable script
 	if [ ! -f $1 ]; then
-		echo "#!/usr/bin/env ${2:-bash}" > $1
+		echo "#!/usr/bin/env ${2:-bash}" >$1
 		chmod 755 $1
 	else
 		echo "$1 already exists!"
@@ -107,7 +107,7 @@ jlsetbin() {
 ## latex
 texindent() {
 	# autoindent .tex files
-	 /usr/bin/find $1 -name '*.tex' -exec latexindent -w -s {} \;
+	/usr/bin/find $1 -name '*.tex' -exec latexindent -w -s {} \;
 }
 
 texrmbak() {
@@ -116,22 +116,21 @@ texrmbak() {
 }
 
 mkmytex() {
-        # create a .tex from myarticle.tex
-        local default3=`pwd`
-        local default2=`basename $default3`
-        local ext4cp='tex bib'
-        for extTmp in $ext4cp
-        do
-                if [[ -f "$TOOLKIT/tex/my$1/my$1.$extTmp" ]]; then
+	# create a .tex from myarticle.tex
+	local default3=$(pwd)
+	local default2=$(basename $default3)
+	local ext4cp='tex bib'
+	for extTmp in $ext4cp; do
+		if [[ -f "$TOOLKIT/tex/my$1/my$1.$extTmp" ]]; then
 			# update the name of .bib file in .tex
 			if [[ "$extTmp" = 'bib' ]]; then
 				sed -i "s/bibliography{my$1}/bibliography{${2:-$default2}}/g" ${3:-$default3}/${2:-$default2}.tex
 				# remove the cr (^m) if on dos
-				if [[ `uname` -ne 'linux' ]] && [[ `uname` -ne 'darwin' ]]; then
+				if [[ $(uname) -ne 'linux' ]] && [[ $(uname) -ne 'darwin' ]]; then
 					dos2unix.exe ${3:-$default3}/${2:-$default2}.tex
 				fi
 			fi
-                        cp $TOOLKIT/tex/my$1/my$1.$extTmp ${3:-$default3}/${2:-$default2}.$extTmp
-                fi
-        done
+			cp $TOOLKIT/tex/my$1/my$1.$extTmp ${3:-$default3}/${2:-$default2}.$extTmp
+		fi
+	done
 }
