@@ -1,0 +1,1 @@
+alias bashaliasmacos="vim $TOOLKIT/dotfiles/.bash_aliases_macos"

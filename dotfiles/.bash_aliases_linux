@@ -1,0 +1,3 @@
+# aliases
+alias bashaliaslinux="vim $TOOLKIT/dotfiles/.bash_aliases_linux"
+alias mathfortune='fortune math | cowsay'

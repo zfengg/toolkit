@@ -6,7 +6,7 @@
 
 \documentclass[12pt]{article}
 
-%---------------------packages-----------------------------%
+% --------------------------------- packages --------------------------------- %
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
 \usepackage{amsfonts, amsthm, amstext, amssymb, amscd, array, enumerate}
@@ -14,8 +14,7 @@
 colorlinks,linkcolor=blue,pagebackref,citecolor=blue,urlcolor=black]{hyperref}
 \usepackage{graphicx}
 \usepackage[shortlabels]{enumitem} % for the smart enumeration
-
-%-----------------------settings---------------------------%
+% --------------------------------- settings --------------------------------- %
 % title setup
 \renewcommand{\maketitle}{
 	{\centering\Large{\bfseries \institute \\
@@ -72,8 +71,7 @@ colorlinks,linkcolor=blue,pagebackref,citecolor=blue,urlcolor=black]{hyperref}
 \newcommand{\nextYear}[1][1]{\advance\year by #1 \the\year\advance\year by -#1}
 \usepackage{perpage}	% to reset counters parpage
 \MakePerPage{footnote}  % the perpage package comman
-
-%---------------------quick-typing-------------------------%
+% ------------------------------- quick-typing ------------------------------- %
 % cali characters
 \newcommand{\calF}{\mathcal{F}}
 \newcommand{\calB}{\mathcal{B}}
@@ -125,15 +123,15 @@ colorlinks,linkcolor=blue,pagebackref,citecolor=blue,urlcolor=black]{hyperref}
 \newcommand{\ndiml}[1][n]{$#1$\nobreakdash-dim}
 \newcommand{\padic}{$p$\nobreakdash-adic}
 \newcommand{\euclid}[1][d]{\mathbb{R}^{#1}}
-
-%---------------------title-------------------------------%
+% ----------------------------------- title ---------------------------------- %
 \newcommand{\institute}{The Chinese University of Hong Kong}
 \newcommand{\department}{Department of Mathematics}
 \newcommand{\course}{MATH1234 Course Name}
 \newcommand{\stitle}{Solutions to Assignment Name}
 \newcommand{\oqlabel}{Q} % the prefix label for ordered questions
-
-%---------------------------document---------------------------%
+% ---------------------------------------------------------------------------- %
+%                                   document                                   %
+% ---------------------------------------------------------------------------- %
 \begin{document}
 
 \maketitle
@@ -157,44 +155,44 @@ Solution with small questions.
 	\item Solution to the first question.
 	\begin{qenumerate}{I}
 		\item Solution to the first question.
-		
+
 		\item Solution to the second question.
 		\begin{qenumerate}{A}
 			\item Solution to the first question.
-			
+
 			\item Solution to the second question.
 		\end{qenumerate}
-		
+
 	\end{qenumerate}
-	
+
 	\item Solution to the second question.
-	
+
 	\begin{qenumerate}{i}
 		\itemPts{2} Solution to the first question with pts.
-		
+
 		\itemPts{3} Solution to the second question with pts.
 	\end{qenumerate}
-	
+
 	\item Solution to the third question.
-	
+
 	\begin{qenumerate}{1}
 		\item Solution to the first question.
-		
+
 		\item Solution to the second question.
 	\end{qenumerate}
-	
+
 \end{qenumerate}
 
 \question{Question with bold listing labels}
 
 \begin{qenumerate*}
 	\item Solution to the first question.
-	
+
 	\item Solution to the second question.
-	
+
 	\begin{qenumerate*}[\Alph]
 		\item Solution to the first question.
-		
+
 		\item\label{itm:options} Available options: \verb|\arabic|\verb|\roman|\verb|\Roman|\verb|\alph|\verb|\Alph|. The default: \verb|\arabic|.
 	\end{qenumerate*}
 \end{qenumerate*}
@@ -204,9 +202,9 @@ The alternative solutions.
 
 \begin{altsols}
 	\item The first sugguested solution.
-	
+
 	\item The second alternative solution. The avaiable options of label styles are the same as \ref{itm:options}.
-	
+
 \end{altsols}
 
 \qpart{Ordered questions}
