@@ -7,6 +7,7 @@ alias cdgh="cd $GITHUB"
 # set customized aliases here
 # shortcuts
 alias bashrc='vim ~/.bashrc'
+alias sourcebash='source ~/.bashrc'
 alias bashalias='vim ~/.bash_aliases'
 alias bashaliasglobal="vim ${BASH_SOURCE[0]}"
 alias vimrc='vim ~/.vimrc'
@@ -122,8 +123,15 @@ mkmytex() {
         for extTmp in $ext4cp
         do
                 if [[ -f "$TOOLKIT/tex/my$1/my$1.$extTmp" ]]; then
+			# update the name of .bib file in .tex
+			if [[ "$extTmp" = 'bib' ]]; then
+				sed -i "s/bibliography{my$1}/bibliography{${2:-$default2}}/g" ${3:-$default3}/${2:-$default2}.tex
+				# remove the cr (^m) if on dos
+				if [[ `uname` -ne 'linux' ]] && [[ `uname` -ne 'darwin' ]]; then
+					dos2unix.exe ${3:-$default3}/${2:-$default2}.tex
+				fi
+			fi
                         cp $TOOLKIT/tex/my$1/my$1.$extTmp ${3:-$default3}/${2:-$default2}.$extTmp
                 fi
         done
 }
-
