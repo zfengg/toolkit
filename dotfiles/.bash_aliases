@@ -119,7 +119,7 @@ mkmytex() {
         for extTmp in $ext4cp
         do
                 if [[ -f "$TOOLKIT/tex/my$1/my$1.$extTmp" ]]; then
-                        cp $TOOLKIT/tex/my$1/my$1.$extTmp ${3:-$default3}/$default2.$extTmp
+                        cp $TOOLKIT/tex/my$1/my$1.$extTmp ${3:-$default3}/${2:-$default2}.$extTmp
                 fi
         done
 }
