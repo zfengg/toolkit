@@ -1,15 +1,16 @@
-%	Filename: myarticle.tex
-%   Version: 1.0
-%	Date: 08/11/2020
-%	e-mail: zfeng@math.cuhk.edu.hk 
+% filename: myarticle.tex
+% version: 1.0
+% date: 08/11/2020
+% e-mail: zfeng@math.cuhk.edu.hk 
 
 %   An all-in-one (most features from amsmath userguide) article template for daily tasks. 
-
-%============== preamble =================%
+% ---------------------------------------------------------------------------- %
+%                                   preamble                                   %
+% ---------------------------------------------------------------------------- %
 \documentclass[12pt]{amsart} 
 % leqno; reqno for changing the position of number of equations
 
-%----------- Pacakges ----------%
+% --------------------------------- pacakges --------------------------------- %
 % packages for symbolics
 \usepackage{amsmath}
 \usepackage{amsfonts} 			  	% \mathscr \mathbb \mathfrak 
@@ -32,7 +33,7 @@
 \usepackage{tikz}    % picture drawing
 \usepackage{tikz-cd} % powerful commutative diagrams
 
-%--------------layout--------------%
+% ---------------------------------- layout ---------------------------------- %
 \textheight 8.0in
 %\setlength{\textheight}{22.0cm}
 \textwidth 6.0in
@@ -47,7 +48,7 @@
 %\evensidemargin 0.25in
 %\usepackage[textheight=8.0in,textwidth=6.0in]{geometry} 
 
-%----------fonts and colors---------%
+% ----------------------------- fonts and colors ----------------------------- %
 %\usepackage{fontspec}% Then you can use the fonts installed at your device. 
 %\setmainfont{Times New Roman}
 %\setsansfont{Times New Roman}
@@ -57,7 +58,7 @@
 %\definecolor{MSBlue}{rgb}{.204,.353,.541}
 %\definecolor{MSLightBlue}{rgb}{.31,.506,.741}
 
-%------header and footer-----%
+% ----------------------------- header and footer ---------------------------- %
 %\usepackage{fancyhdr}
 %%headstyle
 %\newcommand{\headstyle}{
@@ -95,14 +96,14 @@
 %%\renewcommand{\footrulewidth}{0.4pt}
 %%\renewcommand{\headrule}{\rule{\textwidth}{0.4pt}}
 
-%-------reference style-----------%
+% ------------------------------ reference style ----------------------------- %
 %\usepackage[msc-links]{amsrefs}
 
-%------hyperlinks & bookmarks-------%
+% -------------------------- hyperlinks & bookmarks -------------------------- %
 \usepackage{aliascnt} % for auto reference of difference environments with the same counter
 \usepackage[bookmarks=true,colorlinks,linkcolor=blue,pagebackref,citecolor=blue,urlcolor=black]{hyperref}
 
-%--------environments---------%
+% -------------------------------- environment ------------------------------- %
 \usepackage{amsthm}
 \newtheorem{dummy}{***}[section]
 
@@ -144,20 +145,19 @@
 \aliascntresetthe{remark}
 \providecommand*{\remarkautorefname}{Remark} 
 
-
-%-----counters-----%
+% --------------------------------- counters --------------------------------- %
 \numberwithin{equation}{section} % \numberwithin also works for other counters
 %\setcounter{MaxMatrixCols}{11} % the maximal cols that a matrix can have
 
-%-----pagestyle-----%
+% --------------------------------- pagestyle -------------------------------- %
 %\pagestyle{plain}
 
-%---cross reference---%
+% ---------------------------------- autoref --------------------------------- %
 %\usepackage[nameinlink]{cleveref} % change the reference style, cleveref must load the last
 \renewcommand{\sectionautorefname}{Section}
 %\renewcommand{\equationautorefname}{Equation}	
 
-%-------------- fast-typing -----------------%
+% -------------------------------- fast-typing ------------------------------- %
 % cali characters
 \newcommand{\calF}{\mathcal{F}}
 \newcommand{\calB}{\mathcal{B}}
@@ -210,13 +210,11 @@
 \newcommand{\padic}{$p$\nobreakdash-adic} % for p-adic typing
 \newcommand{\euclid}[1][d]{\mathbb{R}^{#1}}
 %\genfrac{left-delim}{right-delim}{thickness}{mathstyle}{numerator}{denominator}
-
 % special for this article
 \newcommand{\measureMu}[1][\lambda]{\mu_{#1}}
 \newcommand{\dimmeasureMu}[1][\lambda]{\dim\mu_{#1}}
 
-
-%----------------title Page -------------------%
+% --------------------------------- titlepage -------------------------------- %
 \title[small title]{My Article}
 % remove any unused author tags.
 % author one information
@@ -242,8 +240,9 @@
 %\dedicatory{}
 %\thanks{}
 
-
-%===================document=======================%
+% ---------------------------------------------------------------------------- %
+%                                   document                                   %
+% ---------------------------------------------------------------------------- %
 \begin{document}
 %\begin{abstract}
 %	 
@@ -251,7 +250,7 @@
 \baselineskip 15.2pt
 \maketitle
 
-%------------introduction---------------%
+% ------------------------------- introduction ------------------------------- %
 %\setcounter{section}{0}
 %\section{Introduction}\label{sec:Introduction}
 %\subsection{Background}\label{subsec:Background}
@@ -394,8 +393,9 @@ Arrows \verb|@>>>| \verb|@<<<| \verb|@VVV| \verb|@AAA|. Double lines: \verb|@=|.
 		& C
 	\end{tikzcd}  \]
 
-
-%=================references=====================%
+% ---------------------------------------------------------------------------- %
+%                                   reference                                  %
+% ---------------------------------------------------------------------------- %
 \bibliographystyle{abbrv}
 \bibliography{myarticle}\label{sec:ref}
 

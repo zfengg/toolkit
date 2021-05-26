@@ -5,15 +5,16 @@
 
 %   A prefered beamer template for daily tasks. 
 
-
-%=====================================Preamble=========================================%
+% ---------------------------------------------------------------------------- %
+%                                   preamble                                   %
+% ---------------------------------------------------------------------------- %
 \documentclass{beamer}
 %[handout]
 %\usepackage{pgfpages}
 %\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
 % \pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]
 
-%---------------------------themes and packages---------------------------------------%
+% ----------------------------- themes & packages ---------------------------- %
 \usetheme{Warsaw} % Madrid/default/Darmstadt/Boadilla/Antibes/Hannover/Singapore/Warsaw/Malmoe/Luebeck
 
 
@@ -49,21 +50,22 @@
 
 %\usepackage[orientation=landscape,size=custom,width=16,height=9.75,scale=0.5,debug]{beamerposter} % change the size of beamer
 
-%---------------------------------environments---------------------------------------%
+% ------------------------------- environments ------------------------------- %
 \newtheorem{conjecture}{Conjecture}
 
-%----------------------------------fast-typing---------------------------------------%
+% -------------------------------- fast-typing ------------------------------- %
 
-%------------------------------------titlepage---------------------------------------%
+% --------------------------------- titlepage -------------------------------- %
 \title[Short Title]{My Beamer Template}
 \subtitle{A subtitle}
 \author[Z. Feng]{Zhou Feng}
 \institute[]{The Chinese University of Hong Kong}
 \date{\today}
 
-%====================================main-body==========================================%
+% ---------------------------------------------------------------------------- %
+%                                   document                                   %
+% ---------------------------------------------------------------------------- %
 \begin{document}
-
 
 
 \begin{frame}[plain]
@@ -247,7 +249,10 @@
 
 	\structure<2>{Example Text}
 \end{frame}
-%====================================Reference==========================================% 
+
+% ---------------------------------------------------------------------------- %
+%                                   reference                                  %
+% ---------------------------------------------------------------------------- %
 \bibliographystyle{amsalpha}
 \bibliography{mybeamer}
 
