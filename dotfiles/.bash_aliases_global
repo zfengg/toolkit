@@ -12,6 +12,7 @@ alias sourcebash='source ~/.bashrc'
 alias bashalias='vim ~/.bash_aliases'
 alias bashaliasglobal="vim ${BASH_SOURCE[0]}"
 alias vimrc='vim ~/.vimrc'
+alias tldr='tldr -t ocean'
 
 # easier navigation
 alias ..="cd .."
