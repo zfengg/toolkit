@@ -1,6 +1,7 @@
 # export the path of current repo
 export TOOLKIT=$(dirname $(dirname $BASH_SOURCE[0]))
 export GITHUB=$(dirname $TOOLKIT)
+export PATHbashaliasglobal="$TOOLKIT/dotfiles/.bash_aliases_global"
 alias cdtoolkit="cd $TOOLKIT"
 alias cdgh="cd $GITHUB"
 
