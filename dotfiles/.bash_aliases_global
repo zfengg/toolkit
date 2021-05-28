@@ -109,12 +109,17 @@ jlsetbin() {
 ## latex
 texindent() {
 	# autoindent .tex files
-	find $1 -name '*.tex' -exec latexindent -w -s {} \;
+	/usr/bin/find $1 -name '*.tex' -exec latexindent -w -s {} \;
 }
 
 texrmbak() {
 	# remove *.bak* files
-	find $1 -name '*.bak*' -exec rm {} \;
+	/usr/bin/find $1 -name '*.bak*' -exec rm {} \;
+}
+
+texclean() {
+	# remove auxilary files except .tex & .bib
+	/usr/bin/find $1 -type f -not \( -name '*.tex' -or -name '*.bib' \) -delete
 }
 
 mkmytex() {

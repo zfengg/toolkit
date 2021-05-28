@@ -10,8 +10,3 @@ texindent() {
 	# autoindent .tex files
 	/bin/find $1 -name '*.tex' -exec D:/PortableSoftwares/Softwares/latexindent/latexindent.exe -w -s {} \;
 }
-
-texrmbak() {
-	# remove *.bak* files
-	/bin/find $1 -name '*.bak*' -exec rm {} \;
-}
