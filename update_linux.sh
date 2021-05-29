@@ -12,9 +12,9 @@ cp ~/.bashrc $currentDir/dotfiles/
 cp ~/.vimrc $currentDir/dotfiles/
 
 # juliaSetup
-cp ~/.julia/config/startup.jl $currentDir/julia/
+cp ~/.julia/config/startup.jl $currentDir/julia
 for i in {5..6}; do
-	mkdir -p $currentDir/julia/v1.$i && cp ~/.julia/environments/v1.$i/* $currentDir/julia/v1.$i/
+	mkdir -p $currentDir/julia/v1.$i && cp ~/.julia/environments/v1.$i/* $currentDir/julia/v1.$i
 done
 
 # cp things to TA_Stuff
