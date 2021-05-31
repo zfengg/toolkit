@@ -119,7 +119,7 @@ texrmbak() {
 
 texclean() {
 	# remove auxilary files except .tex & .bib
-	/usr/bin/find $1 -type f -not \( -name '*.tex' -or -name '*.bib' \) -delete
+	/usr/bin/find $1 -type f -not \( -name '*.tex' -or -name '*.bib' -or -name '*.pdf' \) -delete
 }
 
 mkmytex() {
