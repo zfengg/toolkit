@@ -249,11 +249,10 @@
 % ---------------------------------------------------------------------------- %
 %                                   document                                   %
 % ---------------------------------------------------------------------------- %
-\begin{document}
+\begin{document}\baselineskip 15.2pt
 %\begin{abstract}
 %	 
 %\end{abstract}
-\baselineskip 15.2pt
 \maketitle
 
 % ------------------------------- introduction ------------------------------- %
@@ -354,6 +353,8 @@ The \verb|\mathbf| command is commonly used to obtain bold Latin letters in math
 
 	\item There is a \verb|\,| spacing between integrand and measure
 	      \[ \int_{a}^{b} x^2 \,dx \]
+	      
+	\item Use \verb|text|
 \end{enumerate}
 
 Here is some practical suggestions for mathematical writting.
@@ -377,6 +378,12 @@ Here is some practical suggestions for mathematical writting.
 	\item Prefer \verb|pairwise| to \verb|mutually|.
 
 	\item No contractions like \verb|can't|, \verb|won't|, etc.
+	
+	\item Use \verb|\begingroup\allowdisplaybreaks ... \endgroup| to allow the large chunk of math display environments to be broken into pages.
+	
+	\item Replace \verb|$$ ... $$| with \verb|\[...\]| in \verb|sed|:
+	
+	\verb|sed '/\$\$/{:x;N;/.*\$\$ *$/!bx;s/\$\$\(.*\)\$\$ *$/\\[\1\\]/}'|
 
 \end{enumerate}
 
