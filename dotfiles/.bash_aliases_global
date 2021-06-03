@@ -106,7 +106,7 @@ jlsetbin() {
 	echo "Please check by running: julia"
 }
 
-## latex
+## latex workflow
 texindent() {
 	# autoindent .tex files
 	/usr/bin/find $1 -name '*.tex' -exec latexindent -w -s {} \;
@@ -142,4 +142,16 @@ mkmytex() {
 			fi
 		fi
 	done
+}
+
+# github workflow
+ghtree() {
+	# tree cmd to markdown with links
+	local tree=$(tree -tf --noreport -I '*~' --charset ascii $1 |
+	sed -e 's/| \+/  /g' -e 's/[|`]-\+/ */g' -e 's:\(* \)\(\(.*/\)\([^/]\+\)\):\1[\4](\2):g' -e 's/\*/\-/g')
+	if [ "$2" = "git" ]; then
+		echo "$tree" | sed '/.git/d'
+	else
+		echo "$tree"
+	fi
 }
