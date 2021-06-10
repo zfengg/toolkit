@@ -50,6 +50,7 @@ barename() {
 }
 
 ## julia installing workflow
+alias plutorun="julia -e 'using Pluto; Pluto.run()'"
 jlinstall() {
 	local PATH_DOWNLOAD="$HOME/Downloads"
 	local PATH_USRBIN="/usr/local/bin"
