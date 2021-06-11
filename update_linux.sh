@@ -8,6 +8,9 @@ currentDir=$(cd $(dirname "$0") && pwd)
 cp ~/.bashrc $currentDir/dotfiles/
 #cp ~/.bash_aliases dotfiles/
 
+# zsh
+cp ~/.zshrc $currentDir/dotfiles/
+
 # vim
 cp ~/.vimrc $currentDir/dotfiles/
 
