@@ -1,5 +1,5 @@
 # export the path of current repo
-export TOOLKIT=$(dirname $(dirname $BASH_SOURCE[0]))
+# export TOOLKIT=$(dirname $(dirname $BASH_SOURCE[0]))
 export GITHUB=$(dirname $TOOLKIT)
 export PATHbashaliasglobal="$TOOLKIT/dotfiles/.bash_aliases_global"
 alias cdtoolkit="cd $TOOLKIT"
@@ -10,7 +10,7 @@ alias cdgh="cd $GITHUB"
 alias bashrc='vim ~/.bashrc'
 alias sourcebash='source ~/.bashrc'
 alias bashalias='vim ~/.bash_aliases'
-alias bashaliasglobal="vim ${BASH_SOURCE[0]}"
+alias bashaliasglobal="vim $TOOLKIT/dotfiles/.bash_aliases_global"
 alias vimrc='vim ~/.vimrc'
 alias tldr='tldr -t ocean'
 
