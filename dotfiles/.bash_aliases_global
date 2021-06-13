@@ -128,8 +128,7 @@ mkmytex() {
 	# create a .tex from myarticle.tex
 	local default3=$(pwd)
 	local default2=$(basename $default3)
-	local ext4cp='tex bib'
-	for extTmp in $ext4cp; do
+	for extTmp in tex bib; do
 		if [[ -f "$TOOLKIT/tex/my$1/my$1.$extTmp" ]]; then
 			cp $TOOLKIT/tex/my$1/my$1.$extTmp ${3:-$default3}/${2:-$default2}.$extTmp
 			# update the name of .bib file in .tex
