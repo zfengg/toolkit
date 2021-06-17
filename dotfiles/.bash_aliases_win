@@ -4,7 +4,7 @@ alias bashaliaswin="vim $TOOLKIT/dotfiles/.bash_aliases_win"
 alias cdone="cd D:/OneDrive/'OneDrive - The Chinese University of Hong Kong'" 
 alias find="/bin/find"
 alias curl="/bin/curl"
-alias opentookit="start $TOOLKIT"
+alias opdirtookit="start $TOOLKIT"
 
 # overwrite functions due to path
 texindent() {
