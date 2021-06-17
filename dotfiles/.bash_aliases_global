@@ -51,9 +51,15 @@ barename() {
 	basename $1 | sed 's/\(.*\)\..*/\1/'
 }
 
+wgetext() {
+	# download a files with specific $1::extension from $2::url
+	wget -r -np -nc -nd -A $1 $2
+}
+
 ## julia installing workflow
 alias plutorun="julia -e 'using Pluto; Pluto.run()'"
 jlinstall() {
+	# install julia
 	local PATH_DOWNLOAD="$HOME/Downloads"
 	local PATH_USRBIN="/usr/local/bin"
 	local DIR_INSTALL="/opt"
@@ -89,6 +95,7 @@ jlinstall() {
 }
 
 jluninstall() {
+	# remove julia
 	local PATH_USRBIN="/usr/local/bin"
 	local DIR_INSTALL="/opt"
 
@@ -100,6 +107,7 @@ jluninstall() {
 }
 
 jlsetbin() {
+	# set the command link 'julia'
 	local PATH_USRBIN="/usr/local/bin"
 	local DIR_INSTALL="/opt"
 
