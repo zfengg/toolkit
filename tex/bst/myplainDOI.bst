@@ -1,4 +1,6 @@
-% hplain: adds eprint field (www-admin@xxx.lanl.gov)
+% Zhou Feng @ 17/06/2021 https://github.com/zfengg/toolkit/tree/master/tex/bst
+%
+% myplainDOI: adds eprint field and DOI links (www-admin@xxx.lanl.gov)
 % an extension of:
 % BibTeX standard bibliography style `plain'
 	% version 0.99a for BibTeX versions 0.99a or later, LaTeX version 2.09.
