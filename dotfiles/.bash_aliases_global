@@ -118,7 +118,12 @@ jlsetbin() {
 }
 
 ## latex workflow
-alias upbib="rm *.bib && cp $TOOLKIT/tex/bib/global.bib ."
+upbib() {
+	local defaultPath=$(pwd)
+	local namebib=$(basename $(ls ${2:-$defaultPath}/*.tex) | sed 's/\(.*\)\..*/\1/')
+	local pathbib="${2:-$defaultPath}/${1:-$namebib}.bib"
+	cp $TOOLKIT/tex/bib/global.bib $pathbib
+}
 
 texindent() {
 	# autoindent .tex files
