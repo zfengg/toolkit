@@ -15,6 +15,8 @@ alias vimrc='vim ~/.vimrc'
 alias tldr='tldr -t ocean'
 alias cl='clear'
 alias myip='curl http://ipecho.net/plain; echo'
+alias cpbibglobal="cp $TOOLKIT/tex/bib/global.bib ."
+alias upbibglobal="cp *.bib $TOOLKIT/tex/bib/global.bib"
 
 # easier navigation
 alias ..="cd .."
