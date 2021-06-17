@@ -1,3 +1,9 @@
 # aliases
 alias bashaliaslinux="vim $TOOLKIT/dotfiles/.bash_aliases_linux"
 alias mathfortune='fortune math | cowsay'
+
+# functions
+opdir() {
+	nautilus ${1:-.}
+}
+alias opdirtoolkit="nautilus $TOOLKIT"
