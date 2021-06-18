@@ -1,11 +1,10 @@
-# export the path of current repo
-# export TOOLKIT=$(dirname $(dirname $BASH_SOURCE[0]))
+# note: export $TOOLKIT (path/to/current_repo) into env
+# e.g. export TOOLKIT=$(dirname $(dirname $BASH_SOURCE[0]))
 export GITHUB=$(dirname $TOOLKIT)
 export PATHbashaliasglobal="$TOOLKIT/dotfiles/.bash_aliases_global"
 alias cdtoolkit="cd $TOOLKIT"
 alias cdgh="cd $GITHUB"
 
-# set customized aliases here
 # shortcuts
 alias bashrc='vim ~/.bashrc'
 alias sourcebash='source ~/.bashrc'
@@ -56,7 +55,7 @@ wgetext() {
 	wget -r -np -nc -nd -A $1 $2
 }
 
-## julia installing workflow
+# julia
 alias plutorun="julia -e 'using Pluto; Pluto.run()'"
 jlinstall() {
 	# install julia
@@ -117,7 +116,7 @@ jlsetbin() {
 	echo "Please check by running: julia"
 }
 
-## latex workflow
+# latex
 edbib() {
 	jabref ${1:-$TOOLKIT/tex/bib/global.bib}
 }
@@ -169,7 +168,7 @@ mkmytex() {
 	done
 }
 
-# github workflow
+# github
 ghtree() {
 	# tree cmd to markdown with links
 	local tree=$(tree -tf --noreport -I '*~' --charset ascii $1 |
