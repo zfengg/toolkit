@@ -118,10 +118,18 @@ jlsetbin() {
 }
 
 ## latex workflow
+edbib() {
+	jabref ${1:-$TOOLKIT/tex/bib/global.bib}
+}
+
 upbib() {
 	local defaultPath=$(pwd)
-	local namebib=$(basename $(ls ${2:-$defaultPath}/*.tex) | sed 's/\(.*\)\..*/\1/')
-	local pathbib="${2:-$defaultPath}/${1:-$namebib}.bib"
+	if [ -n "$1" ]; then
+		local pathbib="${2:-$defaultPath}/$1"
+	else
+		local namebib=$(basename $(ls ${2:-$defaultPath}/*.tex) | sed 's/\(.*\)\..*/\1/')
+		local pathbib="${2:-$defaultPath}/$namebib.bib"
+	fi
 	cp $TOOLKIT/tex/bib/global.bib $pathbib
 }
 
