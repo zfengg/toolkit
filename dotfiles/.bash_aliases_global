@@ -14,6 +14,7 @@ alias vimrc='vim ~/.vimrc'
 alias tldr='tldr -t ocean'
 alias cl='clear'
 alias myip='curl http://ipecho.net/plain; echo'
+alias transz='trans :zh'
 
 # easier navigation
 alias ..="cd .."
