@@ -118,12 +118,16 @@ jlsetbin() {
 }
 
 # latex
+edtex() {
+	texstudio $1 &
+}
+
 edmytex() {
-	texstudio $TOOLKIT/tex/my${1:-article}/my${1:-article}.tex
+	texstudio $TOOLKIT/tex/my${1:-article}/my${1:-article}.tex &
 }
 
 edbib() {
-	jabref ${1:-$TOOLKIT/tex/bib/global.bib}
+	jabref ${1:-$TOOLKIT/tex/bib/global.bib} &
 }
 
 upbib() {
