@@ -56,6 +56,20 @@ wgetext() {
 	wget -r -np -nc -nd -A $1 $2
 }
 
+relpath() {
+	local source=$1
+	local target=$2
+
+	local common_part=$source
+	local back=
+	while [ "${target#$common_part}" = "${target}" ]; do
+		common_part=$(dirname $common_part)
+		back="../${back}"
+	done
+
+	echo ${back}${target#$common_part/}
+}
+
 # julia
 alias plutorun="julia -e 'using Pluto; Pluto.run()'"
 jlinstall() {
