@@ -192,6 +192,12 @@ mkmytex() {
 }
 
 # github
+ghurl() {
+	local repo=${1:-toolkit}
+	local localpathrepo="$GITHUB/$repo"
+	echo "https://github.com/zfengg/$repo/tree/master/$(relpath $localpathrepo ${2:-$PWD})"
+}
+
 ghtree() {
 	# tree cmd to markdown with links
 	local tree=$(tree -tf --noreport -I '*~' --charset ascii $1 |
