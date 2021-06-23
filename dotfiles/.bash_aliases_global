@@ -192,6 +192,10 @@ mkmytex() {
 }
 
 # github
+authdate() {
+	echo "Zhou Feng @ $(date -I)"
+}
+
 ghurl() {
 	local repo=${1:-toolkit}
 	local localpathrepo="$GITHUB/$repo"
