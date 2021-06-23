@@ -1,6 +1,8 @@
 # aliases
 alias bashaliaslinux="vim $TOOLKIT/dotfiles/.bash_aliases_linux"
 alias mathfortune='fortune math | cowsay'
+alias opdirtoolkit="nautilus $TOOLKIT"
+alias chterm='sudo update-alternatives --config x-terminal-emulator'
 
 # functions
 opdir() {
