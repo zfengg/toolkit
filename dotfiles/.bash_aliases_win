@@ -1,7 +1,7 @@
 alias bashaliaswin="vim $TOOLKIT/dotfiles/.bash_aliases_win"
 
 # aliases
-alias cdone="cd D:/OneDrive/'OneDrive - The Chinese University of Hong Kong'" 
+alias cdone="cd '$OneDrive'"
 alias find="/bin/find"
 alias curl="/bin/curl"
 alias opdirtookit="start $TOOLKIT"
