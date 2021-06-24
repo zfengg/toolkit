@@ -5,6 +5,7 @@ alias cdone="cd '$OneDrive'"
 alias find="/bin/find"
 alias curl="/bin/curl"
 alias opdirtookit="start $TOOLKIT"
+alias python='/c/Users/zfeng/AppData/Local/Programs/Python/Python38/python.exe'
 
 # overwrite functions due to path
 texindent() {
