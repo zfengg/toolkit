@@ -22,7 +22,6 @@
 \usepackage{colonequals} 		  	% command `\colonequals`
 \usepackage{amscd} 		 		  	% basic commutative diagrams; complex ones: kuvio, XY-pic
 \usepackage{float} 		 		  	% table figure positioning
-\usepackage[numbers,sort]{natbib} 	% automatically sort the citations
 %\usepackage{booktabs} 			  	% thick rules
 %\usepackage{fullpage} 				% fit more on a page without having to set margins manually
 %---list environments---%
@@ -97,6 +96,7 @@
 
 % ------------------------------ reference style ----------------------------- %
 %\usepackage[msc-links]{amsrefs}
+\usepackage[numbers,sort]{natbib} 	% automatically sort the citations
 
 % -------------------------- hyperlinks & bookmarks -------------------------- %
 \usepackage{aliascnt} % for auto reference of difference environments with the same counter
@@ -407,10 +407,32 @@ Arrows \verb|@>>>| \verb|@<<<| \verb|@VVV| \verb|@AAA|. Double lines: \verb|@=|.
 		& C
 	\end{tikzcd}  \]
 
+\section{reference \& citation}
+Choose a \verb*|natbib| compatible \verb|\bibliographystyle|, e.g.\,\verb|abbrvnat|, \verb|plainnat|.
+\begin{itemize}[$\cdot$]
+	\item \verb*|\cite{}|: \cite{AkiyamaEtAl2020}
+	\item \verb*|\citet{}|: \citet{AkiyamaEtAl2020}
+	\item \verb*|\citet*{}|: \citet*{AkiyamaEtAl2020}
+	\item \verb*|\citep{}|: \citep{AkiyamaEtAl2020}
+	\item \verb*|\citep*{}|: \citep*{AkiyamaEtAl2020}
+	\item \verb*|\citealt*{}|: \citealt*{AkiyamaEtAl2020}
+	\item \verb*|\citeyear{}|: \citeyear{AkiyamaEtAl2020}
+	\item \verb*|\citeauthor{}|: \citeauthor{AkiyamaEtAl2020}
+	\item \verb*|\citeauthor*{}|: \citeauthor*{AkiyamaEtAl2020}
+	\item \verb*|\cite[text]{keylist}| \cite[Theorem 1]{AkiyamaEtAl2020}
+	\item \verb*|\cite[prefix][suffix]{keylist}|: \cite[see e.g.\!][p.\,123]{AkiyamaEtAl2020}
+	\item \verb*|\citenum{}|: \citenum{AkiyamaEtAl2020}
+	\item \verb*|\citeyearpar{}|: \citeyearpar{AkiyamaEtAl2020}
+	\item \verb*|\citefullauthor{}|: \citefullauthor{AkiyamaEtAl2020}
+\end{itemize}
+
+See also a book \citet*{Parry1981} and an arXiv preprint \cite{Feng2020}.
+More multi-authors citation like \citet*{BenoistQuint2016} and \citet*{FanEtAl2002}.
+
 % ---------------------------------------------------------------------------- %
 %                                   reference                                  %
 % ---------------------------------------------------------------------------- %
-\bibliographystyle{abbrv}
+\bibliographystyle{abbrvnat}
 \bibliography{myarticle}\label{sec:ref}
 
 % otherwise, copy .bbl file to here
