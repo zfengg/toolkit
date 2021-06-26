@@ -14,6 +14,7 @@ alias tldr='tldr -t ocean'
 alias cl='clear'
 alias myip='curl http://ipecho.net/plain; echo'
 alias transz='trans :zh'
+alias du='du -h -d 1'
 
 # easier navigation
 alias ..="cd .."

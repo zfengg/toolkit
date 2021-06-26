@@ -3,9 +3,12 @@ alias bashaliaslinux="vim $TOOLKIT/dotfiles/.bash_aliases_linux"
 alias mathfortune='fortune math | cowsay'
 alias opdirtoolkit="nautilus $TOOLKIT"
 alias chterm='sudo update-alternatives --config x-terminal-emulator'
+alias ll='lsd -lA'
+alias la='lsd -A'
+alias lll='ls -lAh'
+alias lt='lsd --tree'
 
 # functions
 opdir() {
 	nautilus ${1:-.}
 }
-alias opdirtoolkit="nautilus $TOOLKIT"
