@@ -247,7 +247,7 @@ FUNCTION {format.title}
 FUNCTION {format.eprint}
 { eprint empty$
     { "" }
-    { "{\em preprint, \burlalt{arXiv:" eprint * "}{http://arxiv.org/abs/" * eprint * "}}" * }
+    { "{\em arXiv preprint \burlalt{arXiv:" eprint * "}{http://arxiv.org/abs/" * eprint * "}}" * }
   if$
 }
 
