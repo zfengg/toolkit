@@ -7,6 +7,7 @@ alias ll='lsd -lA'
 alias la='lsd -A'
 alias lll='ls -lAh'
 alias lt='lsd --tree'
+alias upbst="cp $TOOLKIT/tex/bst/* $HOME/texmf/bibtex/bst/ && texhash"
 
 # functions
 opdir() {
