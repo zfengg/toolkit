@@ -15,11 +15,11 @@
 \usepackage{amsfonts} 			  	% \mathscr \mathbb \mathfrak 
 \usepackage{amssymb} 			 	% special symbols
 \usepackage{mathrsfs}
+\usepackage{mathtools}
 \usepackage{savesym}
 \usepackage{color} 				  	% colors
 \usepackage{graphicx} 			  	% include figures
 \usepackage{caption} 	 		  	% caption dealing
-\usepackage{colonequals} 		  	% command `\colonequals`
 \usepackage{amscd} 		 		  	% basic commutative diagrams; complex ones: kuvio, XY-pic
 \usepackage{float} 		 		  	% table figure positioning
 %\usepackage{booktabs} 			  	% thick rules
@@ -97,9 +97,9 @@
 % ------------------------------ reference style ----------------------------- %
 %\usepackage[msc-links]{amsrefs}
 \usepackage[numbers,sort]{natbib} 	% automatically sort the citations
-\newcommand{\seeeg}[1]{see e.g.\,#1}
+\newcommand{\seeeg}[1]{see e.g.\ #1}
 \newcommand{\seep}[1]{(see #1)}
-\newcommand{\seepeg}[1]{(see e.g.\,#1)}
+\newcommand{\seepeg}[1]{(see e.g.\ #1)}
 
 % -------------------------- hyperlinks & bookmarks -------------------------- %
 \usepackage{aliascnt} % for auto reference of difference environments with the same counter
@@ -346,7 +346,7 @@ The \verb|\mathbf| command is commonly used to obtain bold Latin letters in math
 \begin{enumerate}[(a)]
 	\item \verb|f : X\to Y| vs. \verb|f\colon X\to Y|: $ f : X\to Y $ vs. $ f\colon X\to Y $.
 
-	\item \verb|:=| vs. \verb|\colonequals| : $ :=  $ vs. $ \colonequals $.
+	\item \verb|:=| vs. \verb|\coloneqq| : $ :=  $ vs. $ \coloneqq $.
 
 	\item $ \lbrace z : z \in \bbZ \rbrace $ vs. $ \lbrace z \colon z \in \bbZ \rbrace $.
 
@@ -359,7 +359,10 @@ The \verb|\mathbf| command is commonly used to obtain bold Latin letters in math
 	\item There is a \verb|\,| spacing between integrand and measure
 	      \[ \int_{a}^{b} x^2 \,dx \]
 	      
-	\item Use \verb|text|
+	\item Use \verb|Serre et al.\ proved|: Serre et al.\ proved.
+	
+	\verb|Serre et al. proved|: Serre et al. proved.
+	
 \end{enumerate}
 
 Here is some practical suggestions for mathematical writting.
