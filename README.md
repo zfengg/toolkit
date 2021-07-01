@@ -1,8 +1,11 @@
 # toolkit
 To store dotfiles, templates...
 
-# dir tree
-.
+
+<details>
+  <summary># dir tree</summary>
+
+  .
  - [update_win.ps1](./update_win.ps1)
  - [TA](./TA)
    - [InputGrades.xlsx](./TA/InputGrades.xlsx)
@@ -39,6 +42,9 @@ To store dotfiles, templates...
    - [.vimrc](./dotfiles/.vimrc)
    - [.bash_aliases_global](./dotfiles/.bash_aliases_global)
  - [README.md](./README.md)
+
+</details>
+
 
 ## install `zsh` packages
 
