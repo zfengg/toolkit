@@ -1,11 +1,10 @@
 # toolkit
 To store dotfiles, templates...
 
-
 <details>
-  <summary># dir tree</summary>
-
-  .
+  <summary><b>Dir tree</b></summary>
+  
+  
  - [update_win.ps1](./update_win.ps1)
  - [TA](./TA)
    - [InputGrades.xlsx](./TA/InputGrades.xlsx)
@@ -46,6 +45,10 @@ To store dotfiles, templates...
 </details>
 
 
+## `zsh` setup
+<details>
+  <summary></summary>
+  
 ## install `zsh` packages
 
 1. [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
@@ -62,3 +65,6 @@ To store dotfiles, templates...
 ```
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
+  
+</details>
+
