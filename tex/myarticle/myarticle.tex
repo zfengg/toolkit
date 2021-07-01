@@ -10,7 +10,6 @@
 % leqno; reqno for changing the position of number of equations
 
 % --------------------------------- pacakges --------------------------------- %
-% packages for symbolics
 \usepackage{amsmath}
 \usepackage{amsfonts} 			  	% \mathscr \mathbb \mathfrak 
 \usepackage{amssymb} 			 	% special symbols
@@ -23,7 +22,7 @@
 \usepackage{amscd} 		 		  	% basic commutative diagrams; complex ones: kuvio, XY-pic
 \usepackage{float} 		 		  	% table figure positioning
 %\usepackage{booktabs} 			  	% thick rules
-%\usepackage{fullpage} 				% fit more on a page without having to set margins manually
+
 %---list environments---%
 \usepackage[shortlabels,inline]{enumitem} % smart enumeration
 %\newlist{inlinelist}{enumerate*}{1}
@@ -32,19 +31,16 @@
 \usepackage{tikz-cd} % powerful commutative diagrams
 
 % ---------------------------------- layout ---------------------------------- %
-\textheight 8.0in
-%\setlength{\textheight}{22.0cm}
-\textwidth 6.0in
-%\topmargin -0.25in
-\oddsidemargin 0.25in
-\evensidemargin 0.25in
-\parskip 1.0ex
-%\setlength{\baselineskip}{15.2pt}
-\footskip 4.0ex
-%\topmargin -0.25in
-%\oddsidemargin 0.25in
-%\evensidemargin 0.25in
-%\usepackage[textheight=8.0in,textwidth=6.0in]{geometry} 
+\textheight 8.in
+\textwidth 6.in
+%\topmargin -.25in
+\oddsidemargin .25in
+\evensidemargin .25in
+\footskip 4.ex
+\parskip 1.ex
+\renewcommand{\baselinestretch}{1.0858}
+%\usepackage[textheight=8.0in,textwidth=6.0in]{geometry}
+%\usepackage{fullpage}	% fit more on a page without having to set margins manually 
 
 % ----------------------------- fonts and colors ----------------------------- %
 %\usepackage{fontspec}% Then you can use the fonts installed at your device. 
@@ -71,18 +67,18 @@
 %	\fancyfoot[R]{}
 %}
 %\pagestyle{fancy}  % Set pagestyle for the document
-%\fancyhf{} %Clear the orginal headfoot style
-%\headstyle %set the new head style
-%\footstyle %set the new foot style
+%\fancyhf{} % clear the orginal headfoot style
+%\headstyle % set the new head style
+%\footstyle % set the new foot style
 %% Define a new pagestyle for main pages
 %\fancypagestyle{main}{%
-%	\fancyhf{} %Clear the original pagestyle
+%	\fancyhf{} % clear the original pagestyle
 %	\headstyle
 %	\footstyle
 %}
 %% for the first page
 %\fancypagestyle{firstpage}{%
-%	\fancyhf{} %Clear the orginal pagestyle
+%	\fancyhf{} % clear the orginal pagestyle
 %	\fancyhead[L]{\small\itshape Curriculum Vitae}
 %	\fancyhead[C]{}
 %	\fancyhead[R]{}
@@ -91,19 +87,23 @@
 %	\fancyfoot[R]{}
 %}
 %\renewcommand{\headrulewidth}{0pt}
-%%\renewcommand{\footrulewidth}{0.4pt}
-%%\renewcommand{\headrule}{\rule{\textwidth}{0.4pt}}
+%\renewcommand{\footrulewidth}{0.4pt}
+%\renewcommand{\headrule}{\rule{\textwidth}{0.4pt}}
 
 % ------------------------------ reference style ----------------------------- %
-%\usepackage[msc-links]{amsrefs}
 \usepackage[numbers,sort]{natbib} 	% automatically sort the citations
 \newcommand{\seeeg}[1]{see e.g.\ #1}
 \newcommand{\seep}[1]{(see #1)}
 \newcommand{\seepeg}[1]{(see e.g.\ #1)}
 
 % -------------------------- hyperlinks & bookmarks -------------------------- %
-\usepackage{aliascnt} % for auto reference of difference environments with the same counter
-\usepackage[bookmarks=true,colorlinks,linkcolor=blue,pagebackref,citecolor=blue,urlcolor=black]{hyperref}
+\usepackage{aliascnt} % for the correct \autoref
+\usepackage[bookmarks=true,
+			pagebackref,
+			colorlinks,
+			linkcolor=blue,
+			citecolor=blue,
+			urlcolor=black]{hyperref}
 
 % -------------------------------- environment ------------------------------- %
 \usepackage{amsthm}
@@ -154,7 +154,6 @@
 %\pagestyle{plain}
 
 % ---------------------------------- autoref --------------------------------- %
-%\usepackage[nameinlink]{cleveref} % cleveref must load at last
 \renewcommand{\sectionautorefname}{Section}
 %\renewcommand{\equationautorefname}{Equation}	
 
@@ -254,7 +253,7 @@
 % ---------------------------------------------------------------------------- %
 %                                   document                                   %
 % ---------------------------------------------------------------------------- %
-\begin{document}\setlength{\baselineskip}{15.2pt}
+\begin{document}
 %\begin{abstract}
 %	 
 %\end{abstract}
