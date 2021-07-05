@@ -192,6 +192,7 @@ mkmytex() {
 }
 
 # github
+alias ghweb='gh repo view --web'
 authdate() {
 	echo "Zhou Feng @ $(date -I)"
 }

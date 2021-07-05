@@ -119,7 +119,6 @@ fi
 export GEM_HOME="$HOME/gems"
 export PATH="$PATH:$HOME/gems/bin" 
 
-# Rust environment
 source "$HOME/.cargo/env"
 
 # perl

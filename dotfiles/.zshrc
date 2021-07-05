@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export OHMYZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 # set shell
 export SHELL=/usr/bin/zsh
 
@@ -81,6 +81,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
+	gitignore
 	zsh-autosuggestions
 	zsh-syntax-highlighting
 	autojump
