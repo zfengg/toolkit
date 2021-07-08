@@ -132,6 +132,8 @@ jlsetbin() {
 }
 
 # latex
+alias texclean='latexmk -c'
+
 edtex() {
 	texstudio $1 &
 }
@@ -163,11 +165,6 @@ texindent() {
 texrmbak() {
 	# remove *.bak* files
 	/usr/bin/find $1 -name '*.bak*' -exec rm {} \;
-}
-
-texclean() {
-	# remove auxilary files except .tex & .bib
-	/usr/bin/find $1 -type f -not \( -name '*.tex' -or -name '*.bib' -or -name '*.pdf' \) -delete
 }
 
 mkmytex() {
