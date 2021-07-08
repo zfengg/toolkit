@@ -188,6 +188,10 @@ mkmytex() {
 	done
 }
 
+complete -f -o plusdirs -X '!*.@(tex)' edtex
+complete -f -o plusdirs -X '!*.@(bib)' edbib
+complete -f -o plusdirs -X '!*.@(bib)' upbib
+
 # github
 alias ghweb='gh repo view --web'
 authdate() {
