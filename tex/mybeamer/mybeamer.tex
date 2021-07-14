@@ -14,9 +14,10 @@
 %\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]
 
 % ----------------------------- themes & packages ---------------------------- %
-\usetheme{Warsaw} % Madrid/default/Darmstadt/Boadilla/Antibes/Hannover/Singapore/Warsaw/Malmoe/Luebeck
+\usetheme{Warsaw} 
+% Warsaw/default/Madrid/default/Darmstadt/Boadilla/Antibes/Hannover/Singapore/Malmoe/Luebeck
 
-%\usecolortheme{crane}	% crane/orchid/whale
+%\usecolortheme{crane}	% whale/crane/orchid
 \useinnertheme{circles} % circles/rectangles/rounded/inmargin
 %\useoutertheme{serif}
 %\usefonttheme{shadow} 	% tree
@@ -31,16 +32,15 @@
 %}
 
 \beamertemplatenavigationsymbolsempty 						% Remove the navigation bar
-% \setbeamertemplate{navigation symbols}{}					% headline, symbols
-%\setbeamertemplate{footline}{}								% remove headline
-\setbeamertemplate{headline}{}								% remove footline
+%\setbeamertemplate{navigation symbols}{}					% headline, symbols
+%\setbeamertemplate{footline}{}								% remove footline
+\setbeamertemplate{headline}{}								% remove headline
 
 %\setbeamertemplate{section in toc}[sections numbered]		% style of section in toc
 %\setbeamertemplate{subsection in toc}[triangle unnumbered] % style of subsection in toc, ball/square/circle/default
 %\setbeamertemplate{sections/subsections in toc}[circle]	% style of sec/subsec in toc
-% \setbeamertemplate{items}[default] 						% chevron/default
+%\setbeamertemplate{items}[default] 						% chevron/default
 
-\hypersetup{colorlinks=true,citecolor=green,linkcolor=black}% style of hyperref links
 
 %\usepackage{tikz}											% draw advanced graphics in latex
 %\pgfdeclareimage[height=0.5cm]{university−logo}{.data/MapQM.pdf}
@@ -48,17 +48,95 @@
 
 %\usepackage[orientation=landscape,size=custom,width=16,height=9,scale=0.5,debug]{beamerposter} % change the size of beamer
 
-% ------------------------------- environments ------------------------------- %
+% -------------------------- hyperlinks & bookmarks -------------------------- %
+\hypersetup{bookmarks=true,
+			colorlinks=false,
+			linkcolor=blue,
+			citecolor=blue,
+			urlcolor=black}
+
+% -------------------------------- environment ------------------------------- %
 \newtheorem{conjecture}{Conjecture}
 
+% --------------------------------- citations -------------------------------- %
+\usepackage{natbib}
+
+% ----------------------------------- misc ----------------------------------- %
+\allowdisplaybreaks
+
 % -------------------------------- fast-typing ------------------------------- %
+% cali characters
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calL}{\mathcal{L}}
+% scurf characters
+\newcommand{\scrB}{\mathscr{B}}
+\newcommand{\scrD}{\mathscr{D}}
+\newcommand{\scrP}{\mathscr{P}}
+\newcommand{\scrA}{\mathscr{A}}
+\newcommand{\scrE}{\mathscr{E}}
+\newcommand{\scrC}{\mathscr{C}}
+\newcommand{\scrT}{\mathscr{T}}
+\newcommand{\scrQ}{\mathscr{Q}}
+% blackboad characters
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbT}{\mathbb{T}}
+% frak characters
+\newcommand{\frX}{\mathfrak{X}}
+% rome characters
+\newcommand{\rmN}{\mathrm{N}}
+\newcommand{\rmR}{\mathrm{R}}
+% math operators
+\DeclareMathOperator*{\Lim}{Lim}
+\DeclareMathOperator*{\intersect}{\cap}
+\DeclareMathOperator*{\Intersect}{\bigcap}
+\DeclareMathOperator*{\union}{\cup}
+\DeclareMathOperator*{\Union}{\bigcup}
+\DeclareMathOperator{\ex}{ex}
+\DeclareMathOperator{\co}{conv}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\supp}{supp}
+% commonly used
+\newcommand{\Ndash}{\nobreakdash--}
+\newcommand{\sigmaAlg}{$\sigma$\nobreakdash-algebra}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\Abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[2][]{\lVert#2\rVert_{#1}}
+\providecommand{\Norm}[2][]{\left\lVert#2\right\rVert_{#1}}
+\newcommand{\ndiml}[1][n]{$#1$\nobreakdash-dim}
+\newcommand{\padic}{$p$\nobreakdash-adic}
+\newcommand{\euclid}[1][d]{\mathbb{R}^{#1}}
+\newcommand{\innerprod}[2]{\langle #1, #2 \rangle}
+\newcommand{\dimH}{\dim_{H}}
+\newcommand{\dimP}{\dim_{P}}
+\newcommand{\leb}[1]{\mathcal{L}(#1)}
+\newcommand{\lebRes}[1]{\mathcal{L}\vert_{#1}}
+\newcommand{\energy}[2][s]{I_{#1}(#2)}
+\newcommand{\capacity}[2][s]{g_{#1}(#2)}
+%\genfrac{left-delim}{right-delim}{thickness}{mathstyle}{numerator}{denominator}
+
+% special for this article
 
 % --------------------------------- titlepage -------------------------------- %
 \title[Short Title]{My Beamer Template}
 \subtitle{A subtitle}
 \author[Z. Feng]{Zhou Feng}
-\institute[]{The Chinese University of Hong Kong}
+\institute[CUHK]{The Chinese University of Hong Kong}
 \date{\today}
+%	\\ \vspace{1em}
+%	\footnotesize{Joint work with A and B}}
+
 
 % ---------------------------------------------------------------------------- %
 %                                   document                                   %
@@ -77,13 +155,13 @@
 
 
 
-\section{Hello world}
+\section{Introduction} \label{sec:intro}
 \subsection{Basic Environments}
 \begin{frame}
 	\frametitle{List}
 	\begin{itemize}
 		\item Point A
-		\item Point B \cite{Falconer2003}
+		\item Point B
 		      \begin{itemize}
 			      \item Subpoint C
 		      \end{itemize}
@@ -107,6 +185,30 @@
 
 \end{frame}
 
+\begin{frame}{Citations}
+	
+	\begin{itemize}
+		\item \structure{\citep{Bowen1975}}
+		
+		\item \structure{\cite{BreuillardVarju2020}}
+		
+		\item \citep*{AkiyamaEtAl2020}
+		
+		\item \citet*{AkiyamaEtAl2020}
+		
+		\item \citealp*{BaranyEtAl2019}
+		
+		\item \citeauthor{BarralFeng2021}
+		
+		\item \citeauthor{BarreiraEtAl1999}
+		
+		\item \citeauthor{Erdoes1939}
+	\end{itemize}
+
+	
+\end{frame}
+
+
 \begin{frame}
 	\frametitle{Description}
 	\begin{description}
@@ -122,15 +224,16 @@
 		\centering
 		\begin{tabular}{l | c | c | c | c }
 			Competitor Name & Swim  & Cycle & Run   & Total \\
-			\hline \hline
+			\hline 
 			John T          & 13:04 & 24:15 & 18:34 & 55:53 \\
 			Norman P        & 8:00  & 22:45 & 23:02 & 53:47 \\
 			Alex K          & 14:00 & 28:00 & n/a   & n/a   \\
 			Sarah H         & 9:22  & 21:10 & 24:03 & 54:35
 		\end{tabular}
 		\caption{Triathlon results}
+		\label{tab:1}
 	\end{table}
-
+	
 \end{frame}
 
 \begin{frame}
@@ -148,7 +251,7 @@
 	\begin{definition}
 		A prime number is a number that...
 	\end{definition}
-	\begin{example}<2->
+	\begin{example}<2->[\citealp{Bowen1975}]
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit,
 		sed do eiusmod tempor incididunt ut labore et
 		dolore magna aliqua.
@@ -158,9 +261,14 @@
 
 \begin{frame}{Theorems and Corollaries}
 
-	\begin{theorem}[Pythagoras]
+	\begin{theorem}[Pythagoras]\label[Theorem]{thm:py}
 		$ a^2 + b^2 = c^2$
 	\end{theorem}
+
+	\begin{theorem}[\citealp*{AkiyamaEtAl2020}]
+		content
+	\end{theorem}
+
 	\begin{corollary}
 		$ x + y = y + x  $
 	\end{corollary}
@@ -248,10 +356,33 @@
 	\structure<2>{Example Text}
 \end{frame}
 
+\begin{frame}{Print some meta-info}
+	\begin{itemize}
+		\item \insertframenumber
+		\item \insertauthor
+		\item \insertinstitute
+		\item \insertshortauthor
+		\item \insertshortinstitute
+		\item \inserttitle
+		\item \insertshorttitle
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+	\large
+	Thank you for listening!
+\end{center}
+\end{frame}
+
+
 % ---------------------------------------------------------------------------- %
 %                                   reference                                  %
 % ---------------------------------------------------------------------------- %
-\bibliographystyle{amsalpha}
-\bibliography{mybeamer}
+
+\begin{frame}<presentation:0>[allowframebreaks,noframenumbering]{Reference}
+	\bibliographystyle{myabbrvnat}
+	\bibliography{mybeamer}
+\end{frame}
 
 \end{document}
