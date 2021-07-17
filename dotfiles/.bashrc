@@ -115,18 +115,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-# Install Ruby Gems to ~/gems
-export GEM_HOME="$HOME/gems"
-export PATH="$PATH:$HOME/gems/bin" 
-
-source "$HOME/.cargo/env"
-
-# perl
-PATH="${PATH:+${PATH}:}/home/zfeng/perl5/bin"; export PATH;
-PERL5LIB="/home/zfeng/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/zfeng/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/zfeng/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/zfeng/perl5"; export PERL_MM_OPT;
-
-# cuda path
-# export PATH=/usr/local/cuda-11.3/bin${PATH:+:${PATH}}

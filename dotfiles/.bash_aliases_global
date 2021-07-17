@@ -178,7 +178,7 @@ mkmytex() {
 			if [[ "$extTmp" = 'bib' ]]; then
 				sed -i "s/bibliography{my$1}/bibliography{${2:-$default2}}/g" ${3:-$default3}/${2:-$default2}.tex
 				# remove the cr (^m) if on dos
-				if [[ $(uname) -ne 'linux' ]] && [[ $(uname) -ne 'darwin' ]]; then
+				if [[ $(uname) -ne 'Linux' ]] && [[ $(uname) -ne 'Darwin' ]]; then
 					dos2unix.exe ${3:-$default3}/${2:-$default2}.tex
 				fi
 				# update .bib with global .bib
