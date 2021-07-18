@@ -11,5 +11,5 @@ alias upbst="cp $TOOLKIT/tex/bst/* $HOME/texmf/bibtex/bst/ && texhash"
 
 # functions
 opdir() {
-	nautilus ${1:-.}
+	nautilus ${1:-.} &
 }
