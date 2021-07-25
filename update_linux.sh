@@ -12,7 +12,8 @@ currentDir=$(cd $(dirname "$0") && pwd)
 cp ~/.zshrc $currentDir/dotfiles/
 
 # vim
-cp ~/.vimrc $currentDir/dotfiles/vim
+# cp ~/.vimrc $currentDir/dotfiles/vim
+cp ~/.vim_runtime/my_configs.vim $currentDir/dotfiles/vim
 
 # juliaSetup
 cp ~/.julia/config/startup.jl $currentDir/julia

@@ -9,6 +9,7 @@ alias lll='ls -lAh'
 alias lt='lsd --tree'
 alias upbst="cp $TOOLKIT/tex/bst/* $HOME/texmf/bibtex/bst/ && texhash"
 alias ghd='github-desktop &'
+alias vimconf='vim ~/.vim_runtime/my_configs.vim'
 
 # functions
 opdir() {
