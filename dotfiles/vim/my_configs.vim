@@ -31,6 +31,9 @@ augroup vimrcEx
   autocmd FileType text setlocal textwidth=78
 augroup END
 
+" theme
+colorscheme desert 
+ 
 " Add optional packages.
 "
 " The matchit plugin makes the % command work better, but it is not backwards
