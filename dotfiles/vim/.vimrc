@@ -16,7 +16,7 @@ if v:progname =~? "evim"
 endif
 
 " Get the defaults that most users want.
-source $VIMRUNTIME/defaults.vim
+" source $VIMRUNTIME/defaults.vim
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -49,7 +49,7 @@ augroup END
 if has('syntax') && has('eval')
   packadd! matchit
 endif
-" runtime macros/matchit.vim
+runtime macros/matchit.vim
 
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')

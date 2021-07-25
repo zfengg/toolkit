@@ -5,14 +5,14 @@
 currentDir=$(cd $(dirname "$0") && pwd)
 
 # bash
-cp ~/.bashrc $currentDir/dotfiles/
+#cp ~/.bashrc $currentDir/dotfiles/
 #cp ~/.bash_aliases dotfiles/
 
 # zsh
 cp ~/.zshrc $currentDir/dotfiles/
 
 # vim
-cp ~/.vimrc $currentDir/dotfiles/
+cp ~/.vimrc $currentDir/dotfiles/vim
 
 # juliaSetup
 cp ~/.julia/config/startup.jl $currentDir/julia
