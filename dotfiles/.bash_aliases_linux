@@ -11,10 +11,7 @@ alias upbst="cp $TOOLKIT/tex/bst/* $HOME/texmf/bibtex/bst/ && texhash"
 alias ghd='github-desktop &'
 
 # vim
-alias vimbasic='vim ~/.vim_runtime/vimrcs/basic.vim'
-alias vimconf='vim ~/.vim_runtime/my_configs.vim'
 alias cdvim='cd ~/.vim'
-alias cdvimrun='cd ~/.vim_runtime'
 
 # functions
 opdir() {

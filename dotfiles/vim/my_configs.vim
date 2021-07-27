@@ -30,9 +30,6 @@ augroup vimrcEx
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
 augroup END
-
-" theme
-colorscheme desert 
  
 " Add optional packages.
 "
@@ -54,9 +51,11 @@ Plug 'JuliaEditorSupport/julia-vim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
-" disable auto backup .*~ and swap .*.swp
-set nobackup
-set nowritebackup
-
+" lightline.vim
+if !has('gui_running')
+  set t_Co=256
+endif
+set noshowmode
+ 
 " custom setups 
 " set number
