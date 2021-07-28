@@ -3,7 +3,7 @@ using Dates
 
 # structs and functions
 mutable struct Member
-	name::String
+    name::String
     shouldPay::Dict
     hasPaid::Dict
     Member(name::String) = new(name, Dict(), Dict())
@@ -96,7 +96,7 @@ function pay_soln(payGrp::PayGroup)
 end
 
 function print_soln(soln)
-    println("\nHere is a \e[32mpayment solution\e[0m is:\n")
+    println("\nHere is a \e[32mpayment solution\e[0m:\n")
     for tuple in soln
         println(tuple[1], " => ", tuple[2], " : ", tuple[3])
     end
@@ -211,8 +211,12 @@ function input_bills(payGrp::PayGroup)
                 AAlist = keys(payGrp.members)
             end
             avgPay = payTotal / length(AAlist)
-            for name in AAlist
-                push!(payGrp.members[name].shouldPay, billname => avgPay)
+            for name in keys(payGrp.members)
+                if name in AAlist
+                    push!(payGrp.members[name].shouldPay, billname => avgPay)
+                else
+                    push!(payGrp.members[name].shouldPay, billname => 0.)
+                end
             end
         end
 
@@ -281,4 +285,4 @@ print_soln(soln)
 
 # the end
 println()
-println("Have a good day ~~")
+println("Have a good day ~")
