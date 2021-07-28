@@ -9,7 +9,7 @@ alias python='/c/Users/zfeng/AppData/Local/Programs/Python/Python38/python.exe'
 alias upbst="cp $TOOLKIT/tex/bst/* /c/Users/zfeng/AppData/Local/MiKTeX/2.9/bibtex/bst && initexmf -u"
 
 # vim
-alias cdvim='cd ~/vimfiles'
+# alias cdvim='cd ~/vimfiles'
 
 # overwrite functions due to path
 texindent() {
