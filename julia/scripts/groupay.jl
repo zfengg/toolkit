@@ -181,6 +181,7 @@ function add_bills!(payGrp::PayGroup)
         println("And how much has \e[36m", payMan, "\e[0m paid?")
         tempExpr = Meta.parse(readline())
         payTotal = eval(tempExpr) |> Float64
+        println(tempExpr, " = ", payTotal)
         for (name, member) in payGrp.members
             if name == payMan
                 push!(member.hasPaid, billname => payTotal)
