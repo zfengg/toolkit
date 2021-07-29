@@ -19,21 +19,18 @@ end
 getToPay(m::Member) = sum(values(m.shouldPay)) - sum(values(m.hasPaid))
 
 function print_member(m::Member)
-    println("----------")
     println("[\e[36m", m.name, "\e[0m]")
-    println("-- has paid --")
+    println("-- has paid")
     for (k, v) in m.hasPaid
         println("\e[33m", k, "\e[0m : ", v)
     end
     println("total = \e[32m", sum(values(m.hasPaid)), "\e[0m")
-    println("-- should pay --")
+    println("-- should pay")
     for (k, v) in m.shouldPay
         println("\e[33m", k, "\e[0m : ", v)
     end
     println("total = \e[31m", sum(values(m.shouldPay)), "\e[0m")
-    println("--")
-    println("remains to pay: \e[35m", getToPay(m), "\e[0m")
-    println("----------")
+    println("-- remains to pay: \e[35m", getToPay(m), "\e[0m\n")
 end
 
 # PayGroup
@@ -51,15 +48,15 @@ function gen_paygrp()
     println("What's the name of your group?")
     title = readline()
     payGrp = PayGroup(title)
-    println("And who are in your group?")
+    println("And who are in group \e[31m", title, "\e[0m?")
     members = String[]
     while true
         membersTmp = readline()
         append!(members, split(membersTmp))
         println()
-        println("Your group now contains ", length(members), " members:")
-        for name in members
-            println(name)
+        println("Your group now contains \e[31m", length(members), "\e[0m members:")
+        for x in members
+            println("\e[36m", x, "\e[0m")
         end
         println()
         println("Do you what to add more members?(y/[n])")
@@ -126,11 +123,10 @@ end
 getBillDetails(x::PayGroup, billname::String) = getBillDetails(x.members, billname)
 
 function print_bill(x::PayGroup, billname::String)
-    println()
     println("[\e[33m", billname, "\e[0m]")
     payTotal = x.billMetaInfo[billname][1]
     payMan = x.billMetaInfo[billname][2]
-    println("total: ", payTotal, " paid by \e[36m", payMan, "\e[0m;")
+    println("total = \e[31m", payTotal, "\e[0m paid by \e[36m", payMan, "\e[0m;")
     if x.billMetaInfo[billname][3]
         println("-- \e[34mAA\e[0m --")
     else
@@ -139,18 +135,23 @@ function print_bill(x::PayGroup, billname::String)
     for (key, val) in x.billDetails[billname]
         println("\e[36m", key, "\e[0m => ", val)
     end
+    println()
 end
 
 function print_bills(x::PayGroup)
+    println("\n======\n")
     for billname in keys(x.billDetails)
         print_bill(x, billname)
     end
+    println("======\n")
 end
 
 function print_members(x::PayGroup)
-    for member in vals(x.members)
+    println("\n======\n")
+    for member in values(x.members)
         print_member(member)
     end
+    println("======\n")
 end
 
 function add_bills!(payGrp::PayGroup)
@@ -177,7 +178,7 @@ function add_bills!(payGrp::PayGroup)
                 println("Oops, \e[36m", payMan, "\e[0m is not in your group! Please reinput the name:")
             end
         end
-        println("And how much?")
+        println("And how much has \e[36m", payMan, "\e[0m paid?")
         payTotal = parse(Float64, readline())
         for (name, member) in payGrp.members
             if name == payMan
@@ -197,7 +198,7 @@ function add_bills!(payGrp::PayGroup)
                 tmpMembers = copy(payGrp.members)
                 println("How much should each member pay?")
                 for (name, member) in tmpMembers
-                    print(name, " : ")
+                    print("\e[36m", name, "\e[0m : ")
                     tempExpr = Meta.parse(readline())
                     tmpShouldPay = eval(tempExpr) |> Float64
                     println(tempExpr, " = ", tmpShouldPay)
@@ -221,7 +222,7 @@ function add_bills!(payGrp::PayGroup)
             if isAllAA == "n"
                 println("Check [y]/n ?")
                 for name in keys(payGrp.members)
-                    print(name, " : ")
+                    print("\e[36m", name, "\e[0m : ")
                     tmpIsAA = readline()
                     if tmpIsAA != "n"
                         push!(AAlist, name)
@@ -304,7 +305,7 @@ end
 function print_soln(soln)
     println("\nTada! Here is a \e[32mpayment solution\e[0m :)\n")
     for tuple in soln
-        println(tuple[1], " => ", tuple[2], " : ", tuple[3])
+        println("\e[36m", tuple[1], "\e[0m => \e[36m", tuple[2], "\e[0m : ", tuple[3])
     end
     println()
 end
