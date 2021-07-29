@@ -47,8 +47,13 @@ end
 function gen_paygrp()
     println("What's the name of your group?")
     title = readline()
+    while isempty(title)
+        println("Why not name your group? ^o^")
+        print("Yes, you can give it a nice name: ")
+        title = readline()
+    end
     payGrp = PayGroup(title)
-    println("And who are in group \e[31m", title, "\e[0m?")
+    println("And who are in the group \e[31m", title, "\e[0m?")
     members = String[]
     while true
         membersTmp = readline()
@@ -66,7 +71,7 @@ function gen_paygrp()
             println("Please add the names of the others:")
         elseif length(members) == 0
             println()
-            println("haha~ such a joke that a group with no members!")
+            println("haha~ such a joke that a group with \e[31mNO\e[0m members!")
             println("Please add the names of the others:")
         else
             if length(members) == 1
@@ -168,14 +173,19 @@ function add_bills!(payGrp::PayGroup)
     for x in keys(payGrp.members)
         println("\e[36m", x, "\e[0m")
     end
-    println("Then let's add your bills together.")
+    println("Then let's review your bills together.")
 
     println()
-    println("What's the first bill to add?")
+    println("What's your first bill to add?")
     countBills = 1
     while true
         # meta info
         billname = readline()
+        while isempty(billname)
+            println("It's better to give the bill a name, right? ^o^")
+            print("So please name your bill: ")
+            billname = readline()
+        end
         println("Who pays \e[33m", billname, "\e[0m?")
         payMan = undef
         while true
@@ -183,7 +193,7 @@ function add_bills!(payGrp::PayGroup)
             if payMan in keys(payGrp.members)
                 break
             else
-                println("Oops, \e[36m", payMan, "\e[0m is not in your group! Please reinput the name:")
+                println("Oops, \e[36m", payMan, "\e[0m is not in your group! Please input the name again:")
             end
         end
         println("And how much has \e[36m", payMan, "\e[0m paid?")
@@ -218,7 +228,7 @@ function add_bills!(payGrp::PayGroup)
                 billDetails = get_bill_details(tmpMembers, billname)
                 if payTotal != sum(values(billDetails))
                     println()
-                    println("Oops! It doesn't sum up to the total payment! Please reinput:")
+                    println("Oops! It doesn't sum up to the total payment! Please input again.")
                 else
                     payGrp.members = tmpMembers
                     break
