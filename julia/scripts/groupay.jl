@@ -59,7 +59,7 @@ function gen_paygrp()
             println("\e[36m", x, "\e[0m")
         end
         println()
-        println("Do you what to add more members?(y/[n])")
+        println("Do you want to add more members?(y/[n])")
         flagInputName = readline()
         if flagInputName != "y"
             break
