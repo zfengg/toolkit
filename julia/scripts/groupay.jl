@@ -16,7 +16,7 @@ mutable struct Member
     hasPaid::Dict
     Member(name::String) = new(name, Dict(), Dict())
 end
-getToPay(m::Member) = sum(values(m.shouldPay)) - sum(values(m.hasPaid))
+get_toPay(m::Member) = sum(values(m.shouldPay)) - sum(values(m.hasPaid))
 
 function print_member(m::Member)
     println("[\e[36m", m.name, "\e[0m]")
@@ -30,7 +30,7 @@ function print_member(m::Member)
         println("\e[33m", k, "\e[0m : ", v)
     end
     println("total = \e[31m", sum(values(m.shouldPay)), "\e[0m")
-    println("-- remains to pay: \e[35m", getToPay(m), "\e[0m\n")
+    println("-- remains to pay: \e[35m", get_toPay(m), "\e[0m\n")
 end
 
 # PayGroup
@@ -61,12 +61,19 @@ function gen_paygrp()
         println()
         println("Do you want to add more members?(y/[n])")
         flagInputName = readline()
-        if flagInputName != "y"
+        if flagInputName == "y"
+            println()
+            println("Please add the names of the others:")
+        elseif length(members) == 0
+            println()
+            println("haha~ such a joke that a group with no members!")
+            println("Please add the names of the others:")
+        else
+            if length(members) == 1
+                println("Cheer up! No shame being alone ~")
+            end
             break
         end
-
-        println()
-        println("Please add the names of other members:")
     end
 
     for name in members
@@ -83,6 +90,7 @@ function add_members!(payGrp::PayGroup)
     end
 
     println("Who else do you want to add?")
+    println("Warning: Repeated names may crash the whole process ^_^!")
     addMembers = String[]
     while true
         membersTmp = readline()
@@ -96,12 +104,12 @@ function add_members!(payGrp::PayGroup)
         println()
         println("Do you what to add more members?(y/[n])")
         flagInputName = readline()
-        if flagInputName != "y"
+        if flagInputName == "y"
+            println()
+            println("Please add the names of the others:")
+        else
             break
         end
-
-        println()
-        println("Please add the names of the others:")
     end
 
     for name in addMembers
@@ -111,7 +119,7 @@ function add_members!(payGrp::PayGroup)
     return payGrp
 end
 
-function getBillDetails(m::Dict, billname::String)
+function get_bill_details(m::Dict, billname::String)
     billDetails = Dict()
     for (name, member) in m
         if haskey(member.shouldPay, billname)
@@ -120,7 +128,7 @@ function getBillDetails(m::Dict, billname::String)
     end
     return billDetails
 end
-getBillDetails(x::PayGroup, billname::String) = getBillDetails(x.members, billname)
+get_bill_details(x::PayGroup, billname::String) = get_bill_details(x.members, billname)
 
 function print_bill(x::PayGroup, billname::String)
     println("[\e[33m", billname, "\e[0m]")
@@ -207,7 +215,7 @@ function add_bills!(payGrp::PayGroup)
                     push!(member.shouldPay, billname => tmpShouldPay)
                 end
 
-                billDetails = getBillDetails(tmpMembers, billname)
+                billDetails = get_bill_details(tmpMembers, billname)
                 if payTotal != sum(values(billDetails))
                     println()
                     println("Oops! It doesn't sum up to the total payment! Please reinput:")
@@ -244,7 +252,7 @@ function add_bills!(payGrp::PayGroup)
         end
 
         push!(payGrp.billMetaInfo, billname => (payTotal, payMan, isAA))
-        billDetails = getBillDetails(payGrp, billname)
+        billDetails = get_bill_details(payGrp, billname)
         push!(payGrp.billDetails, billname => billDetails)
         println()
         print_bill(payGrp, billname)
@@ -264,11 +272,11 @@ function add_bills!(payGrp::PayGroup)
 end
 
 ## payment solution
-function pay_soln(payGrp::PayGroup)
+function gen_soln(payGrp::PayGroup)
     payers = []
     receivers = []
     for (name, member) in payGrp.members
-        tmpToPay = getToPay(member)
+        tmpToPay = get_toPay(member)
         if tmpToPay == 0
             continue
         elseif tmpToPay > 0
@@ -344,7 +352,7 @@ else
 end
 
 # payment solution
-soln = pay_soln(payGrp)
+soln = gen_soln(payGrp)
 print_soln(soln)
 
 # the end
