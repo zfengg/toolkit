@@ -9,6 +9,7 @@ alias lll='ls -lAh'
 alias lt='lsd --tree'
 alias upbst="cp $TOOLKIT/tex/bst/* $HOME/texmf/bibtex/bst/ && texhash"
 alias ghd='github-desktop &'
+alias sagenb='sage --notebook=jupyter'
 
 # vim
 alias cdvim='cd ~/.vim'

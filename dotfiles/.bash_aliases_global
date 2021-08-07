@@ -15,7 +15,8 @@ alias myip='curl http://ipecho.net/plain; echo'
 alias transz='trans :zh'
 alias du='du -ah -d 1'
 alias djvu2pdf='ddjvu -format=pdf -quality=100'
-alias groupay='julia -iq --startup-file=no $GITHUB/groupay/groupay.jl'
+alias groupay='julia $GITHUB/groupay/groupay.jl'
+alias jnb='jupyter notebook'
 
 # easier navigation
 alias ..="cd .."
