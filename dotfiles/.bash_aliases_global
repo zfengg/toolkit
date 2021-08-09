@@ -9,7 +9,6 @@ alias bashrc='vim ~/.bashrc'
 alias sourcebash='source ~/.bashrc'
 alias bashalias='vim ~/.bash_aliases'
 alias bashaliasglobal="vim $TOOLKIT/dotfiles/.bash_aliases_global"
-alias tldr='tldr -t ocean'
 alias cl='clear'
 alias myip='curl http://ipecho.net/plain; echo'
 alias transz='trans :zh'
