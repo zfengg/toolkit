@@ -79,6 +79,7 @@ relpath() {
 
 # julia
 alias jl='julia'
+alias jl.='julia --project=.'
 alias plutorun="julia -e 'using Pluto; Pluto.run()'"
 jlinstall() {
 	# install julia
