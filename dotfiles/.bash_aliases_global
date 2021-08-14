@@ -25,6 +25,7 @@ alias ....="cd ../../.."
 # git
 alias gadcm='git add -A && git commit -m'
 alias gupignore='git rm -r --cached . ; git add . &&  git commit -m "update .gitignore"'
+alias gbc='git add -A && git commit -m "bored commit"'
 
 # vim
 alias vimrc='vim ~/.vimrc'
