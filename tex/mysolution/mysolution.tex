@@ -1,4 +1,4 @@
-% file: mysolution.tex @ https://github.com/zfengg/toolkit/tree/master/tex_templates/mysolution
+% file: mysolution.tex @ https://github.com/zfengg/toolkit/blob/master/tex/mysolution/mysolution.tex
 %
 %	A simple tex template to write solutions for assignments/tests/exams.
 %
@@ -7,13 +7,15 @@
 \documentclass[12pt]{article}
 
 % --------------------------------- packages --------------------------------- %
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=0.7in]{geometry}
+\renewcommand{\baselinestretch}{1}
 \usepackage{amsmath}
 \usepackage{amsfonts, amsthm, amstext, amssymb, amscd, array, enumerate}
 \usepackage[bookmarks=true,bookmarksopen=true,
 colorlinks,linkcolor=blue,pagebackref,citecolor=blue,urlcolor=black]{hyperref}
 \usepackage{graphicx}
 \usepackage[shortlabels]{enumitem} % for the smart enumeration
+
 % --------------------------------- settings --------------------------------- %
 % title setup
 \renewcommand{\maketitle}{
@@ -71,6 +73,7 @@ colorlinks,linkcolor=blue,pagebackref,citecolor=blue,urlcolor=black]{hyperref}
 \newcommand{\nextYear}[1][1]{\advance\year by #1 \the\year\advance\year by -#1}
 \usepackage{perpage}	% to reset counters parpage
 \MakePerPage{footnote}  % the perpage package comman
+
 % ------------------------------- quick-typing ------------------------------- %
 % cali characters
 \newcommand{\calF}{\mathcal{F}}
@@ -123,12 +126,14 @@ colorlinks,linkcolor=blue,pagebackref,citecolor=blue,urlcolor=black]{hyperref}
 \newcommand{\ndiml}[1][n]{$#1$\nobreakdash-dim}
 \newcommand{\padic}{$p$\nobreakdash-adic}
 \newcommand{\euclid}[1][d]{\mathbb{R}^{#1}}
+
 % ----------------------------------- title ---------------------------------- %
 \newcommand{\institute}{The Chinese University of Hong Kong}
 \newcommand{\department}{Department of Mathematics}
 \newcommand{\course}{MATH1234 Course Name}
 \newcommand{\stitle}{Solutions to Assignment Name}
 \newcommand{\oqlabel}{Q} % the prefix label for ordered questions
+
 % ---------------------------------------------------------------------------- %
 %                                   document                                   %
 % ---------------------------------------------------------------------------- %
