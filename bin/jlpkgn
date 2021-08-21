@@ -1,0 +1,19 @@
+#!/usr/bin/env julia
+using RegistryCI
+using RegistryCI.AutoMerge
+path_to_registry = joinpath(DEPOT_PATH[1], "registries", "General")
+all_pkg_names = AutoMerge.get_all_non_jll_package_names(path_to_registry)
+
+for n in ARGS
+	println("[ \e[94m$n\e[0m ]")
+	results = AutoMerge.meets_distance_check(n, all_pkg_names)
+	if results[1]
+		println("\e[92m", results[1],"\e[0m")
+	else
+		println("\e[91m", results[1],"\e[0m")
+		for l in results[2:end]
+			println(l)
+		end
+    end
+	println()
+end

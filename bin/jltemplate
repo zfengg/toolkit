@@ -1,0 +1,22 @@
+#!/usr/bin/env julia
+using PkgTemplates
+
+# Pkg custom template
+t = Template(;
+		user="zfengg",
+		dir=".",
+		plugins=[
+			GitHubActions(),
+			Codecov()
+		]
+	)
+
+show(t)
+
+println("\n\nContinue to generate package?([y]/n)")
+shouldGen = readline()
+if shouldGen == "n"
+	exit()
+end
+
+t(ARGS[1])
