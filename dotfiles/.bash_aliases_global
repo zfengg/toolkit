@@ -33,6 +33,9 @@ alias vimconf='vim $TOOLKIT/dotfiles/vim/my_configs.vim'
 alias cdvimrun='cd ~/.vim_runtime'
 alias vimbasic='vim ~/.vim_runtime/vimrcs/basic.vim'
 
+# misc
+alias shdl="$GITHUB/shdl/shdl.py"
+
 # some simple functions
 mks() {
 	# make a runnable script
