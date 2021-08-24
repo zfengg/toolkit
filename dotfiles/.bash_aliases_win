@@ -5,8 +5,11 @@ alias cdone="cd '$OneDrive'"
 alias find="/bin/find"
 alias curl="/bin/curl"
 alias opdirtookit="start $TOOLKIT"
-alias python='/c/Users/zfeng/AppData/Local/Programs/Python/Python38/python.exe'
 alias upbst="cp $TOOLKIT/tex/bst/* /c/Users/zfeng/AppData/Local/MiKTeX/2.9/bibtex/bst && initexmf -u"
+
+# python
+# alias python='/c/Users/zfeng/AppData/Local/Programs/Python/Python38/python.exe'
+# alias pip='pip3'
 
 # vim
 # alias cdvim='cd ~/vimfiles'
@@ -16,3 +19,8 @@ texindent() {
 	# autoindent .tex files
 	/bin/find $1 -name '*.tex' -exec D:/PortableSoftwares/Softwares/latexindent/latexindent.exe -w -s {} \;
 }
+
+#
+export PATH="/c/Users/zfeng/scoop/shims:$PATH"
+export PATH="/c/Users/zfeng/scoop/apps/python/current:$PATH"
+export PATH="/c/Users/zfeng/scoop/apps/python/current/Scripts:$PATH"
