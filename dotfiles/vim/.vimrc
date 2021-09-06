@@ -60,9 +60,10 @@ Plug 'JuliaEditorSupport/julia-vim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
-" disable auto backup .*~ and swap .*.swp
-set nobackup
-set nowritebackup
+" change .un~ ~ .swp directories
+set backupdir=~/.vim/.backup/,/tmp//
+set directory=~/.vim/.swp/,/tmp//
+set undodir=~/.vim/.undo/,/tmp//
 
 " custom setups 
 " set number
