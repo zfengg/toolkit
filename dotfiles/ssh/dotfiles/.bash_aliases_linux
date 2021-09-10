@@ -1,0 +1,20 @@
+# aliases
+alias bashaliaslinux="vim $TOOLKIT/dotfiles/.bash_aliases_linux"
+alias mathfortune='fortune math | cowsay'
+alias opdirtoolkit="nautilus $TOOLKIT"
+alias chterm='sudo update-alternatives --config x-terminal-emulator'
+# alias ll='lsd -lA --date +"%Y-%m-%d %T"'
+alias la='ls -A1'
+alias lll='ls -lAh'
+alias lt='ls --tree'
+alias upbst="cp $TOOLKIT/tex/bst/* $HOME/texmf/bibtex/bst/ && texhash"
+alias ghd='github-desktop &'
+alias sagenb='sage --notebook=jupyter'
+
+# vim
+alias cdvim='cd ~/.vim'
+
+# functions
+opdir() {
+	nautilus ${1:-.} &
+}
