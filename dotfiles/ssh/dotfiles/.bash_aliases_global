@@ -1,0 +1,223 @@
+# shortcuts
+alias bashrc='vim ~/.bashrc'
+alias sourcebash='source ~/.bashrc'
+alias bashalias='vim ~/.bash_aliases'
+alias bashaliasglobal="vim $TOOLKIT/dotfiles/.bash_aliases_global"
+alias cl='clear'
+alias myip='curl http://ipecho.net/plain; echo'
+alias transz='trans :zh'
+alias du='du -ah --max-depth=1'
+alias djvu2pdf='ddjvu -format=pdf -quality=100'
+alias groupay='julia $GITHUB/groupay/groupay.jl'
+alias jnb='jupyter notebook'
+
+# easier navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# git
+alias gadcm='git add -A && git commit -m'
+alias gupignore='git rm -r --cached . ; git add . &&  git commit -m "update .gitignore"'
+alias gbc='git add -A && git commit -m "bored commit"'
+
+# vim
+alias vimrc='vim ~/.vimrc'
+alias vimconf='vim $TOOLKIT/dotfiles/vim/my_configs.vim'
+alias cdvimrun='cd ~/.vim_runtime'
+alias vimbasic='vim ~/.vim_runtime/vimrcs/basic.vim'
+
+# misc
+alias shdl="$GITHUB/shdl/shdl.py"
+
+# some simple functions
+mks() {
+	# make a runnable script
+	if [ ! -f $1 ]; then
+		echo "#!/usr/bin/env ${2:-bash}" >$1
+		chmod 755 $1
+	else
+		echo "$1 already exists!"
+	fi
+}
+
+datename() {
+	# attach date to the name of a file as a copy
+	cp $1 "${2:-$(dirname $1)}/$(date -I)_$(basename $1)"
+}
+
+extname() {
+	# get the extension of a filename
+	basename $1 | sed 's/.*\.\(.*\)/\1/'
+}
+
+barename() {
+	# get the bare name of a filename
+	basename $1 | sed 's/\(.*\)\..*/\1/'
+}
+
+wgetext() {
+	# download a files with specific $1::extension from $2::url
+	wget -r -np -nc -nd -A $1 $2
+}
+
+relpath() {
+	local source=$1
+	local target=$2
+
+	local common_part=$source
+	local back=
+	while [ "${target#$common_part}" = "${target}" ]; do
+		common_part=$(dirname $common_part)
+		back="../${back}"
+	done
+
+	echo ${back}${target#$common_part/}
+}
+
+# julia
+alias jl='julia'
+alias jl.='julia --project=.'
+alias plutorun="julia -e 'using Pluto; Pluto.run()'"
+jlinstall() {
+	# install julia
+	local PATH_DOWNLOAD="$HOME/Downloads"
+	local PATH_USRBIN="$HOME/bin"
+	local DIR_INSTALL="$HOME/opt"
+	local tarball="julia-$1-linux-x86_64.tar.gz"
+	local linkDownload="https://julialang-s3.julialang.org/bin/linux/x64/${1:0:3}/$tarball"
+
+	echo "downloading the julia tar-ball:"
+	wget --directory-prefix $PATH_DOWNLOAD $linkDownload
+	echo ":) download finished!"
+
+	echo ">>> unpacking tarball to $DIR_INSTALL :"
+	tar -xvzf "$PATH_DOWNLOAD/$tarball" --directory=$DIR_INSTALL
+	echo ":) julia tarball unpacked at $DIR_INSTALL/julia-$1/ !"
+
+	echo "creating symbolic link"
+	ln -s "$DIR_INSTALL/julia-$1/bin/julia" "$PATH_USRBIN/julia$1"
+	# replace the default julia command
+	if [ -n "$2" ]; then
+		rm "$PATH_USRBIN/$2"
+		ln -s "$DIR_INSTALL/julia-$1/bin/julia" "$PATH_USRBIN/$2"
+	fi
+	echo ":) symbolic links created!"
+
+	echo "removing the downloaded tarball"
+	rm "$PATH_DOWNLOAD/$tarball"
+	echo ":) tarball removed!"
+
+	if [ -n "$2" ]; then
+		echo -e ":) All finished!!! Please check by running: \e[32mjulia$1\e[0m or \e[32m$2\e[0m "
+	else
+		echo -e ":) All finished!!! Please check by running: \e[32mjulia$1\e[0m "
+	fi
+}
+
+jluninstall() {
+	# remove julia
+	local PATH_USRBIN="$HOME/bin"
+	local DIR_INSTALL="$HOME/opt"
+
+	rm -rf "$DIR_INSTALL/julia-$1"
+	echo "installation dir: $DIR_INSTALL/julia-$1 removed!"
+
+	rm "$PATH_USRBIN/julia$1"
+	echo "symbolic link: $PATH_USRBIN/julia$1 removed!"
+}
+
+jlsetbin() {
+	# set the command link 'julia'
+	local PATH_USRBIN="$HOME/bin"
+	local DIR_INSTALL="$HOME/opt"
+
+	rm "$PATH_USRBIN/julia"
+	ln -s "$DIR_INSTALL/julia-$1/bin/julia" "$PATH_USRBIN/julia"
+
+	echo "Please check by running: \e[32mjulia\e[0m "
+}
+
+# latex
+alias texclean='latexmk -c'
+
+edtex() {
+	texstudio $1 &
+}
+
+edmytex() {
+	texstudio $TOOLKIT/tex/my${1:-article}/my${1:-article}.tex &
+}
+
+edbib() {
+	jabref ${1:-$TOOLKIT/tex/bib/global.bib} &
+}
+
+upbib() {
+	local defaultPath=$(pwd)
+	if [ -n "$1" ]; then
+		local pathbib="${2:-$defaultPath}/$1"
+	else
+		local namebib=$(basename $(ls ${2:-$defaultPath}/*.tex) | sed 's/\(.*\)\..*/\1/')
+		local pathbib="${2:-$defaultPath}/$namebib.bib"
+	fi
+	cp $TOOLKIT/tex/bib/global.bib $pathbib
+}
+
+texindent() {
+	# autoindent .tex files
+	/usr/bin/find $1 -name '*.tex' -exec latexindent -w -s {} \;
+}
+
+texrmbak() {
+	# remove *.bak* files
+	/usr/bin/find $1 -name '*.bak*' -exec rm {} \;
+}
+
+mkmytex() {
+	# create a .tex from myarticle.tex
+	local default3=$(pwd)
+	local default2=$(basename $default3)
+	for extTmp in tex bib; do
+		if [[ -f "$TOOLKIT/tex/my$1/my$1.$extTmp" ]]; then
+			cp $TOOLKIT/tex/my$1/my$1.$extTmp ${3:-$default3}/${2:-$default2}.$extTmp
+			# update the name of .bib file in .tex
+			if [[ "$extTmp" = 'bib' ]]; then
+				sed -i "s/bibliography{my$1}/bibliography{${2:-$default2}}/g" ${3:-$default3}/${2:-$default2}.tex
+				# remove the cr (^m) if on dos
+				if [[ $(uname) -ne 'Linux' ]] && [[ $(uname) -ne 'Darwin' ]]; then
+					dos2unix.exe ${3:-$default3}/${2:-$default2}.tex
+				fi
+				# update .bib with global .bib
+				cp $TOOLKIT/tex/bib/global.$extTmp ${3:-$default3}/${2:-$default2}.$extTmp
+			fi
+		fi
+	done
+}
+
+complete -f -o plusdirs -X '!*.@(tex)' edtex
+complete -f -o plusdirs -X '!*.@(bib)' edbib
+complete -f -o plusdirs -X '!*.@(bib)' upbib
+
+# github
+alias ghweb='gh repo view --web'
+authdate() {
+	echo "Zhou Feng @ $(date -I)"
+}
+
+ghurl() {
+	local repo=${1:-toolkit}
+	local localpathrepo="$GITHUB/$repo"
+	echo "https://github.com/zfengg/$repo/tree/master/$(relpath $localpathrepo ${2:-$PWD})"
+}
+
+ghtree() {
+	# tree cmd to markdown with links
+	local tree=$(tree -tf --noreport -I '*~' --charset ascii $1 |
+	sed -e 's/| \+/  /g' -e 's/[|`]-\+/ */g' -e 's:\(* \)\(\(.*/\)\([^/]\+\)\):\1[\4](\2):g' -e 's/\*/\-/g')
+	if [ "$2" = "git" ]; then
+		echo "$tree" | sed '/.git/d'
+	else
+		echo "$tree"
+	fi
+}
