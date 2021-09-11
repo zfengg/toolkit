@@ -109,11 +109,11 @@
 		colorlinks,
 		linkcolor=blue,
 		citecolor=blue,
-		urlcolor=black]{hyperref}
+		urlcolor=cyan]{hyperref}
 
 % -------------------------------- environment ------------------------------- %
 \usepackage{amsthm}
-\newtheorem{dummy}{***}[section]
+\newtheorem{dummy}{***}
 
 \theoremstyle{plain}
 \newaliascnt{theorem}{dummy}
@@ -136,6 +136,10 @@
 \newtheorem{conjecture}[conjecture]{Conjecture}
 \aliascntresetthe{conjecture}
 \providecommand*{\conjectureautorefname}{Conjecture}
+
+\newtheorem{model}{Model}
+%\aliascntresetthe{conjecture}
+\providecommand*{\modelautorefname}{Model}
 
 \theoremstyle{definition}
 \newaliascnt{definition}{dummy}
