@@ -7,7 +7,7 @@
 \documentclass[12pt]{article}
 
 % --------------------------------- packages --------------------------------- %
-\usepackage[margin=0.7in]{geometry}
+\usepackage[a4paper,margin=0.7in]{geometry}
 \renewcommand{\baselinestretch}{1}
 \usepackage{amsmath}
 \usepackage{amsfonts, amsthm, amstext, amssymb, amscd, array, enumerate}
@@ -19,12 +19,12 @@ colorlinks,linkcolor=blue,pagebackref,citecolor=blue,urlcolor=black]{hyperref}
 % --------------------------------- settings --------------------------------- %
 % title setup
 \renewcommand{\maketitle}{
-	{\centering\Large{\bfseries \institute \\
-		\department}
-	\\
-	\course
-	\\
-	\stitle \\}
+	{\centering\bfseries \large{ \uppercase\expandafter{\institute} \\
+			\department}
+		\\
+		\course
+		\\
+		\stitle \\}
 }
 % question counter
 \newcounter{question}
