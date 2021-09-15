@@ -19,12 +19,12 @@ colorlinks,linkcolor=blue,pagebackref,citecolor=blue,urlcolor=black]{hyperref}
 % --------------------------------- settings --------------------------------- %
 % title setup
 \renewcommand{\maketitle}{
-	{\centering\bfseries \large{ \uppercase\expandafter{\institute} \\
-			\department}
+	{\centering \large{\bfseries\uppercase\expandafter{\institute}\\
+			\department
+		}\\
+	{\bfseries\course}
 		\\
-		\course
-		\\
-		\stitle \\}
+	\stitle \\}
 }
 % question counter
 \newcounter{question}
