@@ -1,8 +1,5 @@
 " An example for a vimrc file.
 "
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2019 Jan 26
-"
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
 "	      for Amiga:  s:.vimrc
@@ -59,6 +56,8 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -68,5 +67,42 @@ set backupdir=~/.vim/.backup/,/tmp//
 set directory=~/.vim/.swp/,/tmp//
 set undodir=~/.vim/.undo/,/tmp//
 
-" custom setups 
-" set number
+" custom setups
+set nu!
+highlight LineNr ctermfg=grey
+set noshowmode
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+autocmd FileType c,cpp,python,julia,vim,markdown
+	\ autocmd BufWritePre * call TrimWhitespace()
+
+" airline
+let g:airline_theme='simple'
+let g:airline_section_z = '%3p%% %3l/%L:%3v'
+let g:airline_mode_map = {
+	\ '__'     : '-',
+	\ 'c'      : 'C',
+	\ 'i'      : 'I',
+	\ 'ic'     : 'I',
+	\ 'ix'     : 'I',
+	\ 'n'      : 'N',
+	\ 'multi'  : 'M',
+	\ 'ni'     : 'N',
+	\ 'no'     : 'N',
+	\ 'R'      : 'R',
+	\ 'Rv'     : 'R',
+	\ 's'      : 'S',
+	\ 'S'      : 'S',
+	\ ''     : 'S',
+	\ 't'      : 'T',
+	\ 'v'      : 'V',
+	\ 'V'      : 'V',
+	\ ''     : 'V',
+	\ }
+" let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+let g:airline#extensions#whitespace#checks = [ 'indent', 'long', 'conflicts' ]
+" let g:airline#extensions#whitespace#checks =
+"     \  [ 'indent', 'trailing', 'long', 'mixed-indent-file', 'conflicts' ]
