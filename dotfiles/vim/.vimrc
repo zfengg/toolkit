@@ -1,7 +1,6 @@
 " An example for a vimrc file.
 "
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
+" To use it, copy it to "     for Unix and OS/2:  ~/.vimrc
 "	      for Amiga:  s:.vimrc
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
@@ -56,8 +55,8 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -69,8 +68,7 @@ set undodir=~/.vim/.undo/,/tmp//
 
 " custom setups
 set nu!
-highlight LineNr ctermfg=grey
-set noshowmode
+hi LineNr ctermfg=grey
 fun! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
@@ -80,29 +78,32 @@ autocmd FileType c,cpp,python,julia,vim,markdown
 	\ autocmd BufWritePre * call TrimWhitespace()
 
 " airline
-let g:airline_theme='simple'
-let g:airline_section_z = '%3p%% %3l/%L:%3v'
-let g:airline_mode_map = {
-	\ '__'     : '-',
-	\ 'c'      : 'C',
-	\ 'i'      : 'I',
-	\ 'ic'     : 'I',
-	\ 'ix'     : 'I',
-	\ 'n'      : 'N',
-	\ 'multi'  : 'M',
-	\ 'ni'     : 'N',
-	\ 'no'     : 'N',
-	\ 'R'      : 'R',
-	\ 'Rv'     : 'R',
-	\ 's'      : 'S',
-	\ 'S'      : 'S',
-	\ ''     : 'S',
-	\ 't'      : 'T',
-	\ 'v'      : 'V',
-	\ 'V'      : 'V',
-	\ ''     : 'V',
-	\ }
+" set noshowmode
+" let g:airline_theme='simple'
+" let g:airline_section_z = '%3l:%v %3L '
+" let g:airline_mode_map = {
+" 	\ '__'     : '-',
+" 	\ 'c'      : 'C',
+" 	\ 'i'      : 'I',
+" 	\ 'ic'     : 'I',
+" 	\ 'ix'     : 'I',
+" 	\ 'n'      : 'N',
+" 	\ 'multi'  : 'M',
+" 	\ 'ni'     : 'N',
+" 	\ 'no'     : 'N',
+" 	\ 'R'      : 'R',
+" 	\ 'Rv'     : 'R',
+" 	\ 's'      : 'S',
+" 	\ 'S'      : 'S',
+" 	\ ''     : 'S',
+" 	\ 't'      : 'T',
+" 	\ 'v'      : 'V',
+" 	\ 'V'      : 'V',
+" 	\ ''     : 'V',
+" 	\ }
 " let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
-let g:airline#extensions#whitespace#checks = [ 'indent', 'long', 'conflicts' ]
+" let g:airline#extensions#whitespace#checks = [ 'indent', 'long', 'conflicts' ]
+" let g:airline_skip_empty_sections = 1
+" hi airline_c  ctermbg=NONE guibg=NONE
 " let g:airline#extensions#whitespace#checks =
 "     \  [ 'indent', 'trailing', 'long', 'mixed-indent-file', 'conflicts' ]
