@@ -68,7 +68,7 @@ set undodir=~/.vim/.undo/,/tmp//
 
 " custom setups
 set nu!
-hi LineNr ctermfg=grey
+hi LineNr ctermfg=darkgrey
 fun! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
