@@ -86,8 +86,8 @@ set laststatus=2
 
 set statusline=
 set statusline+=%#StatusLine#
-" set statusline+=%{StatuslineGit()}
 set statusline+=%{FugitiveStatusline()}
+" set statusline+=%{fugitive#head()} 
 set statusline+=%#LineNr#
 set statusline+=\ %f
 set statusline+=%m\ 
