@@ -97,5 +97,5 @@ set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
 " set statusline+=%#ModeMsg#
-set statusline+=\ :%c
+set statusline+=\ %c
 set statusline+=\ 
