@@ -49,18 +49,16 @@ runtime macros/matchit.vim
 
 " Plugins Vim-Plug 
 call plug#begin('~/.vim/plugged')
-
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'godlygeek/tabular'
 Plug 'lervag/vimtex'
-Plug 'junegunn/fzf'
-Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
+" Plug 'junegunn/fzf'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
-
 call plug#end()
 
 " change .un~ ~ .swp directories
@@ -83,7 +81,6 @@ autocmd FileType c,cpp,python,julia,markdown
 
 " statusline
 set laststatus=2
-
 set statusline=
 set statusline+=%#StatusLine#
 set statusline+=%{FugitiveStatusline()}
@@ -92,10 +89,10 @@ set statusline+=%#LineNr#
 set statusline+=\ %f
 set statusline+=%m\ 
 set statusline+=%=
-set statusline+=%#LineNr#
+" set statusline+=%#LineNr#
 set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
 " set statusline+=%#ModeMsg#
-set statusline+=\ %c
+set statusline+=\ %-2c
 set statusline+=\ 
