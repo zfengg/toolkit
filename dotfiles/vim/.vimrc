@@ -56,7 +56,7 @@ Plug 'tpope/vim-commentary'
 Plug 'godlygeek/tabular'
 Plug 'lervag/vimtex'
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
-" Plug 'junegunn/fzf'
+Plug 'junegunn/fzf'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 call plug#end()
