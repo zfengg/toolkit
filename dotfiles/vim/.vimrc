@@ -1,17 +1,13 @@
-" An example for a vimrc file.
+" Zhou Feng @ 2021-10-2
 "
-" To use it, copy it to "     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
+"	Unix and MacOS:  ~/.vimrc
+"	MS-DOS and Win32:  $VIM\_vimrc
 
-" When started as "evim", evim.vim will already have done these settings, bail
-" out.
 if v:progname =~? "evim"
   finish
 endif
 
-" Get the defaults that most users want.
+" Get the defaults
 " source $VIMRUNTIME/defaults.vim
 
 if has("vms")
@@ -35,31 +31,6 @@ augroup vimrcEx
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
 augroup END
-
-" Add optional packages.
-"
-" The matchit plugin makes the % command work better, but it is not backwards
-" compatible.
-" The ! means the package won't be loaded right away but when plugins are
-" loaded during initialization.
-if has('syntax') && has('eval')
-  packadd! matchit
-endif
-runtime macros/matchit.vim
-
-" Plugins Vim-Plug 
-call plug#begin('~/.vim/plugged')
-Plug 'JuliaEditorSupport/julia-vim'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'godlygeek/tabular'
-Plug 'lervag/vimtex'
-Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'junegunn/fzf'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-call plug#end()
 
 " change .un~ ~ .swp directories
 set backupdir=~/.vim/.backup/,/tmp//
@@ -96,3 +67,52 @@ set statusline+=\[%{&fileformat}\]
 " set statusline+=%#ModeMsg#
 set statusline+=\ %-2c
 set statusline+=\ 
+
+
+" Add optional packages.
+" The matchit plugin makes the % command work better, but it is not backwards
+" compatible.
+" The ! means the package won't be loaded right away but when plugins are
+" loaded during initialization.
+if has('syntax') && has('eval')
+  packadd! matchit
+endif
+runtime macros/matchit.vim
+
+" Plugins Vim-Plug 
+call plug#begin('~/.vim/plugged')
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'godlygeek/tabular'
+Plug 'sirver/ultisnips'
+Plug 'lervag/vimtex', { 'for': 'tex' }
+Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'junegunn/fzf'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+call plug#end()
+
+" plugin settings
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+" let g:vimtex_quickfix_mode=0
+" set conceallevel=1
+" let g:tex_conceal='abdmg'
+"
+let NERDTreeQuitOnOpen=1
+
+" keybindings
+map <C-n> :NERDTreeToggle<CR>
+let mapleader = " "
+map <leader>w :w<CR>
+map <leader>q :q!<CR>
+map <leader>Q :qa!<CR>
+map <leader>h :noh<CR>
+map <leader>t :NERDTreeToggle<CR>
+map <leader>f :FZF<CR>
+" map <leader>n :set nonumber<CR>
+let mapleader = ","
+map <leader>n :set nonumber<CR>
+map <leader>q :wq<CR>
