@@ -38,7 +38,7 @@ set directory=~/.vim/.swp/,/tmp//
 set undodir=~/.vim/.undo/,/tmp//
 
 " line numbers
-set nu!
+set rnu!
 hi LineNr ctermfg=darkgrey
 
 " whitespace
@@ -65,7 +65,7 @@ set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
 " set statusline+=%#ModeMsg#
-set statusline+=\ %-2c
+set statusline+=\ %4l,%-2c
 set statusline+=\ 
 
 
@@ -95,13 +95,16 @@ Plug 'junegunn/fzf'
 call plug#end()
 
 " plugin settings
+let NERDTreeQuitOnOpen=1
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 " let g:vimtex_quickfix_mode=0
 " set conceallevel=1
 " let g:tex_conceal='abdmg'
 "
-let NERDTreeQuitOnOpen=1
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " keybindings
 map <C-n> :NERDTreeToggle<CR>
