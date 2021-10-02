@@ -49,7 +49,7 @@ runtime macros/matchit.vim
 
 " Plugins Vim-Plug 
 call plug#begin('~/.vim/plugged')
-Plug 'JuliaEditorSupport/julia-vim', { 'for': 'julia' }
+Plug 'JuliaEditorSupport/julia-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
