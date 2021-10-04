@@ -73,6 +73,8 @@ colorlinks,linkcolor=blue,pagebackref,citecolor=blue,urlcolor=black]{hyperref}
 \newcommand{\nextYear}[1][1]{\advance\year by #1 \the\year\advance\year by -#1}
 \usepackage{perpage}	% to reset counters parpage
 \MakePerPage{footnote}  % the perpage package comman
+\newenvironment{solution}[1][Solution]{\begin{proof}[#1]}{\end{proof}}
+\allowdisplaybreaks
 
 % ------------------------------- quick-typing ------------------------------- %
 % cali characters

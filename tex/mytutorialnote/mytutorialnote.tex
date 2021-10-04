@@ -102,6 +102,7 @@
 \newcommand{\seeeg}[1]{see e.g.\ #1}
 \newcommand{\seep}[1]{(see #1)}
 \newcommand{\seepeg}[1]{(see e.g.\ #1)}
+\allowdisplaybreaks
 
 % -------------------------- hyperlinks & bookmarks -------------------------- %
 \usepackage{aliascnt} % for the correct \autoref
@@ -157,7 +158,9 @@
 %\newtheorem{remark}[remark]{Remark}
 \newtheorem*{remark}{Remark}
 %\aliascntresetthe{remark}
-\providecommand*{\remarkautorefname}{Remark} 
+\providecommand*{\remarkautorefname}{Remark}
+
+\newenvironment{solution}[1][Solution]{\begin{proof}[#1]}{\end{proof}}
 
 % --------------------------------- counters --------------------------------- %
 %\numberwithin{equation}{section} % \numberwithin also works for other counters
