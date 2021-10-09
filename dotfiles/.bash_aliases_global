@@ -116,9 +116,9 @@ jlinstall() {
 	echo ":) tarball removed!"
 
 	if [ -n "$2" ]; then
-		echo -e ":) All finished!!! Please check by running: \e[32mjulia$1\e[0m or \e[32m$2\e[0m "
+		echo -e ":) All finished!!! Please check by running: \033[32mjulia$1\033[0m or \033[32m$2\033[0m "
 	else
-		echo -e ":) All finished!!! Please check by running: \e[32mjulia$1\e[0m "
+		echo -e ":) All finished!!! Please check by running: \033[32mjulia$1\033[0m "
 	fi
 }
 
@@ -142,7 +142,7 @@ jlsetbin() {
 	sudo rm "$PATH_USRBIN/julia"
 	sudo ln -s "$DIR_INSTALL/julia-$1/bin/julia" "$PATH_USRBIN/julia"
 
-	echo "Please check by running: \e[32mjulia\e[0m "
+	echo "Linked \033[32m$DIR_INSTALL/julia-$1/bin/julia\033[0m to \033[32mjulia\033[0m "
 }
 
 # latex

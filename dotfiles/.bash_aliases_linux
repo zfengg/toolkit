@@ -16,6 +16,6 @@ alias sagenb='sage --notebook=jupyter'
 alias cdvim='cd ~/.vim'
 
 # functions
-opdir() {
+odir() {
 	nautilus ${1:-.} &
 }
