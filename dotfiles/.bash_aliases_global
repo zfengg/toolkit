@@ -35,6 +35,7 @@ alias vimbasic='vim ~/.vim_runtime/vimrcs/basic.vim'
 
 # misc
 alias shdl="$GITHUB/shdl/shdl.py"
+alias cpinputgrades="cp $TOOLKIT/TA/InputGrades.xlsx ."
 
 # some simple functions
 mks() {
