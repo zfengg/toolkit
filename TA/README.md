@@ -4,9 +4,9 @@
 
 ![Demo4InputGrades](https://user-images.githubusercontent.com/42152221/139264430-8419f05e-6785-4acd-8e88-bfce14802ca7.gif)
 
-> Works well for CUHK. It suits other schools after some simple modifications.
+> Works well for CUHK. After some simple modifications, it may suit other schools.
 
-## `TeX` templates
+## Some `TeX` templates
 
 | Use for | `.tex` |
 | --- | --- |
@@ -14,7 +14,7 @@
 | solution | [solution.tex](./solution/solution.tex) |
 | tutorial note | [tutorialnote.tex](./tutorialnote/tutorialnote.tex) |
 
-Some samples at archive repos [MATH3280](https://github.com/zfengg/math3280) or [MATH4010](https://github.com/zfengg/MATH4010).
+Some samples could be found at archive repos [MATH3280](https://github.com/zfengg/math3280) or [MATH4010](https://github.com/zfengg/MATH4010).
 
 ## Why not immigrate this directory to a new Repo?
 This directory is a part of a greater toolkit. We want to reduce the redundancy and make it easier to update for personal use. Some daily usage commands like `cpinputgrades` depends on this directory. If time available, a clearer documentation for the whole repo might be given in the future.
