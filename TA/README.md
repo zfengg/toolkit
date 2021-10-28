@@ -6,7 +6,7 @@
 
 > Works well for CUHK. After some simple modifications, it may suit other schools.
 
-## Some `TeX` templates
+## Some TeX templates
 
 | Use for | `.tex` |
 | --- | --- |
