@@ -1,0 +1,176 @@
+% file: myassignment.tex @ https://github.com/zfengg/toolkit/blob/master/tex/mysolution/myassignment.tex
+%
+%	A simple tex template to write assignments.
+%
+% author: Zhou Feng @ 23/05/2021
+
+\documentclass[12pt]{article}
+
+% --------------------------------- packages --------------------------------- %
+\usepackage[a4paper,margin=0.7in]{geometry}
+\renewcommand{\baselinestretch}{1}
+\usepackage{amsmath}
+\usepackage{amsfonts, amsthm, amstext, amssymb, amscd, array, enumerate}
+\usepackage[bookmarks=true,bookmarksopen=true,
+colorlinks,linkcolor=blue,pagebackref,citecolor=blue,urlcolor=black]{hyperref}
+\usepackage{graphicx}
+\usepackage[shortlabels]{enumitem} % for the smart enumeration
+% date display
+\usepackage[useregional,showdow]{datetime2}
+\newcommand{\dueDate}[3]{\DTMsavedate{tDay}{#1-#2-#3}}
+\newcommand{\printDueDate}{\DTMusedate{tDay} \DTMweekdayname{\DTMfetchdow{tDay}}}
+
+% --------------------------------- settings --------------------------------- %
+% title setup
+\renewcommand{\maketitle}{
+	\begin{center}
+		\large{\bfseries\uppercase\expandafter{\institute} \\
+			\department}\\
+		{\bfseries\course}\\
+		\stitle\\
+		Deadline: \printDueDate
+	\end{center}
+}
+% question counter
+\newcounter{question}
+\setcounter{tocdepth}{2} % for bookmark levels
+% question titles
+\newcommand{\qpart}[1]{\refstepcounter{question}
+	\section*{#1}
+	\pdfbookmark[1]{#1}{Q:\thequestion}}
+\newcommand{\question}[1]{\refstepcounter{question}
+	\subsection*{#1}
+	\pdfbookmark[2]{#1}{Q:\thequestion}}
+\newcommand{\questionPts}[2]{\refstepcounter{question}
+	\subsection*{#1\,(#2\,pts)}
+	\pdfbookmark[2]{#1}{Q:\thequestion}}
+\newcommand{\questionFt}[2]{\refstepcounter{question}
+	\subsection*{#1\footnote{#2}}
+	\pdfbookmark[2]{#1}{Q:\thequestion}}
+\newcommand{\questionPtsFt}[3]{\refstepcounter{question}
+	\subsection*{#1\footnote{#3}\,(#2\,pts)}
+	\pdfbookmark[2]{#1}{Q:\thequestion}}
+% ordered questions
+\newcommand{\oquestion}[1][\oqlabel]{\refstepcounter{question}
+	\subsection*{#1\thequestion}
+	\pdfbookmark[2]{#1\thequestion}{oQ:\thequestion}}
+\newcommand{\oquestionPts}[2][\oqlabel]{\refstepcounter{question}
+	\subsection*{#1\thequestion\,(#2\,pts)}
+	\pdfbookmark[2]{#1\thequestion}{oQ:\thequestion}}
+\newcommand{\oquestionFt}[2][\oqlabel]{\refstepcounter{question}
+	\subsection*{#1\thequestion\footnote{#2}}
+	\pdfbookmark[2]{#1\thequestion}{oQ:\thequestion}}
+\newcommand{\oquestionPtsFt}[3][\oqlabel]{\refstepcounter{question}
+	\subsection*{#1\thequestion\footnote{#3}\,(#2\,pts)}
+	\pdfbookmark[2]{#1\thequestion}{oQ:\thequestion}}
+% items with pts
+\newcommand{\itemPts}[1]{\item\!(#1\,pts)}
+% question list environments
+\newenvironment{qenumerate}[1]{\begin{enumerate}[(#1)]}{\end{enumerate}}
+\newenvironment{qenumerate*}[1][\arabic]{\begin{enumerate}[label=\textbf{(#1*)}]}{\end{enumerate}}
+\newenvironment{altsols}[1][\arabic]{\begin{enumerate}[label=\textbf{S.#1*}]}{\end{enumerate}}
+% others
+\newcommand{\theend}{
+	\begin{center}
+		\vfil \small--- \textit{THE END} ---
+	\end{center}
+}
+\newcommand{\nextYear}[1][1]{\advance\year by #1 \the\year\advance\year by -#1}
+\usepackage{perpage}	% to reset counters parpage
+\MakePerPage{footnote}  % the perpage package comman
+
+% ------------------------------- quick-typing ------------------------------- %
+% cali characters
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calL}{\mathcal{L}}
+% scurf characters
+\newcommand{\scrB}{\mathscr{B}}
+\newcommand{\scrD}{\mathscr{D}}
+\newcommand{\scrP}{\mathscr{P}}
+\newcommand{\scrA}{\mathscr{A}}
+\newcommand{\scrE}{\mathscr{E}}
+\newcommand{\scrC}{\mathscr{C}}
+\newcommand{\scrT}{\mathscr{T}}
+\newcommand{\scrQ}{\mathscr{Q}}
+% blackboad characters
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbP}{\mathbb{P}}
+% frak characters
+\newcommand{\frX}{\mathfrak{X}}
+% rome characters
+\newcommand{\rmN}{\mathrm{N}}
+\newcommand{\rmR}{\mathrm{R}}
+% math operators
+\DeclareMathOperator*{\Lim}{Lim}
+\DeclareMathOperator*{\intersect}{\cap}
+\DeclareMathOperator*{\Intersect}{\bigcap}
+\DeclareMathOperator*{\union}{\cup}
+\DeclareMathOperator*{\Union}{\bigcup}
+\DeclareMathOperator{\ex}{ex}
+\DeclareMathOperator{\co}{conv}
+\DeclareMathOperator{\hdim}{dim_{H}}
+\DeclareMathOperator{\diam}{diam}
+% commonly used
+\newcommand{\Ndash}{\nobreakdash--}
+\newcommand{\sigmaAlgebra}{$\sigma$\nobreakdash-algebra}
+\providecommand{\abs}[1]{|#1|}
+\providecommand{\Abs}[1]{\left| #1\right|}
+\providecommand{\norm}[2][]{\| #2 \|_{#1}}
+\providecommand{\Norm}[2][]{\left \| #2 \right \|_{#1}}
+\newcommand{\ndiml}[1][n]{$#1$\nobreakdash-dim}
+\newcommand{\padic}{$p$\nobreakdash-adic}
+\newcommand{\euclid}[1][d]{\mathbb{R}^{#1}}
+
+% ----------------------------------- title ---------------------------------- %
+\newcommand{\institute}{The Chinese University of Hong Kong}
+\newcommand{\department}{Department of Mathematics}
+\newcommand{\course}{MATH1234 Course Name}
+\newcommand{\stitle}{Homework 1}
+\dueDate{2020}{9}{1}
+\newcommand{\oqlabel}{Q} % the prefix label for ordered questions
+
+% ---------------------------------------------------------------------------- %
+%                                   document                                   %
+% ---------------------------------------------------------------------------- %
+\begin{document}
+
+\maketitle
+
+\begin{center}
+	\fbox{
+		\begin{minipage}{13cm}
+			{\centering Notice:}
+			\vspace{-0.5em}
+			\begin{itemize}\setlength\itemsep{-0.3em}
+				\item All the assignments must be submitted before the deadline.
+				\item Each assignment should include your name and student ID number.
+			\end{itemize}
+		\end{minipage}
+	}
+\end{center}
+
+\vspace{1em}
+
+\begin{enumerate}[leftmargin=*]
+	\item  Show that
+	\begin{equation*}\label{eq:Cn-norm}
+		\norm{x} = \sum_{k=0}^{n} \sup_{t\in[0,1]} \abs{x^{(k)}(t)}
+	\end{equation*}
+	is a norm on $ C^{n}[0, 1] $.
+	
+\end{enumerate}
+
+\theend
+
+\end{document}

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# update .tex
+declare -a arr=("solution" "assignment" "tutorialnote")
+for i in "${arr[@]}"
+do
+	mkdir -p $i
+	for j in tex pdf
+	do
+	cp ../tex/my$i/my$i.$j $i/$i.$j 
+done
+done
