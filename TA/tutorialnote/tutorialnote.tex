@@ -6,12 +6,12 @@
 % ---------------------------------------------------------------------------- %
 %                                   preamble                                   %
 % ---------------------------------------------------------------------------- %
-\documentclass[12pt]{article} 
+\documentclass[12pt]{article}
 % leqno; reqno for changing the position of number of equations
 
 % --------------------------------- pacakges --------------------------------- %
 \usepackage{amsmath}
-\usepackage{amsfonts} 			  	% \mathscr \mathbb \mathfrak 
+\usepackage{amsfonts} 			  	% \mathscr \mathbb \mathfrak
 \usepackage{amssymb} 			 	% special symbols
 \usepackage{mathrsfs}
 \usepackage{mathtools}
@@ -24,13 +24,14 @@
 %\usepackage{booktabs} 			  	% thick rules
 \usepackage{centernot}
 
-%---list environments---%
+% -------------------------- packages with settings -------------------------- %
+% modify lists
 \usepackage[shortlabels,inline]{enumitem} % smart enumeration
 %\newlist{inlinelist}{enumerate*}{1}
-%---diagram drawing---%
-\usepackage{tikz}    % picture drawing
-\usepackage{tikz-cd} % powerful commutative diagrams
-% date display
+% plot diagrams
+\usepackage{tikz}    % draw general diagrams
+\usepackage{tikz-cd} % lib for powerful commutative diagrams
+% display dates
 \usepackage[useregional,showdow]{datetime2}
 \newcommand{\tutorialDate}[3]{\DTMsavedate{tDay}{#1-#2-#3}}
 \newcommand{\printTutorialDate}{\DTMusedate{tDay} \DTMweekdayname{\DTMfetchdow{tDay}}}
@@ -45,10 +46,10 @@
 \parskip 1.ex
 \renewcommand{\baselinestretch}{1.0858}
 \usepackage[a4paper,headheight=15pt,left=0.7in,right=0.7in,top=1in,bottom=0.8in]{geometry}
-%\usepackage{fullpage}	% fit more on a page without having to set margins manually 
+%\usepackage{fullpage}	% fit more on a page without having to set margins manually
 
 % ----------------------------- fonts and colors ----------------------------- %
-%\usepackage{fontspec}% Then you can use the fonts installed at your device. 
+%\usepackage{fontspec}% Then you can use the fonts installed at your device.
 %\setmainfont{Times New Roman}
 %\setsansfont{Times New Roman}
 %\setmonofont{Times New Roman}
@@ -59,43 +60,46 @@
 
 % ----------------------------- header and footer ---------------------------- %
 \usepackage{fancyhdr}
-%headstyle
-\newcommand{\headstyle}{
+% def headstyles
+\newcommand{\headstyle}{%
 	\fancyhead[L]{\tutorialTitle}
 	\fancyhead[C]{\course}
 	\fancyhead[R]{\printTutorialDate}
 }
-% footstyle
+% def footstyles
 \makeatletter
-\newcommand{\footstyle}{
+\newcommand{\footstyle}{%
+	\fancyfoot[L]{}
+	\fancyfoot[C]{\thepage}
+	\fancyfoot[R]{}
+}
+\newcommand{\authorfootstyle}{%
 	\fancyfoot[L]{}
 	\fancyfoot[C]{\thepage}
 	\fancyfoot[R]{\textit{\footnotesize Prepared by \@author}}
 }
 \makeatother
-\pagestyle{fancy}  % Set pagestyle for the document
+% set global pagestyle
+\pagestyle{fancy}
 \fancyhf{} % clear the orginal headfoot style
-\headstyle % set the new head style
-\footstyle % set the new foot style
-% Define a new pagestyle for main pages
+\headstyle
+\footstyle
+% def first-page pagestyle
+\fancypagestyle{firstpage}{%
+	\fancyhf{}
+	\headstyle
+	\authorfootstyle
+}
+% def main pagestyle
 \fancypagestyle{main}{%
-	\fancyhf{} % clear the original pagestyle
+	\fancyhf{}
 	\headstyle
 	\footstyle
 }
-%% for the first page
-%\fancypagestyle{firstpage}{%
-%	\fancyhf{} % clear the orginal pagestyle
-%	\fancyhead[L]{\small\itshape Curriculum Vitae}
-%	\fancyhead[C]{}
-%	\fancyhead[R]{}
-%	\fancyfoot[L]{}
-%	\fancyfoot[C]{\thepage}
-%	\fancyfoot[R]{}
-%}
 %\renewcommand{\headrulewidth}{0pt}
 %\renewcommand{\footrulewidth}{0.4pt}
 %\renewcommand{\headrule}{\rule{\textwidth}{0.4pt}}
+
 
 % ------------------------------ reference style ----------------------------- %
 \usepackage[numbers,sort]{natbib} 	% automatically sort the citations
@@ -122,19 +126,19 @@
 \newaliascnt{theorem}{dummy}
 \newtheorem{theorem}[theorem]{Theorem}
 \aliascntresetthe{theorem}
-\providecommand*{\theoremautorefname}{Theorem} 
+\providecommand*{\theoremautorefname}{Theorem}
 \newaliascnt{proposition}{dummy}
 \newtheorem{proposition}[proposition]{Proposition}
 \aliascntresetthe{proposition}
-\providecommand*{\propositionautorefname}{Proposition} 
+\providecommand*{\propositionautorefname}{Proposition}
 \newaliascnt{corollary}{dummy}
 \newtheorem{corollary}[corollary]{Corollary}
 \aliascntresetthe{corollary}
-\providecommand*{\corollaryautorefname}{Corollary} 
+\providecommand*{\corollaryautorefname}{Corollary}
 \newaliascnt{lemma}{dummy}
 \newtheorem{lemma}[lemma]{Lemma}
 \aliascntresetthe{lemma}
-\providecommand*{\lemmaautorefname}{Lemma} 
+\providecommand*{\lemmaautorefname}{Lemma}
 \newaliascnt{conjecture}{dummy}
 \newtheorem{conjecture}[conjecture]{Conjecture}
 \aliascntresetthe{conjecture}
@@ -148,11 +152,11 @@
 \newaliascnt{definition}{dummy}
 \newtheorem{definition}[definition]{Definition}
 \aliascntresetthe{definition}
-\providecommand*{\definitionautorefname}{Definition} 
+\providecommand*{\definitionautorefname}{Definition}
 \newaliascnt{example}{dummy}
 \newtheorem{example}[example]{Example}
 \aliascntresetthe{example}
-\providecommand*{\exampleautorefname}{Example} 
+\providecommand*{\exampleautorefname}{Example}
 
 \theoremstyle{remark}
 %\newaliascnt{remark}{dummy}
@@ -166,12 +170,9 @@
 % --------------------------------- counters --------------------------------- %
 %\numberwithin{equation}{section} % \numberwithin also works for other counters
 
-% --------------------------------- pagestyle -------------------------------- %
-%\pagestyle{plain}
-
 % ---------------------------------- autoref --------------------------------- %
 \renewcommand{\sectionautorefname}{Section}
-%\renewcommand{\equationautorefname}{Equation}	
+%\renewcommand{\equationautorefname}{Equation}
 
 % ------------------------------------ misc ----------------------------------- %
 %\setcounter{MaxMatrixCols}{11} % the maximal cols that a matrix can have
@@ -189,7 +190,7 @@
 \newcommand{\calM}{\mathcal{M}}
 \newcommand{\calL}{\mathcal{L}}
 \newcommand{\calI}{\mathcal{I}}
-% scurf characters
+% scrf characters
 \newcommand{\scrB}{\mathscr{B}}
 \newcommand{\scrD}{\mathscr{D}}
 \newcommand{\scrP}{\mathscr{P}}
@@ -243,10 +244,10 @@
 \newcommand{\capacity}[2][s]{g_{#1}(#2)}
 %\genfrac{left-delim}{right-delim}{thickness}{mathstyle}{numerator}{denominator}
 
-% special for this article
+% special for current document
 
 % --------------------------------- titlepage -------------------------------- %
-\newcommand{\course}{MATH3280A Introductory Probability}
+\newcommand{\course}{MATH3280 Introductory Probability}
 \newcommand{\tutorialTitle}{Tutorial 1}
 \tutorialDate{2021}{9}{6}
 \author{Zhou Feng}
@@ -255,9 +256,12 @@
 %                                   document                                   %
 % ---------------------------------------------------------------------------- %
 \begin{document}
+\thispagestyle{firstpage}
 \section*{General information}
 
+\newpage
 
+\section*{Examples}
 
 
 % ---------------------------------------------------------------------------- %
