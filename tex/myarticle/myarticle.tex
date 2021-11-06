@@ -6,29 +6,30 @@
 % ---------------------------------------------------------------------------- %
 %                                   preamble                                   %
 % ---------------------------------------------------------------------------- %
-\documentclass[a4paper,12pt]{amsart} 
+\documentclass[a4paper,12pt]{amsart}
 % leqno; reqno for changing the position of number of equations
 
 % --------------------------------- pacakges --------------------------------- %
 \usepackage{amsmath}
-\usepackage{amsfonts} 			  	% \mathscr \mathbb \mathfrak 
-\usepackage{amssymb} 			 	% special symbols
+\usepackage{amsfonts}	% \mathscr \mathbb \mathfrak
+\usepackage{amssymb}  	% special symbols
 \usepackage{mathrsfs}
 \usepackage{mathtools}
 \usepackage{savesym}
-\usepackage{color} 				  	% colors
-\usepackage{graphicx} 			  	% include figures
-\usepackage{caption} 	 		  	% caption dealing
-\usepackage{amscd} 		 		  	% basic commutative diagrams; complex ones: kuvio, XY-pic
-\usepackage{float} 		 		  	% table figure positioning
-%\usepackage{booktabs} 			  	% thick rules
+\usepackage{color} 	 	% colors
+\usepackage{graphicx}  	% include figures
+\usepackage{caption}  	% caption dealing
+\usepackage{amscd} 	  	% basic commutative diagrams; complex ones: kuvio, XY-pic
+\usepackage{float} 	  	% table figure positioning
+%\usepackage{booktabs}	% thick rules
 
-%---list environments---%
+% -------------------------- packages with settings -------------------------- %
+% modify lists
 \usepackage[shortlabels,inline]{enumitem} % smart enumeration
 %\newlist{inlinelist}{enumerate*}{1}
-%---diagram drawing---%
-\usepackage{tikz}    % picture drawing
-\usepackage{tikz-cd} % powerful commutative diagrams
+% plot diagrams
+\usepackage{tikz}    % draw general diagrams
+\usepackage{tikz-cd} % lib for powerful commutative diagrams
 
 % ---------------------------------- layout ---------------------------------- %
 \textheight 8.in
@@ -39,11 +40,11 @@
 \footskip 4.ex
 \parskip 1.ex
 \renewcommand{\baselinestretch}{1.0858}
-\usepackage[margin=1in]{geometry}
-%\usepackage{fullpage}	% fit more on a page without having to set margins manually 
+\usepackage[a4paper,margin=1in]{geometry}
+%\usepackage{fullpage}	% fit more on a page without having to set margins manually
 
 % ----------------------------- fonts and colors ----------------------------- %
-%\usepackage{fontspec}% Then you can use the fonts installed at your device. 
+%\usepackage{fontspec}% Then you can use the fonts installed at your device.
 %\setmainfont{Times New Roman}
 %\setsansfont{Times New Roman}
 %\setmonofont{Times New Roman}
@@ -53,39 +54,43 @@
 %\definecolor{MSLightBlue}{rgb}{.31,.506,.741}
 
 % ----------------------------- header and footer ---------------------------- %
-%\usepackage{fancyhdr}
-%%headstyle
-%\newcommand{\headstyle}{
-%	\fancyhead[L]{}
-%	\fancyhead[C]{}
-%	\fancyhead[R]{}
-%}
-%% footstyle
-%\newcommand{\footstyle}{
-%	\fancyfoot[L]{}
-%	\fancyfoot[C]{\thepage}
-%	\fancyfoot[R]{}
-%}
-%\pagestyle{fancy}  % Set pagestyle for the document
-%\fancyhf{} % clear the orginal headfoot style
-%\headstyle % set the new head style
-%\footstyle % set the new foot style
-%% Define a new pagestyle for main pages
-%\fancypagestyle{main}{%
-%	\fancyhf{} % clear the original pagestyle
-%	\headstyle
-%	\footstyle
-%}
-%% for the first page
-%\fancypagestyle{firstpage}{%
-%	\fancyhf{} % clear the orginal pagestyle
-%	\fancyhead[L]{\small\itshape Curriculum Vitae}
-%	\fancyhead[C]{}
-%	\fancyhead[R]{}
-%	\fancyfoot[L]{}
-%	\fancyfoot[C]{\thepage}
-%	\fancyfoot[R]{}
-%}
+% \usepackage{fancyhdr}
+% % def headstyles
+% \newcommand{\headstyle}{%
+% 	\fancyhead[L]{}
+% 	\fancyhead[C]{}
+% 	\fancyhead[R]{}
+% }
+% % def footstyles
+% \makeatletter
+% \newcommand{\footstyle}{%
+% 	\fancyfoot[L]{}
+% 	\fancyfoot[C]{\thepage}
+% 	\fancyfoot[R]{}
+% }
+% \newcommand{\authorfootstyle}{%
+% 	\fancyfoot[L]{}
+% 	\fancyfoot[C]{\thepage}
+% 	\fancyfoot[R]{\textit{\footnotesize Prepared by \@author}}
+% }
+% \makeatother
+% % set global pagestyle
+% \pagestyle{fancy}
+% \fancyhf{} % clear the orginal headfoot style
+% \headstyle
+% \footstyle
+% % def first-page pagestyle
+% \fancypagestyle{firstpage}{%
+% 	\fancyhf{}
+% 	\headstyle
+% 	\authorfootstyle
+% }
+% % def main pagestyle
+% \fancypagestyle{main}{%
+% 	\fancyhf{}
+% 	\headstyle
+% 	\footstyle
+% }
 %\renewcommand{\headrulewidth}{0pt}
 %\renewcommand{\footrulewidth}{0.4pt}
 %\renewcommand{\headrule}{\rule{\textwidth}{0.4pt}}
@@ -114,19 +119,19 @@
 \newaliascnt{theorem}{dummy}
 \newtheorem{theorem}[theorem]{Theorem}
 \aliascntresetthe{theorem}
-\providecommand*{\theoremautorefname}{Theorem} 
+\providecommand*{\theoremautorefname}{Theorem}
 \newaliascnt{proposition}{dummy}
 \newtheorem{proposition}[proposition]{Proposition}
 \aliascntresetthe{proposition}
-\providecommand*{\propositionautorefname}{Proposition} 
+\providecommand*{\propositionautorefname}{Proposition}
 \newaliascnt{corollary}{dummy}
 \newtheorem{corollary}[corollary]{Corollary}
 \aliascntresetthe{corollary}
-\providecommand*{\corollaryautorefname}{Corollary} 
+\providecommand*{\corollaryautorefname}{Corollary}
 \newaliascnt{lemma}{dummy}
 \newtheorem{lemma}[lemma]{Lemma}
 \aliascntresetthe{lemma}
-\providecommand*{\lemmaautorefname}{Lemma} 
+\providecommand*{\lemmaautorefname}{Lemma}
 \newaliascnt{conjecture}{dummy}
 \newtheorem{conjecture}[conjecture]{Conjecture}
 \aliascntresetthe{conjecture}
@@ -136,17 +141,17 @@
 \newaliascnt{definition}{dummy}
 \newtheorem{definition}[definition]{Definition}
 \aliascntresetthe{definition}
-\providecommand*{\definitionautorefname}{Definition} 
+\providecommand*{\definitionautorefname}{Definition}
 \newaliascnt{example}{dummy}
 \newtheorem{example}[example]{Example}
 \aliascntresetthe{example}
-\providecommand*{\exampleautorefname}{Example} 
+\providecommand*{\exampleautorefname}{Example}
 
 \theoremstyle{remark}
 \newaliascnt{remark}{dummy}
 \newtheorem{remark}[remark]{Remark}
 \aliascntresetthe{remark}
-\providecommand*{\remarkautorefname}{Remark} 
+\providecommand*{\remarkautorefname}{Remark}
 
 % --------------------------------- counters --------------------------------- %
 \numberwithin{equation}{section} % \numberwithin also works for other counters
@@ -156,7 +161,7 @@
 
 % ---------------------------------- autoref --------------------------------- %
 \renewcommand{\sectionautorefname}{Section}
-%\renewcommand{\equationautorefname}{Equation}	
+%\renewcommand{\equationautorefname}{Equation}
 
 % ------------------------------------ misc ----------------------------------- %
 %\setcounter{MaxMatrixCols}{11} % the maximal cols that a matrix can have
@@ -249,7 +254,7 @@
 %\thanks{}
 
 %----for the footnotes of titlepage-----%
-%\subjclass[2010]{Primary 28A80, 42A85} 
+%\subjclass[2010]{Primary 28A80, 42A85}
 %\keywords{Self-similar measure}
 %\date{}
 %\dedicatory{}
@@ -260,7 +265,7 @@
 % ---------------------------------------------------------------------------- %
 \begin{document}
 %\begin{abstract}
-%	 
+%
 %\end{abstract}
 \maketitle
 
@@ -362,11 +367,11 @@ The \verb|\mathbf| command is commonly used to obtain bold Latin letters in math
 
 	\item There is a \verb|\,| spacing between integrand and measure
 	      \[ \int_{a}^{b} x^2 \,dx \]
-	      
+
 	\item Use \verb|Serre et al.\ proved|: Serre et al.\ proved.
-	
-	\verb|Serre et al. proved|: Serre et al. proved.
-	
+
+	      \verb|Serre et al. proved|: Serre et al. proved.
+
 \end{enumerate}
 
 Here is some practical suggestions for mathematical writting.
@@ -390,12 +395,12 @@ Here is some practical suggestions for mathematical writting.
 	\item Prefer \verb|pairwise| to \verb|mutually|.
 
 	\item No contractions like \verb|can't|, \verb|won't|, etc.
-	
+
 	\item Use \verb|\begingroup\allowdisplaybreaks ... \endgroup| to allow the large chunk of math display environments to be broken into pages.
-	
+
 	\item Replace \verb|$$ ... $$| with \verb|\[...\]| in \verb|sed|:
-	
-	\verb|sed '/\$\$/{:x;N;/.*\$\$ *$/!bx;s/\$\$\(.*\)\$\$ *$/\\[\1\\]/}'|
+
+	      \verb|sed '/\$\$/{:x;N;/.*\$\$ *$/!bx;s/\$\$\(.*\)\$\$ *$/\\[\1\\]/}'|
 
 \end{enumerate}
 
@@ -441,10 +446,10 @@ More multi-authors citation like \citet*{BenoistQuint2016} and \citet*{FanEtAl20
 
 \begin{remark}
 	For the use of \verb*|natbib| and format of arXiv preprint, it is recommended to use the \verb*|.bst| files \verb*|*nat.bst| or \verb*|*natDOI.bst| at
-	
+
 	\href{https://github.com/zfengg/toolkit/tree/master/tex/bst}{https://github.com/zfengg/toolkit/tree/master/tex/bst}.
-	
-	Otherwise, all the other default \verb*|bst| styles suffices.	
+
+	Otherwise, all the other default \verb*|bst| styles suffices.
 \end{remark}
 
 % ---------------------------------------------------------------------------- %
@@ -456,10 +461,10 @@ More multi-authors citation like \citet*{BenoistQuint2016} and \citet*{FanEtAl20
 
 % otherwise, copy .bbl file to here
 %\begin{thebibliography}{99999}
-%	
+%
 %	\bibitem{Falconer2003}K. J. Falconer.
 %	{\em Fractal geometry. Mathematical foundations and applications.}  Wiley, 2003.
-%		
+%
 %\end{thebibliography}
 
 
