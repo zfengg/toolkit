@@ -203,10 +203,12 @@ mkmytex() {
 }
 
 # autocomplete by extension
-complete -f -o plusdirs -X '!*.@(tex)' edtex
-complete -f -o plusdirs -X '!*.@(bib)' edbib
-complete -f -o plusdirs -X '!*.@(bib)' upbib
-complete -f -o plusdirs -X '!*.@(pdf)' opdf
+if [ $SHELL = '/usr/bin/bash' ]; then
+	complete -f -o plusdirs -X '!*.@(tex)' edtex
+	complete -f -o plusdirs -X '!*.@(bib)' edbib
+	complete -f -o plusdirs -X '!*.@(bib)' upbib
+	complete -f -o plusdirs -X '!*.@(pdf)' opdf
+fi
 
 # github
 alias ghweb='gh repo view --web'
