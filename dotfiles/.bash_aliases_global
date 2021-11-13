@@ -190,7 +190,11 @@ mkmytex() {
 			cp $TOOLKIT/tex/my$1/my$1.$extTmp ${3:-$default3}/${2:-$default2}.$extTmp
 			# update the name of .bib file in .tex
 			if [[ "$extTmp" = 'bib' ]]; then
+				if [ `uname` = Darwin ]; then
+				gsed -i "s/bibliography{my$1}/bibliography{${2:-$default2}}/g" ${3:-$default3}/${2:-$default2}.tex
+				else
 				sed -i "s/bibliography{my$1}/bibliography{${2:-$default2}}/g" ${3:-$default3}/${2:-$default2}.tex
+				fi
 				# remove the cr (^m) if on dos
 				if [[ $(uname) -ne 'Linux' ]] && [[ $(uname) -ne 'Darwin' ]]; then
 					dos2unix.exe ${3:-$default3}/${2:-$default2}.tex

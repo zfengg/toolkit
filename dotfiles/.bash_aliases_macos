@@ -1,1 +1,8 @@
 alias bashaliasmacos="vim $TOOLKIT/dotfiles/.bash_aliases_macos"
+
+# macos vs gnu utilities
+# alias sed='gsed'
+
+# start app from terminal
+alias texstudio="/opt/homebrew/Caskroom/texstudio/4.0.4/texstudio.app/Contents/MacOS/texstudio"
+alias jabref="/opt/homebrew/Caskroom/jabref/5.3/JabRef.app/Contents/MacOS/JabRef"
