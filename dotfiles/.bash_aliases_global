@@ -149,7 +149,7 @@ jlsetbin() {
 alias texclean='latexmk -c'
 
 edtex() {
-	texstudio $1 &
+	texstudio $1 &>/dev/null>/dev/null &
 }
 
 edmytex() {
@@ -157,7 +157,7 @@ edmytex() {
 }
 
 edbib() {
-	jabref ${1:-$TOOLKIT/tex/bib/global.bib} &
+	jabref ${1:-$TOOLKIT/tex/bib/global.bib} &>/dev/null>/dev/null &
 }
 
 upbib() {
