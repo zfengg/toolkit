@@ -6,7 +6,7 @@ alias bashaliasmacos="vim $TOOLKIT/dotfiles/.bash_aliases_macos"
 # bin for tex workflow 
 alias texstudio="/opt/homebrew/Caskroom/texstudio/4.0.4/texstudio.app/Contents/MacOS/texstudio"
 alias jabref="/opt/homebrew/Caskroom/jabref/5.3/JabRef.app/Contents/MacOS/JabRef"
-alias upbst="sudo cp -R $TOOLKIT/tex/bst /usr/local/texlive/2021/texmf-dist/bibtex/bst/mybst"
+alias upbst="sudo cp -R $TOOLKIT/tex/bst /usr/local/texlive/2021/texmf-dist/bibtex/bst/mybst && texhash"
 
 # julia
 alias julia="/Applications/Julia-1.7.app/Contents/Resources/julia/bin/julia"
