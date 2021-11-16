@@ -157,7 +157,7 @@ edmytex() {
 }
 
 edbib() {
-	jabref ${1:-$TOOLKIT/tex/bib/global.bib} &/dev/null &
+	jabref ${1:-$TOOLKIT/tex/bib/global.bib} &>/dev/null &
 }
 
 upbib() {
