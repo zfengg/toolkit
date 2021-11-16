@@ -2,6 +2,7 @@ alias bashaliasmacos="vim $TOOLKIT/dotfiles/.bash_aliases_macos"
 
 # macos vs gnu utilities
 # alias sed='gsed'
+alias htop='sudo htop'
 
 # bin for tex workflow 
 alias texstudio="/opt/homebrew/Caskroom/texstudio/4.0.4/texstudio.app/Contents/MacOS/texstudio"
