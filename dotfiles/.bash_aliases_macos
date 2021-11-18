@@ -11,3 +11,6 @@ alias upbst="sudo cp -R $TOOLKIT/tex/bst /usr/local/texlive/2021/texmf-dist/bibt
 
 # julia
 alias julia="/Applications/Julia-1.7.app/Contents/Resources/julia/bin/julia"
+
+# shortcuts
+alias cddb="$HOME/Dropbox"
