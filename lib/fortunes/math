@@ -1,0 +1,1167 @@
+%
+You have hit a fortune from the fortune collection   'math'
+containing mathematical fortune entries. Latest update: June 6 2001
+This fortune got started in October 1999 and is maintained in  
+http://www.dynamical-systems.org
+The file contains mathematical quotations, jokes, annectotes,
+even some mathematical results with short proofs.
+To install this file: 
+1) 'strfile math'   produces a file 'math.dat' .
+2) Copy both files 'math' and 'math.dat' into '/usr/share/games/fortunes'
+or wherever your fortune program keeps the fortunes. You might check 
+first, if not a newer version of this file or an other file named
+'math' already resides there. The 'fortune' program itself is usually in 
+'/usr/games/fortune'. If you are not system administrator, put the files
+'math' and 'math.dat' into a private directory like for example '~/lib' 
+and replace 'fortune math' by 'fortune ~/lib/math'. 
+Examples to use this fortune: 
+  fortune math             random entries from this file
+  fortune -m PI=           PI with 100 digits
+  fortune -m E=            E  with 100 digits
+  fortune -m Mandelbrot    Mandelbrot set (generated with pbmtoascii)  
+You might want to erase this first entry of the fortune before
+installation. 
+%                                  
+Every problem in the calculus of variations has a solution, provided
+the word solution is suitably understood. 
+                -- David Hilbert
+%
+The real mathematician is an enthusiast per se. Without enthusiasm
+no mathematics.
+                -- Novalis
+%
+There is no royal road to geometry.
+                                        Euclid
+%
+One may be a mathematician of the first rank without being able
+to compute. It is possible to be a great computer without having
+the slightest idea of mathematics
+                -- Novalis
+%
+Geometry may sometimes appear to take the lead over analysis,
+but in fact precedes it only as a servant goes before his master
+to clear the path and light him on the way. 
+                -- James Joseph Sylvester
+%
+The essence of mathematics lies in its freedom.
+                -- Georg Cantor
+%
+Fantasy, energy, self-confidence and self-criticism are the 
+characteristic endowments of the mathematician. 
+                -- Sophus Lie
+%
+Pure mathematics is the magician's real wand.
+                -- Novalis
+%
+When a mathematician has no more ideas, he pursues axiomatics.
+                -- Felix Klein
+%
+The paper "On the nature of turbulence" with F. Takens was 
+eventually published in a scientific journal. 
+(Actually, I was an editor of the journal, and I accepted 
+the paper by myself for publication. This is not a recommended 
+procedure in general, but I felt that it was justified in this
+particular case). 
+                -- D. Ruelle, in Chance and Chaos
+%
+A good topological theorem to mention any time is
+the theorem which, in essence, states that however
+you try to comb the hair on a hairy ball, you can 
+never do it smoothly - the so-called 'hairy-ball' 
+theorem. You can make snide comments about the 
+grooming of the hosts' dog or cat in the meantime as
+you pick hairs off your trouser leg. 
+                 -- R. Ainsley in Bluff your way in Maths, 1988
+%
+LARGE NUMBERS:   (10^n means that 10 is raised to the n'th power) 
+10^4          One "myriad". The largest numbers, the Greeks were considering.
+10^5          The largest number considered by the Romans.
+10^10         The age of our universe in years.
+10^22         Distance to our neighbor galaxy Andromeda in meters.
+10^23         Number of atoms in two gram Carbon (Avogadro).
+10^26         Size of universe in meters.
+10^41         Mass of our home galaxy "milky way" in kg.
+10^51         Archimedes's estimate of number of sand grains in universe.
+10^52         Mass of our universe in kg.
+10^80         The number of atoms in our universe.
+10^100        One "googol". (Name coined by 9 year old nephew of E. Kasner).
+10^153        Number mentioned in a myth about Buddha.
+10^155        Size of ninth Fermat number (factored in 1990).
+10^(10^6)     Size of large prime number (Mersenne number, Nov 1996).
+10^(10^7)     Years, ape needs to write "hound of Baskerville" (random typing).
+10^(10^(33))  Inverse is chance that a can of beer tips by quantum fluctuation.
+10^(10^(42))  Inverse is probability that a mouse survives on sun for a week.
+10^(10^{51))  Inverse is chance to find yourself on Mars (quantum fluctuations)
+10^(10^(100)) One "Gogoolplex", Decimal expansion can not exist in universe.  
+                          -- from R.E. Crandall, Scient. Amer., Feb. 1997
+%
+The statement sometimes made, that there exist only analytic functions
+in nature, is in my opinion absurd.
+                  -- F. Klein, Lectures on Mathematics, 1893
+%
+The introduction of numbers as coordinates ... is an act of violence...
+                  -- H. Weyl, Philosophy of Mathematics and Natural Science
+                     1949
+%
+Mathematics possesses not only truth but supreme beauty - a beauty cold and austere,
+like that of a sculpture
+                  -- Bertrand Russell
+%
+Geometry is magic that works...
+                  -- R. Thom. Stability Structurelle et Morphogenese, 1972
+%
+Ernst Zermelo, who created a system of axioms for set theory,
+was a Privatdozent at Goettingen when Herr Geheimrat Felix Klein 
+held sway over the fabled mathematics department. As Pauli told it, 
+"Zermelo taught a course on mathematical logic and stunned his
+students by posing the following question: All mathematicians in 
+Goettingen belong to one of two classes. In the first class belong 
+those mathematicians who do what Felix Klein likes, but what they 
+dislike. In the second class are those mathematicians who do what
+Felix Klein likes, but what they dislike. To what class does Felix 
+Klein belong?" 
+Jordan, having listened intently, broke into roaring laughter. Pauli
+paused, took a sip of wine and said disapprovingly, "Herr Jordan, you
+have laughed too soon". He continued: "None of the awed students 
+could solve this blasphemous problem. Zermelo then crowed in his
+high-pitched voice, 'But, meine Herren, it's very simple. Felix
+Klein isn't a mathematician.'" Jordan laughed again. Pauli
+drained his wine glass approvingly and concluded with 
+"Zermelo was not offered a professorship at Goettingen".  
+               -- E.L. Schucking, in 'Jordan, Pauli,Politics,
+                  Brecht and a variable gravitational constant'
+                  Physics Today, Oct. 1999 
+%
+In the beginning, everything was void, and J.H.W.H.Conway
+began to create numbers. Conway said, "Let there be two 
+rules which bring forth all numbers large and small. This
+shall be the first rule: Every number corresponds to two
+sets of previously created numbers, such that no member of
+the left set is greater than or equal to any member of the
+right set. And the second rule shall be this: One number is
+less than or equal to another number if and only if no member
+of the first number's left set is greater than or equal to the 
+second number, and no member of the second number 's right
+set is less than or equal to the first number." And Conway
+examined these two rules he had made, and behold! they were
+very good. 
+And the first number was created from the void left set and the
+void right set. Conway called this number "zero", and said that
+it shall be a sign to separate positive numbers from negative 
+numbers. Conway proved that zero was less than or equal to 
+zero, and he saw that it was good. And the evening and the 
+morning were the day of zero. On the next day, two more numbers
+were created, one with zero as its left set and one with zero as its
+right set. And Conway called the former number "one", and 
+the latter he called "minus one". And he proved that minus one
+is less than but not equal to zero and zero is less than but
+not equal to one. And the evening...
+                 -- D. Knuth, Surreal numbers, 1979 
+%
+Mathematics consists essentially of :
+     a) proving the obvious
+     b) proving the not so obvious
+     c) proving the obviously untrue
+For example, it took mathematicians until the 1800'ies to
+prove that 1+1=2 and not before the late 1970 were they 
+confident of proving that any map requires no more
+than four colors to make it look nice, a fact known by 
+cartographers for centuries. 
+There are many not-so-obvious things which can be proved true 
+too. Like the fact that for any group of 23 people, there is
+an even chance two or more of them share birthdays. (With
+groups of twins this becomes almost certain. Not quite certain 
+as you will of course point out: they might all have been born
+either side of midnight). 
+Mathematicians are also fond of proving things which are obviously
+false, like all straight lines being curved, and an engaged telephone 
+being just as likely to be free if you ring again immediately after,
+as if you wait twenty minutes.
+                 -- R. Ainsley in Bluff your way in Maths, 1988
+%
+There exists a subset of the real line such that the infimum
+of the set is greater then the supremum of the set.
+                 -- Gary L. Wise and Eric B. Hall, 
+                    Counter examples in probability and real analysis, 
+                    1993, First Example in book
+%
+Transcendental number : A number which is not the root of any
+polynomial equation, like pi and e, and which can only be 
+understood after several hours meditation in the lotus position.
+                 -- R. Ainsley in Bluff your way in Maths, 1988
+%
+There are great advantages to being a mathematician:
+    a) you do not have to be able to spell
+    b) you do not have to be able to add up
+The illiteracy of mathematicians is taken for granted. 
+There still persists a myth that mathematics somehow
+involves numbers. Many fondly believe that university 
+students spend their time long dividing by 173 and
+learning their 39 times table; in fact, the reverse is
+true. Mathematicians are renowned for their inability to 
+add up or take away, in much the same way as geographers
+are always getting lost, and economists are always 
+borrowing money off you. 
+                 -- R. Ainsley in Bluff your way in Maths, 1988
+%
+In this note we would like to offer an elementary 'topological'
+proof of the infinitude of the prime numbers. We introduce a 
+topology into the space of integers S, by using the arithmetic 
+progressions (from -infinity to +infinity) as a basis. It is not
+difficult to verify that this actually yields a topological space.
+In fact, under this topology, S may be shown to be normal and hence 
+metrisable. Each arithmetic progression is closed as well as open, 
+since its complement is the union of the other arithmetic 
+progressions (having the same difference). As a result, the union 
+of any finite number of arithmetic progressions is closed. 
+Consider now the set A which is the union of A(p), where A(p)
+consists of primes greater or equal to p. The only numbers not
+belonging to A are -1 and 1, and since the set {-1,1} is clearly 
+not an open set, A cannot be closed. Hence A is not a finite union 
+of closed sets, which proves that there is an infinity of primes.
+                -- H. Fuerstenberg, On the infinitude of primes, 
+                   American Mathematical Montly, 62, 1955, p. 353
+%
+The barber in a certain town shaves all the people who don't 
+shave themselves. Who shaves the barber? 
+  This is meant to be a clever little paradox with no solution
+but you can annoy the asker intensely by saying it's easy and 
+that the barber is a women. 
+  You can then ask the following (a version of Russell's
+Paradox, - point this out too): in a library there are some 
+books for the catalogue section which is a list of all books
+which don't list themselves. Shold he or she include this book
+in its own list? If so, then it becomes a book which lists 
+itself, so it shouldn't be in the list of books which don't
+and vice versa. This should keep the most determined assailant
+at bay while you attack the wine. 
+                 -- R. Ainsley in Bluff your way in Maths, 1988
+%
+Hadamard, trying to find a job in a US university,
+came to a small university and was received by the chairman 
+of the department of mathematics. He explained who he was 
+and gave his curriculum vitae. The chairman said:
+'our means are very limited and I can not promise that
+we shal take you'. Then Hadamard noticed that among the
+portraits on he wall was his own. 'That's me!' he said.
+'Well, come again in a week, we shal think about this'.
+On his next visit, the answer was negative and his portrait
+had been removed.
+                -- Vladimir Mazya and Tatyana Shaposhnikova, in
+                   Jacques Hadamard, a universal Mathematician, 
+                   AMS History of Mathematics Volume 14
+%
+The appropriate object is known as the Cantor set, because it 
+was discovered by Henry Smith in 1875. (The founder of set 
+theory, Georg Cantor, used Smith's invention in 1883. Let's
+fact it, 'Smith set' isn't very impressive, is it?) 
+                -- Ian Stewart, in Does God Play Dice, 1989 p. 121 
+%
+... Thus the erectile organ comes to symbolize the place of 
+JOUISSANCE, not in itself, or even in the form of an image, 
+but as a part lacking in the desired image: that is why it is
+equivalent to the (-1)^(1/2) of the signification produced above, 
+of the JOUISSANCE that it restores by the coefficient of its
+statement to the function of lack of signifier (-1).
+                -- Lacan, Ecrits, Paris 1966  (cited in 
+                   'Fashionable nonsense' by Alan Sokal and Jean Bricmont)
+%
+Mandelbrot made quite good computer pictures, which seemed to show
+a number of isolated "islands" (in the Mandelbrot set M). 
+Therefore, he conjectured that the set M has many distinct connected 
+components. 
+(The editors of the journal thought that his islands were specks of 
+dirt, and carefully removed them from the pictures). 
+                -- John Milnor, in Dynamics in one complex variable, 1991
+%
+sin, cos, tan, cot, sec, cosec - Formulae derived from the sides of 
+triangles but which crop up in completely unexpected places. Sins are 
+extremely common, but rarely do you encounter secs in mathematics. 
+                 -- R. Ainsley in Bluff your way in Maths, 1988
+%
+This reminds me of the Hilbert story, which I learned from
+my teacher Franz Rellich in Goettingen: 
+When Hilbert - who was old and retired - was asked at a 
+party by the newly appointed Nazi-minister of education: 
+"Herr Geheimrat, how is mathematics in Goettingen, now 
+that it has been freed of the Jewish influences" he 
+replied: "Mathematics in Goettingen? That does not EXIST
+anymore". 
+                -- Jurgen Moser, in Dynamical Systems-Past and Present, 
+                   Doc. Math. J. DMV I p. 381-402, 1998
+%
+There are two glasses of wine, one white and one red. A teaspoonful of
+wine is taken from the red and mixed in with the white. Then a teaspoonful
+of this mixture is taken and mixed in with the red. Which is bigger, the
+amount of red in the white or the amount of white in the red?
+  The answer is that the're both the same, because there's the same volume
+in each glass, so whatever quantity of red is in the white must be equal
+to the quantity of white in the red. However in practice it is impossible
+to do this because the white always runs out first at parties and the red
+always gets spilt on someone's white trousers. 
+                 -- R. Ainsley in Bluff your way in Maths, 1988
+%
+"Suppose you're on a game show and you are given a choice of three
+doors. Behind one door is a car and behind the others are goats. You
+pick a door-say No. 1 - and the host, who knows what's behind the doors,
+opens another door-say, No. 3-which has a goat. (In all games, the host
+opens a door to reveal a goat). He then says to you, "Do you want to
+pick door No. 2?" (In all games he always offers an option to switch).
+Is it to your advantage to switch your choice?"
+                -- The three doors problem, also known as Monty-Hall Problem
+%
+Pure mathematician - Anyone who prefers set theory to sex.
+                 -- R. Ainsley in Bluff your way in Maths, 1988
+%
+There was a mad scientist ( a mad ...social... scientist ) who kidnaped 
+three colleagues, an engineer, a physicist, and a mathematician, and locked 
+each of them in separate cells with plenty of canned food and water but no 
+can opener. A month later, returning, the mad scientist went to the engineer's 
+cell and found it long empty. The engineer had constructed a can opener from 
+pocket trash, used aluminum shavings and dried sugar to make an explosive, and 
+escaped. 
+The physicist had worked out the angle necessary to knock the lids off the tin 
+cans by throwing them against the wall. She was developing a good pitching arm 
+and a new quantum theory. 
+The mathematician had stacked the unopened cans into a surprising solution to 
+the kissing problem; his dessicated corpse was propped calmly against a wall, 
+and this was inscribed on the floor in blood: 
+
+      Theorem: If I can't open these cans, I'll die. 
+      Proof: assume the opposite... 
+%
+Proof by induction - A very important and powerful mathematical tool,
+because it works by assuming something is true and then goes on to 
+prove that therefore it is true. Not surprisingly, you can prove almost
+everything by induction. So long as the proof includes the following
+phrases:
+ a) Assume true for n; then also true for n+1 because.. (followed by 
+some plausible but messy working out in which n, n+1 appear prominently). 
+ b) But is true for n=0 (a little more messy working out with lots of 
+zeros sprayed at random through the proof). 
+ c) So is true for all n. Q.E.D. 
+                 -- R. Ainsley in Bluff your way in Maths, 1988
+%
+LEMMA: All horses are the same color. 
+Proof (by induction): Case n=1: In a set with only one horse, it is obvious 
+that all horses in that set are the same color.   
+Case n=k: Suppose you have a set of k+1 horses. Pull one of these horses 
+out of the set, so that you have k horses. Suppose that all of these horses 
+are the same color. Now put back the horse that you took out, and pull out 
+a different one. Suppose that all of the k horses now in the set are the 
+same color. Then the set of k+1 horses are all the same color.
+We have k true => k+1 true; therefore all horses are the same color. 
+THEOREM: All horses have an infinite number of legs. 
+Proof (by intimidation): Everyone would agree that all horses have an even 
+number of legs. It is also well-known that horses have fore-legs in front and 
+two legs in back. But 4 + 2 = 6 legs is certainly an odd number of legs for
+a horse to have! Now the only number that is both even and odd is infinity;
+therefore all horses have an infinite number of legs. 
+However, suppose that there is a horse somewhere that does not have an infinite 
+number of legs. Well, that would be a horse of a different color; and by the 
+Lemma, it doesn't exist. QED 
+%
+Dean, to the physics department. "Why do I always have to give you guys so 
+much money, for laboratories and expensive equipment and stuff. Why couldn't 
+you be like the maths department - all they need is money for pencils, paper 
+and waste-paper baskets. Or even better, like the philosophy department. 
+All they need are pencils and paper." 
+%
+An astronomer, a physicist and a mathematician were holidaying 
+in Scotland. Glancing from a train window, they observed a black sheep 
+in the middle of a field.
+"How interesting," observed the astronomer, "all Scottish sheep are black!"
+To which the physicist responded, "No, no! Some Scottish sheep are black!"
+The mathematician gazed heavenward in supplication, and then intoned, 
+"In Scotland there exists at least one field, containing at least one sheep, 
+at least one side of which is black."
+                  -- J. Steward in 'Concepts of Modern Mathematics'
+%
+An engineer, a chemist and a mathematician are staying in three adjoining 
+cabins at an old motel. First the engineer's coffee maker catches fire. 
+He smells the smoke, wakes up, unplugs the coffee maker, throws it out 
+the window, and goes back to sleep. Later that night the chemist smells 
+smoke too. He wakes up and sees that a cigarette butt has set the trash 
+can on fire. He says to himself, "Hmm. How does one put out a fire?
+One can reduce the temperature of the fuel below the flash point, isolate 
+the burning material from oxygen, or both. This could be accomplished 
+by applying water." So he picks up the trash can, puts it in the shower 
+stall, turns on the water, and, when the fire is out, goes back to sleep. 
+The mathematician, of course, has been watching all this out the window. 
+So later, when he finds that his pipe ashes have set the bed-sheet on fire,
+he is not in the least taken aback. He says: "Aha! A solution exists!" 
+and goes back to sleep.
+%
+Taking logs - Broadly speaking, any equation which looks difficult
+will look much easier when logs are taken on both sides. Taking logs 
+on one side only is tempting for many equations, but may be noticed. 
+                 -- R. Ainsley in Bluff your way in Maths, 1988
+%
+Theorem: A cat has nine tails. 
+Proof: No cat has eight tails. A cat has one tail more than no cat. 
+Therefore, a cat has nine tails. 
+%
+Prime number - A number with no divisors. Boxes of chocolates always
+contain a prime number so that, whatever the number of people present,
+somebody has to have that one left over. 
+                 -- R. Ainsley in Bluff your way in Maths, 1988
+%
+Aleph-null bottles of beer on the wall,
+Aleph-null bottles of beer,
+You take one down, and pass it around,
+Aleph-null bottles of beer on the wall.
+%
+At the end of a proof you write Q.E.D, which stands not for
+Quod Erat Demonstrandum as the books would have you believe, but
+for Quite Easily Done. 
+                 -- R. Ainsley in Bluff your way in Maths, 1988
+%
+1+1 = 3, for large values of 1 
+%
+Group theory - An exceedingly beautiful branch of pure mathematics
+used for showing in how many ways blocks of wood can be painted. 
+                 -- R. Ainsley in Bluff your way in Maths, 1988
+%
+Mathematician:  3 is prime,5 is prime,7 is prime, by induction - 
+                every odd integer higher than 2 is prime.
+Physicist:      3 is prime, 5 is prime, 7 is prime, 
+                9 is an experimental error, 11 is prime,...
+Engineer:       3 is prime, 5 is prime, 7 is prime, 9 is prime, 
+                11 is prime,...
+Programmer:     3's prime, 5's prime, 7's prime, 7's prime, 
+                7's prime,...
+Salesperson:    3 is prime, 5 is prime, 7 is prime, 9 -- 
+                we'll do for you the best we can,...
+Software seller:3 is prime, 5 is prime, 7 is prime, 
+                9 will be prime in the next release,...
+Biologist:      3 is prime, 5 is prime, 7 is prime, 9 -- 
+                results have not arrived yet,...
+Advertiser:     3 is prime, 5 is prime, 7 is prime, 11 is prime,...
+Lawyer:         3 is prime, 5 is prime, 7 is prime, 9 -- 
+                there is not enough evidence to prove that it is not prime,...
+Accountant:     3 is prime, 5 is prime, 7 is prime, 9 is prime, 
+                deducing 10% tax and 5% other obligations.
+Statistician:   Let's try several randomly chosen numbers: 
+                17 is prime, 23 is prime, 11 is prime...
+Psychologist:   3 is prime, 5 is prime, 7 is prime, 
+                9 is prime but tries to suppress it,...
+%
+PI=
+3.141592653589793238462643383279502884
+19716939937510582097494459230781640628
+6208998628034825342117067982148086513...
+%
+Euler E=
+2.718281828459045235360287471352662497
+75724709369995957496696762772407663035
+3547594571382178525166427427466391932...
+%
+Mandelbrot set M = { c | Tz=z*z+c has a bounded orbit at z=0 }  
+                                            "
+                                            oMM
+                                         MooMMMM
+                                         oMMMMMMMM
+                                         "MMMMMMM"
+                              oo    oo oooMMMMMMMooo oo
+                             ""MMMooMMMMMMMMMMMMMMMMMMMo   oo o
+                              "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+                          oo ooMMMMMMMMMMMMMMMMMMMMMMMMMMMMM""
+                          "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMo
+              o          ooMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMooo
+         oo   "o o       oMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
+         MMMMMMMMMMoo   oMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMo
+       ooMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM""
+       MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM""
+  "oMoMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
+oMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+ ""MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMoo
+  " " "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+       MMMMMMMMMMMMMMMM"MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
+         MMMMMMMMMMM""  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+         MM"""MM"""      MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+              o"         oMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+                           MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+                          "M"MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
+                               MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+                              MMMMMMMMMMMMMMMMMMMMMMMMMM" "MM"o
+                              M"""  MM"MMMMMMMMMMMMM""M
+                                          MMMMMMM
+                                         MMMMMMMMM
+                                         oMMMMMM""
+                                            MMM"
+                                              "
+                                             "
+%
+THEOREM: The limit as n goes to infinity of sin x/n is 6. 
+PROOF: cancel the n in the numerator and denominator. 
+%
+A mathematician is a device for turning coffee into theorems. 
+                                  -- P. Erdos 
+%
+Finally I am becoming stupider no more. 
+                                  -- Epitaph, P. Erdos wrote for himself
+%
+epsilon                  child
+bosses                   women
+slaves                   men
+captured                 married
+liberated                divorced
+recaptured               remarried
+trivial beings           nonmathematicians
+noise                    music
+poison                   alcohol
+preaching                giving a lecture
+supreme fascist          god
+died                     stopped doing mathematics
+preach                   lecture
+Joedom                   UDSSR
+Samland                  USA
+on the long wave length  communists
+on the short wave length fashists 
+                                  -- from the vocabulary of P. Erdos
+                                     'the man who loved only numbers'
+%
+Chebyshev said it, and I say it again
+There is always a prime between n and 2n
+                                  -- P. Erdos
+%
+Outrage, disgust, the characterization of group theory as
+a plague or as a dragon to be slain - this is not an atypical
+physist's reaction in the 1930s-50s to the use of group
+theory in physics. 
+                                  -- S. Sternberg
+%
+Anyone who considers arithmetical methods of producing random 
+digits is, of course, in a state of sin.
+                                  -- J. von Neumann
+%
+The mathematician's patterns, like the painter's or the 
+poet's must be beautiful; the ideas, like the colors or the 
+words, must fit together in a harmonious way. Beauty is the 
+first test: there is no permanent place in the world for 
+ugly mathematics... It may be very hard to define 
+mathematical beauty, but that is just as true of 
+beauty of any kind - we may not know quite what we mean by 
+a beautiful poem, but that does not prevent us from 
+recognizing one when we read it. 
+                                  -- G.H. Hardy  
+%
+It is a melancholy experience for a professional 
+mathematician to find himself writing about mathematics.
+                                  -- G.H. Hardy
+%
+There is a much quoted story about David Hilbert, who one
+day noticed that a certain student had stopped attending
+class. When told that the student had decided to drop 
+mathematics to become a poet, Hilbert replied, "Good-
+he did not have enough imagination to become a 
+mathematician". 
+                                   -- R. Osserman
+%
+Referee's report: This paper contains much that is new and 
+much that is true. Unfortunately, that which is true is not 
+new and that which is new is not true. 
+                           -- H. Eves 'Return to Mathematical Circles', 1988. 
+%
+Structures are the weapons of the mathematician.
+                                   -- N. Bourbaki
+%
+Mathematics is the only instructional material that can be presented 
+in an entirely undogmatic way. 
+                                   -- M. Dehn
+%
+Each problem that I solved became a rule which served afterwards to 
+solve other problems
+                                   -- R. Decartes
+%
+For a physicist mathematics is not just a tool by means of which
+phenomena can be calculated, it is the main source of concepts and
+principles by means of which new theories can be created. 
+	                           -- F. Dyson
+%
+If the entire Mandelbrot set were placed on an ordinary sheet of paper, 
+the tiny sections of boundary we examine would not fill the width of
+a hydrogen atom. Physicists think about such tiny objects; only 
+mathematicians have microscopes fine enough to actually observe them.
+	                           -- J. Eving
+%
+Sample letter of recommendation:
+
+Dear Search Committee Chair,
+I am writing this letter for Mr. Still Student who has applied for a 
+position in your department. I should start by saying that I cannot
+recommend him too highly.
+In fact, there is no other student with whom I can adequately compare 
+him, and I am sure that the amount of mathematics he knows will
+surprise you.
+His dissertation is the sort of work you don't expect to see these days. 
+It definitely demonstrates his complete capabilities.
+In closing, let me say that you will be fortunate if you can get him 
+to work for you.
+Sincerely,
+A. D. Advisor (Prof.)
+                                  -- from MAA Focus Newsletter 
+%
+To divide a cube into two other cubes, a fourth power or in general 
+any power whatever into two powers of the same denomination above
+the second is impossible, and I have assuredly found an admirable proof 
+of this, but the margin is too narrow to contain it.
+                                  -- P. de Fermat
+%
+Mathematics is not only real, but it is the only reality. That is that 
+entire universe is made of matter, obviously. And matter is made of
+particles. It's made of electrons and neutrons and protons. So the entire 
+universe is made out of particles. Now what are the particles made
+out of? They're not made out of anything. The only thing you can say 
+about the reality of an electron is to cite its mathematical properties.
+So there's a sense in which matter has completely dissolved and what is 
+left is just a mathematical structure.
+	                          -- M. Gardner
+%
+God does arithmetic.
+                                  -- K.F. Gauss
+%
+Don't just read it; fight it! Ask your own questions, look for your own 
+examples, discover your own proofs. Is the hypothesis necessary? Is
+the converse true? What happens in the classical special case? What about 
+the degenerate cases? Where does the proof use the hypothesis?
+	                          -- P.R. Halmos
+%
+God not only plays dice. He also sometimes throws the dice where they 
+cannot be seen.
+                                  -- S.W. Hawking
+%
+'Wir muessen wissen.  Wir werden wissen.'
+(We have to know. We will know.)
+	                          -- D. Hilbert (engraved in tombstone)
+%
+Physics is much too hard for physicists.
+                                  -- D. Hilbert
+%
+Hofstadter's Law: It always takes longer than you expect, even when 
+you take into account Hofstadter's Law.
+                                  -- D.R. Hofstadter, Goedel-Escher-Bach 
+%
+The science of mathematics presents the most brilliant example of how 
+pure reason may successfully enlarge its domain without the aid of
+experience.
+	                          -- E. Kant
+%
+A topologist is one who doesn't know the difference between a doughnut
+and a coffee cup.
+	                          -- J. Kelley
+%
+Say what you know, do what you must, come what may.
+	                          -- S. Kovalevsky
+%
+God made the integers, all else is the work of man.
+	                          -- L. Kronecker
+%
+There is no branch of mathematics, however abstract, which may not some 
+day be applied to phenomena of the real world.
+	                          -- N. Lobatchevsky
+%
+Medicine makes people ill, mathematics make them sad and theology 
+makes them sinful.
+	                          -- M. Luther
+%
+The mathematician who pursues his studies without clear views of this 
+matter, must often have the uncomfortable feeling that his paper and
+pencil surpass him in intelligence.
+	                          -- E. Mach
+%
+I tell them that if they will occupy themselves with the study of 
+mathematics they will find in it the best remedy against the lusts of 
+the flesh.
+                                  -- T. Mann
+%
+Today, it is not only that our kings do not know mathematics, 
+but our philosophers do not know mathematics and - to go a step 
+further - our mathematicians do not know mathematics.
+                                  -- J.R. Oppenheimer
+%
+Mathematics consists of proving the most obvious thing in the least 
+obvious way.
+	                          -- G. Polya
+%
+However successful the theory of a four dimensional world may be, 
+it is difficult to ignore a voice inside us which whispers:
+"At the back of your mind, you know a fourth dimension is all 
+nonsense". I fancy that voice must have had a busy time in the 
+past history of physics. What nonsense to say that this solid
+table on which I am writing is a collection of electrons 
+moving with prodigious speed in empty spaces, which relative to 
+electronic dimensions are as wide as the spaces between the 
+planets in the solar system! What nonsense to say that the thin
+air is trying to cursh my body with a load of 14 lbs. to the 
+square inch! What nonsense that the star cluster which I see 
+through the telescope, obviously there NOW, is a glimpse into a 
+past age 50'000 years ago! Let us not be beguiled by this voice.
+It is discredited...
+                                 -- Sir Arthur Eddington 
+%
+The first million decimal places of pi are comprised of:
+   99959      0's
+   99758      1's
+  100026      2's
+  100229      3's
+  100230      4's
+  100359      5's
+   99548      6's
+   99800      7's
+   99985      8's
+  100106      9's
+                                 --David Blatner, the joy of pi 
+%
+Math historians often state that the Egyptians thought pi = 256/81.
+In fact, there is no direct evidence that the Egyptians conceived
+of a constant number pi, much less tried to calculate it. Rather, 
+they were simply interested in finding the relationship between the
+circle and the square, probably to accomplish the task of precisely
+measuring land and buildings. 
+                                 --David Blatner, the joy of pi
+%
+2000 BC          Babilonians use pi=25/8, Egyptians use pi=256/81
+1100 BC          Chinese use pi=3
+ 200 AC          Ptolemy uses pi=377/120
+ 450             Tsu Ch'ung-chih uses pi=255/113
+ 530             Aryabhata uses pi=62832/20000
+ 650             Brahmagupta uses pi=sqrt(10)
+1593             Romanus finds pi to 15 decimal places
+1596             Van Ceulen calculates pi to 32 places
+1699             Sharp calculates pi to 72 places
+1719             Tantet de Lagny calculates pi to 127 places
+1794             Vega calculates pi to 140 decimal places
+1855             Richter calculates pi to 500 decimal places
+1873             Shanks finds 527 decimal places
+1947             Ferguson calculates 808 places
+1949             ENIAC computer finds 2037 places
+1955             NORC computer computes 3089 places
+1959             IBM 704 computer finds 16167 places
+1961             Shanks-Wrench (IBM7090) find 100200 places
+1966             IBM 7030 computes 250000 places
+1967             CDC6600 computes 500000 places
+1973             Guilloud-Bouyer (CDC7600) find 1 Mio places
+1983             Tamura-Kanada (HITACM-280H) compute 16 Mio places
+1988             Kanada (HITAC M-280H) computes 16 Mio digits
+1989             Chudnovsky finds 1000 Mio digits
+1995             Kanada computes pi to 6000 Mio digits
+1996             Chudnovsky computes pi to 8000 Mio digits
+1997             Kanada determines pi to 51000 Mio digits
+                                 --David Blatner, the joy of pi
+%
+The following is a transcript of an interchange between defence
+attorney Robert Blasier and FBI Special Agent Roger Martz on 
+July 26, 1995, in the courtroom of the O.J. Simpson trial:
+
+Q:         Can you calculate the area of a circle 
+           with a five-millimeter diameter?
+A:         I mean I could. I don't...math I don't ...
+           I don't know right now what it is.
+Q:         Well, what is the formula for the area of a circle?
+A:         Pi R Squared
+Q:         What is pi?
+A:         Boy, you ar really testing me. 2.12... 2.17...
+Judge Ito: How about 3.1214?
+Q:         Isn't pi kind of essential to being a scientist
+           knowing what it is?
+A:         I haven't used pi since I guess I was in high school.
+Q:         Let's try 3.12.
+A:         Is that what it is? There is an easier way to do...
+Q:         Let's try 3.14. And what is the radius?
+A:         It would be half the diameter: 2.5
+Q:         2.5 squared, right?
+A:         Right.
+Q:         Your honor, may we borrow a calculator?
+[pause]
+Q:         Can you use a calculator?
+A:         Yes, I think. 
+Q:         Tell me what pi times 2.5 squared is.
+A:         19
+Q:         Do you want to write down 19? Square millimeters, right?
+           The area. What is one tenth of that?
+A:         1.9
+Q:         You miscalculated by a factor of two, the size, the 
+           minimum size of a swatch you needed to detect EDTA
+           didn't you?
+A:         I don't know that I did or not. I calculated a little
+           differently. I didn't use this. 
+Q:         Well, does the area change by the different method of
+           calculation?
+A:         Well, this is all estimations based on my eyeball. I
+           didn't use any scientific math to determine it. 
+                                 --David Blatner, the joy of pi
+%
+To those who do not know Mathematics it is difficult to get across a 
+real feeling as to the beauty, the deepest beauty of nature. ... 
+If you want to learn about nature, to appreciate nature, it is 
+necessary to understand the language that she speaks in. 
+                                             --   Richard Feynman in
+                                           "The Character of Physical Law"
+%
+All science requires Mathematics. The knowledge of mathematical things is 
+almost innate in us... This is the easiest of sciences, a fact which is 
+obvious in that no one?s brain rejects it; for laymen and people who are 
+utterly illiterate know how to count and reckon.
+                                             -- Roger Bacon
+%
+Pure mathematics consists entirely of such asseverations as that, if
+such and such a proposition is true of anything, then such and such
+another proposition is true of that thing... It's essential not to discuss
+whether the proposition is really true, and not to mention what the
+anything is of which it is supposed to be true... If our hypothesis is
+about anything and not about some one or more particular things,
+then our deductions constitute mathematics. Thus mathematics may
+be defined as the subject in which we never know what we are talking
+about, nor whether what we are saying is true. 
+	                                     -- Bertrand Russell
+%
+The more ambitious plan may have more chances of success
+                                           --  G. Polya, How To Solve It
+%
+THEOREM: Every natural number can be completely and unambiguously 
+identified in fourteen words or less. 
+PROOF: 
+1. Suppose there is some natural number which cannot be unambiguously 
+described in fourteen words or less. 
+2. Then there must be a smallest such number. Let's call it n. 
+3. But now n is "the smallest natural number that cannot be unambiguously 
+described in fourteen words or less".  
+4. This is a complete and unambiguous description of n in fourteen words, 
+contradicting the fact that n was supposed not to have such a description! 
+5. Since the assumption (step 1) of the existence of a natural number that 
+cannot be unambiguously described in fourteen words or less
+led to a contradiction, it must be an incorrect assumption. 
+6.Therefore, all natural numbers can be unambiguously described in fourteen 
+words or less! 
+%
+THEOREM: 1=2
+PROOF: 
+  1. Let a=b. 
+  2. Then a^2 = ab, 
+  3. a^2 + a^2 = a^2 + ab, 
+  4. 2 a^2 = a^2 + ab, 
+  5. 2 a^2 - 2 ab = a^2 + ab - 2 ab, 
+  6. and 2 a^2 - 2 ab = a^2 - ab. 
+  7. Writing this as 2 (a^2 - a b) = 1 (a^2 - a b), 
+  8. and cancelling the (a^2 - ab) from both sides gives 1=2. 
+%
+II III V VII XI XIII XVII XIX XXIII XXIX ...
+%
+"Can you do addition?" the White Queen asked. 
+"What's one and one and one and one and one and one
+and one and one and one and one?"
+"I don't know," said Alice, "I lost count.". 
+                      -- Lewis Carrol alias Charles Lutwidge Dodgson, 
+                      Alice's Adventures in Wonderland
+%
+"She can't do Subtraction", said the White Queen. "Can you do 
+Division? Divide a loaf by a knife -- what's the 
+answer to that?"
+"I suppose --" Alice was beginning, but the 
+Red Queen answerd for her. "Bread and butter, of course ..."  
+                      -- Lewis Carrol alias Charles Lutwidge Dodgson, 
+                      Alice's Adventures in Wonderland
+%
+Theorem: the square root x of 2 is irrational. 
+Proof: x=n/m with gcd(n,m)=1 implies 2=n^2/m^2 which is
+2 m^2=n^2 so that n must be even and n^2 a multiple of 4. 
+Therefore m is even. This contradicts gcd(n,m)=1. 
+%
+It is still an unending source of surprise for me to see
+how a few scribbles on a blackboard or on a sheet of paper
+could change the course of human affairs. 
+                       -- Stanislaw Ulam. 
+%
+Of all escapes from reality, mathematics is the most 
+successful ever. It is a fantasy that becomes all the 
+more addictive because it works back to improve the 
+same reality we are trying to evade. All other escapes-
+sex, drugs, hobbies, whatever - are ephemeral by comparison. 
+The mathematician's feeling of triumph, as he forces 
+the world to obey the laws his imagimation has created, 
+feeds on its own success. The world is premanently 
+changed by the workings of his mind, and the certainty 
+that his creations will endure renews his confidence as no 
+other pursuit. 
+                       --  Gian-Carlo Rota
+%
+A good mathematical joke is better, and better mathematics
+than a dozen mediocre papers. 
+                       -- John Edensor Littlewood
+%
+pi/4 = 1-1/3+1/5-1/7+1/9 ...
+                       -- Wilhelm von Leibniz
+%
+THEOREM (A. Katok) There exists a measurable set E of area one in 
+the unit square (0,1) x [0,1] together with a family of disjoint 
+smooth real analytic curves G(y) which fill out this square, so that 
+each curve G(y) intersects E in at most one single point. 
+PROOF. Define for p in (0,1) the piecewise linear map T on [0,1] 
+by T(x)=x/p for x in A=[0,p) and f(x)=(x-p)/(1-p) for x in B=[p,1). 
+It is easy to see that T is measure-preserving. Denote by T^n(x) the
+n'th iterate of the map, that is T^n(x)=T(T^(n-1)(x)). For fixed p, code
+x by an infinite sequence b(n)=0 if x(n)=T^n(x) in A and b(n)=1 else. 
+In terms of this coding, T corresponds to the shift map. By the strong
+law of large numbers, for Lebesgue almost every x in [0,1], the 
+frequency of 1's in the associated symbol space is defined and equal
+to (1-p). Let E be the subset of (p,x) in (0,1) x [0,1] such that
+the frequency of 1's is equal to 1-p. It is a measurable set. Because
+the intersection of E with each line {p} x [0,1] has full Lebesgue
+measure, Fubini's theorem implies that E has Lebesgue area 1. 
+For x in [0,1] define y(p,x) = sum b(n) 2^n, where b(n) is the coding
+of x. The sets G(y) = { (p,x) |  y(p,x)=y } are disjoint and each G(y) 
+is a smooth real analytic curve. 
+[Proof: set p(0)=p,p(1)=1-p. From x(n)=b(n) p(0)+x(n+1) p(b(n)) follows
+  x=x(p,y)=p(0)(b(1)+p(b(1))(b(2)+p(b(2))(b(3)+...) ...) ...)
+          =p(0)(b(1)+b(2) p(b(1))                 +b(3) p(b(1)) p(b(2)) 
+                    +b(4) p(b(1)) p(b(2)) p(b(3)) +...)
+  Set p(0)=p=(1+t)/2, p(1)=1-p=(1-t)/2. If |t|<c<1, then the n'th term in 
+  the above series has absolute value at most [(1+c)/2]^n so that the 
+  series converges uniformly. By Weierstrass uniform convergence theorem, 
+  for each y, the series defines x as an analytic function of t for |t|<1 
+  and so as an analytic function of p for p in (0,1). 
+] 
+Now, G(y) is the graph of the function p -> x(p,y). Since a given symbol 
+sequence b(n) can have at most one limiting frequency 
+lim (b(1)+ ... + b(n))/n = 1-p, it follows that each G(y) can intersect 
+E in at most a single point (p,x(p,y)). 
+                           -- John Milnor, Mathem. Intelligencer, Vol 19, 1997
+%
+It has been said that the First World War was the chemists' war because
+mustard gas and chlorine were empolyed for the first time, and that the
+Second World War was the physicists war, because the atom bomb was 
+detonated. Similarly, it has been argued that the Third World War would
+be the mathematicians' war, because mathematics will have control over
+the next great weapon of war - information. 
+                           --  Simon Singh, in 'The code book'
+%
+Never speak more clearly than you think. 
+                            -- Jeremy Bernstein 
+%
+What, in effect are the conditions for the construction of formal 
+thought? The child must not only apply operations to objects - in 
+other words, mentally execute possible actions on them - he must 
+also 'reflect' those operations in the absence of the objects which 
+are replaced by pure propositions. Thus 'reflection' is thought 
+raised to the second power. Concrete thinking is the representation 
+of a possible action, and formal thinking is the representation of 
+a representation of possible action... It is not surprising, 
+therefore, that the system of concrete operations must be completed 
+during the last years of childhood before it can be 'reflected' by 
+formal operations. In terms of their function, formal operations do 
+not differ from concrete operations except that they are applied to 
+hypotheses or propositions whose logic is an abstract translation of 
+the system of 'inference' that governs concrete operations. 
+                           -- Jean Piaget
+%
+An integer 2^n-1 is called a Mersenne number.  If it is prime, 
+it is called a Mersenne prime. In that case, n must be prime. 
+Known examples are n = 2, 3, 5, 7, 13, 17, 19, 31, 61, 89, 107, 
+127, 521, 607, 1279, 2203, 2281, 3217, 4253, 4423, 9689, 9941, 
+11213, 19937, 21701, 23209, 44497, 86243, 110503, 132049, 216091, 
+756839, 859433, 1257787, 1398269, 2976221, 3021377. It is not 
+known whether there are infinitely many Mersenne primes. 
+%
+A positive integer n is called a perfect number if it is equal to 
+the sum of all of its positive divisors, excluding n itself.
+Examples are 6=1+2+3, 28=1+2+4+7+14. An integer k is an even perfect 
+number if and only if it has the form 2^(n-1)(2^n-1) and 2^n-1 is 
+prime. In that case 2^n-1 is called a Mersenne prime and n must be 
+prime. It is unknown whether there exists an odd perfect number. 
+%
+WILSON'S THEOREM: p prime if and only if (p-1)!==-1 (mod p)
+PROOF. 1,2, ..., p-1 are roots of x^(p-1)==0 (mod p). A congruence
+has not more roots then its degree, hence 
+x^(p-1) -1 == (x-1)(x-2) ... (x-(p-1)) mod p. For x=0, this gives
+-1 == (-1)^(p-1) (p-1)! == (p-1)! which is also true for p=2. 
+                          --  from P. Ribenboim, 
+                           'The new book of prime number records'
+%
+There is keen competition to produce the largest pair of twin primes.
+On October 9, 1995, Dubner discovered the largest known pair of twin
+primes p,p+2 where p=570918348*10^5120 - 1. It took only one day 
+with 2 crunchers. The expected time would be 150 times longer! What
+luck! 
+                          --  from P. Ribenboim, 
+                           'The new book of prime number records'
+%
+How to catch a lion: 
+- THE HILBERT METHOD. Place a locked cage in the desert.
+Set up the following axiomatic system.
+   (i) The set of lions is non-empty
+   (ii) If there is a lion in the desert, then there is a lion in the cage. 
+Theorem. There is a lion in the cage
+- THE PEANO METHOD. There is a space-filling curve passing through every 
+point of the desert. Such a curve may be traversed in as short a time as 
+we please. Armed with a spear, traverse the curve faster than the 
+lion can move his own length. 
+- THE TOPOLOGICAL METHOD. The lion has a least the connectivity of a torus. 
+Transport the desert into 4-space. It can now be deformed in such a way as
+to knot the lion. He is now helples. 
+- THE SURGERGY METHOD. The lion is an orientable 3-manifold with boundary 
+and so may be rendered contractible by surgery. 
+- THE UNIVERSAL COVERING METHOD. Cover the lion by his simply-connected
+covering space. Since this has no holes, he is trapped.
+- THE GAME THEORY METHOD. The lion is a big game, hence certainly a game. 
+There exists an optimal strategy. Follow it. 
+- THE SCHROEDINGER METHOD. At any instant there is a non-zero probability 
+that the lion is in the cage. Wait. 
+- THE ERASTOSHENIAN METHOD. Enumerate all objects in the desert: examine
+them one by one; discard all those that are not lions. A refinement
+will capture only prime lions. 
+- THE PROJECTIVE GEOMETRY METHOD. The desert is a plane. Project 
+this to a line, then project the line to a point inside the cage. The 
+lion goes to the same point. 
+- THE INVERSION METHOD. Take a cylindrical cage. First case: the lion 
+is in the cage: Trivial.  Second case: the lion is outside the cage. 
+Go inside the cage. Invert at the boundary of the cage. The lion is 
+caught. Caution: Don't stand in the middle of the cage during the 
+inversion! 
+%
+Euler's formula: A connected plane graph with n vertices, e edges and f faces
+satisfies                  n - e + f = 2
+Proof. Let T be the edge set of a spanning tree for G. It is a subset of the 
+set E of edges. A spanning tree is a minimal subgraph that connects all the 
+vertices of G. It contains so no cycle. The dual graph G* of G has a vertex
+in the interior of each face. Two vertices of G* are connected by an edge if
+the correponding faces have a common boundary edge. G* can have double edges
+even if the original graph was simple. Consider the collection T* of edges
+E* in G* that correspond to edges in the complement of T in E. The edges of 
+T* connect all the faces because T does not have a cycle. Also T* does not
+contain a cycle, since otherwise, it would seperate some vertices of G 
+contradicting that T was a spanning subgraph and edges of T and T* don't 
+intersect. Thus T* is a spanning tree for G*. Clearly e(T)+e(T*)=2. 
+For every tree, the number of vertices is one larger than the number of 
+vertices. Applied to the tree T, this yields n = e(T)+1, while for the tree
+T* it yields f=e(T*)+1. Adding both equations gives n+f=(e(T)+1)+(e(T*)+1)=e+2.
+                       -- from M.Aigner, G. Ziegler  "Proofs from THE BOOK"
+%
+Theorem: e = sum(k) 1/k! is irrational. 
+Proof. e=a/b with integers a,b would imply N = n! (e - sum(k<n+1) 1/k!) is 
+an integer for n>b because n! e and n!/k! were both integers. However, 
+0<N=sum(k>n) n!/k!=1/(n+1) + 1/(n+1)(n+2) + ...<1/(n+1) + 1/(n+1)^2 + ...=1/n
+(second sum is a geometric series) for every n is not possible. 
+                       -- from M.Aigner, G. Ziegler  "Proofs from THE BOOK"
+%
+After a few years at MIT, the Mathematician Norbert Wiener moved to a larger house. 
+His wife, knowing his nature, figured that he would forget his new address and 
+be unable to find his way home after work. So she wrote the address
+of the new home on a piece of paper that she made him put in his shirt pocket.
+At lunchtime that day, the professor had an inspiring idea. He pulled the 
+paper out of his pocket and used it to scribble down some calculations. Finding
+a flaw, he threw the paper away in disgust. At the end of the day he realized
+he had thrown away his address, he now had no idea where he lived. 
+Putting his mind to work, he came up with a plan. He would go to his old
+house and await rescue. His wife would surely realize that he 
+was lost and go to his old house to pick him up. Unfortunately, when he 
+arrived at his old house, there was no sign of his wife, only a small girl 
+standing in front of the house. "Excuse me, little girl" he said "but do you 
+happen to know where the people who used to live here moved to?" "It's okay, 
+Daddy," said the little girl, "Mommy sent me to get you".
+Moral 1. Don't be surprised if the professor doesn't know your name by the end 
+         of the semester. 
+Moral 2. Be glad your parents aren't mathematicians. if your parents are 
+         mathematicians, introduce yourself and get them to help you through the 
+         course. 
+	                               - From the introduction of "How to ace calculus" by 
+                                         C. Adams, A. Thompson and J. Hass
+%
+David Hilbert was one of the great European mathematicians at the turn of the 
+century. One of his students purchased an early automobile and died in one of 
+the first car accidents. Hilbert was asked to speak at the funeral. "Young Klaus"
+he said, "was one of my finest students. He had an unusual gift for doing 
+mathematics. He was insterested in a great variety of problems, such as..."
+There was a short pause, follwed by "Consider the set of differentiable functions
+on the unit interval and take their closure in the ..."
+Moral 1. Sit near the door. 
+Moral 2. Some mathematicians can be a little out of touch with reality. If your professor
+         falls in this category, look at the bright side. You will have lots of 
+         funny stories by the end of the semester.  
+                                      - From the introduction of "How to ace calculus" by
+                                         C. Adams, A. Thompson and J. Hass                        
+%
+In a forest a fox bumps into a little rabbit, and says, 
+"Hi, junior, what are you up to?" 
+"I'm writing a dissertation on how rabbits eat foxes," said the rabbit. 
+"Come now, friend rabbit, you know that's impossible!" 
+"Well, follow me and I'll show you." 
+They both go into the rabbit's dwelling and after a while the rabbit 
+emerges with a satisfied expression on his face. 
+Along comes a wolf. "Hello, what are we doing these days?" 
+"I'm writing the second chapter of my thesis, on how rabbits devour wolves." 
+"Are you crazy? Where is your academic honesty?" 
+"Come with me and I'll show you." ...... 
+As before, the rabbit comes out with a satisfied look on his face and 
+this time he has a diploma in his paw. The camera pans back and into the
+rabbit's cave and, as everybody should have guessed by now, we see an 
+enormous mean-looking lion sitting next to the bloody and furry remains 
+of the wolf and the fox. The moral of this story is: 
+It's not the contents of your thesis that are important -- 
+it's your PhD advisor that counts. 
+                                       - Unknown Usenet Source
+%
+It is true that a mathematician who is not also something of a 
+poet will never be a perfect mathematician. 
+                                       - K. Weierstrass,
+                                         Quoted in D MacHale, 
+                                         	Comic Sections (Dublin 1993) 
+%
+THEOREM: All triangles are equilateral. 
+PROOF: 
+1) Given an arbitrary triangle ABC. Construct the middle orthogonal 
+on AB in D and cut it with the line dividing the angle at C. Call the 
+intersection E. Form the normal from E to AC in F and from E to BC
+in G. Draw the lines AE und BE. 
+       C *                   
+        / \                  
+       /    \
+      *F      *G
+     /    E*    \
+    /      |      \
+   /       |        \
+  /        |D         \
+A*---------*------------*B
+2. The angles ECF and ECG are gleich. The angles EFC and EGC are both
+   right angles. Because the triangles ECF and ECG have also EC common,
+   they myust be congruent. Therefore CF=CG and EF=EG.
+3. The sides DA and DB are equal. The angle EDA and EDB are both 
+   right angles. Because the triangles EDA and EDB have also ED in common,
+   they have to be congruent and EA=EB.
+4. The angle EGB and EFA are both right angle. Also, EF=EG and EA=EB. 
+   Therefore both triangles EGB and EFA are congruent. Therefore FA=GB.
+5. Since CF=CG and FA=GB, addition of the sides gives also CA=CB.
+6. Having proved that two arbitrary sides are equal, all are equal.  
+%
+I married a widow, who had an adult stepdaughter. My father, a widow 
+and who often visited us, fell in love with my stepdaughter and married her.
+So, my father became my son-in-law and my stepdaughter became my stepmother.
+But my wife became the mother-in-law of her father-in-law. My stepmother, 
+stepdaughter of my wife had a son and I therefore a brother, because
+he is the son of my father and my stepmother. But since he was in the same 
+time the son of our stepdaughter, my wife became his grandmother and I became the
+grandfather of my stepbrother. My wife gave me also a son. My stepmother,
+the stepsister of my son, is in the same time his grandmother, because he is 
+the son of her stepson and my father is the brother-in-law of my child, because his
+sister is his wife.  My wife, who is the mother of my stepmother, is therefore 
+my grandmother.  My son, who is the child of my grandmother, is the grandchild 
+of my father.  But I'm the husband of my wife and in the same time the grandson of
+my wife. This means: I'm my own grandfather.
+%
+I never could make out what those damned dots meant. 
+                                    --   Lord Randolph Churchill (1849-1895)
+                                         Brittish conservative politician, referring
+                                         to decimal points.
+%
+The mathematician has reached the highest rung on the ladder of human 
+thought. 
+                                   --   Havelock Ellis
+%
+Let no one ignorant of mathematics enter here.
+                                   --   Plato, Inscription written over the 
+                                        entrance to the academy
+%
+I knew a mathematician, who said 'I do not know as much as God. But I 
+know as much as God knew at my age'.
+                                   --   Milton Shulman, Candian writer
+
