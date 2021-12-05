@@ -85,6 +85,7 @@ relpath() {
 # julia
 alias jl='julia'
 alias jl.='julia --project=.'
+alias jlstartup="vim $HOME/.julia/config/startup.jl"
 alias plutorun="julia -e 'using Pluto; Pluto.run()'"
 jlinstall() {
 	# install julia
