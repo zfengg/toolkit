@@ -7,10 +7,13 @@
 \documentclass[12pt]{article}
 
 % --------------------------------- packages --------------------------------- %
+\footskip 4.ex
+\parskip 1.ex
+\renewcommand{\baselinestretch}{1.0858}
 \usepackage[a4paper,margin=0.7in]{geometry}
 \renewcommand{\baselinestretch}{1}
 \usepackage{amsmath,mathtools}
-\usepackage{amsfonts, amsthm, amstext, amssymb, amscd, array, enumerate}
+\usepackage{amsfonts,amsthm,amstext,amssymb,amscd,array,enumerate}
 \usepackage[pdfusetitle,
 			bookmarks=true,bookmarksopen=true,
 			colorlinks,linkcolor=blue,pagebackref,
@@ -61,7 +64,7 @@
 	\subsection*{#1\thequestion\footnote{#3}\,(#2\,pts)}
 	\pdfbookmark[2]{#1\thequestion}{oQ:\thequestion}}
 % items with pts
-\newcommand{\itemPts}[1]{\item\!(#1\,pts)}
+\newcommand{\itemPts}[1][\quad]{\item\!(#1\,pts)}
 % question list environments
 \newenvironment{qenumerate}[1]{\begin{enumerate}[(#1)]}{\end{enumerate}}
 \newenvironment{qenumerate*}[1][\arabic]{\begin{enumerate}[label=\textbf{(#1*)}]}{\end{enumerate}}
@@ -120,6 +123,9 @@
 \DeclareMathOperator{\co}{conv}
 \DeclareMathOperator{\hdim}{dim_{H}}
 \DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Exp}{Exp}
+\DeclareMathOperator{\Cov}{Cov}
 % commonly used
 \newcommand{\Ndash}{\nobreakdash--}
 \newcommand{\sigmaAlgebra}{$\sigma$\nobreakdash-algebra}
@@ -130,6 +136,8 @@
 \newcommand{\ndiml}[1][n]{$#1$\nobreakdash-dim}
 \newcommand{\padic}{$p$\nobreakdash-adic}
 \newcommand{\euclid}[1][d]{\mathbb{R}^{#1}}
+\newcommand{\cov}[2]{\Cov(#1, #2)}
+\newcommand{\var}[1]{\Var(#1)}
 
 % ----------------------------------- title ---------------------------------- %
 \newcommand{\institute}{The Chinese University of Hong Kong}
@@ -145,13 +153,13 @@
 
 \maketitle
 
-\qpart{Parition of questions}
+\qpart{Partition of questions}
 
 \question{Question}
 
 \questionFt{Question with footnote}{This is the footnote to the question.}
 
-\questionPtsFt{Question with pts annd footnote}{2}{This is the footnote to the question.}
+\questionPtsFt{Question with points and footnote}{2}{This is the footnote to the question.}
 
 Solution content.
 
@@ -177,9 +185,9 @@ Solution with small questions.
 	\item Solution to the second question.
 
 	\begin{qenumerate}{i}
-		\itemPts{2} Solution to the first question with pts.
+		\itemPts[2] Solution to the first question with points.
 
-		\itemPts{3} Solution to the second question with pts.
+		\itemPts[3] Solution to the second question with points.
 	\end{qenumerate}
 
 	\item Solution to the third question.
@@ -210,9 +218,9 @@ Solution with small questions.
 The alternative solutions.
 
 \begin{altsols}
-	\item The first sugguested solution.
+	\item The first suggested solution.
 
-	\item The second alternative solution. The avaiable options of label styles are the same as \ref{itm:options}.
+	\item The second alternative solution. The available options of label styles are the same as \ref{itm:options}.
 
 \end{altsols}
 
