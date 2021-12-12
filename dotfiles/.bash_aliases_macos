@@ -14,3 +14,5 @@ alias julia="/Applications/Julia-1.7.app/Contents/Resources/julia/bin/julia"
 
 # shortcuts
 alias cddb="$HOME/Dropbox"
+# alias groupay="$HOME/github/groupay/compiled/bin/Groupay"
+alias groupay="$HOME/github/PayGroups.jl/compiled/bin/PayGroups"
