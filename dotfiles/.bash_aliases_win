@@ -7,6 +7,7 @@ alias curl="/bin/curl"
 alias opdirtookit="start $TOOLKIT"
 alias upbst="cp $TOOLKIT/tex/bst/* /c/Users/zfeng/AppData/Local/MiKTeX/2.9/bibtex/bst && initexmf -u"
 alias opdf='/c/Program\ Files/Adobe/Acrobat\ DC/Acrobat/Acrobat.exe'
+alias cdtex="cd $HOME/Dropbox/tex"
 
 # python
 # alias python='/c/Users/zfeng/AppData/Local/Programs/Python/Python38/python.exe'
