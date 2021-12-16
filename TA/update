@@ -10,3 +10,6 @@ do
 	cp ../tex/my$i/my$i.$j $i/$i.$j 
 done
 done
+
+# git commit
+git add -A && git commit -m "update .tex"
