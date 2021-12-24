@@ -14,8 +14,10 @@
 \usepackage{amsfonts}	% \mathscr \mathbb \mathfrak
 \usepackage{amssymb}  	% special symbols
 \usepackage{mathrsfs}
-\usepackage{mathtools}
+\usepackage{mathtools}	% e.g., \coloneqq
 \usepackage{savesym}
+\usepackage{esvect}		% \vv
+\usepackage{ifthen}		% \ifthenelse
 \usepackage{color} 	 	% colors
 \usepackage{graphicx}  	% include figures
 \usepackage{caption}  	% caption dealing
@@ -372,7 +374,50 @@ The \verb|\mathbf| command is commonly used to obtain bold Latin letters in math
 
 	      \verb|Serre et al. proved|: Serre et al. proved.
 
+	\item \fbox{text box} \& $ \boxed{\text{math box } \boxed{\bbR}} $.
+
+	\item \verb|\vv{AB}| $ \vv{AB} $ vs.\ \verb|\overrightarrow{AB}|  $ \overrightarrow{AB} $
+
+	\item \verb|if...| statements: \newcounter{num}
+	      \begin{itemize}
+		      \item \verb|\ifnum\value{num}>n {A} \else {B}\fi|:
+		            \ifnum\value{num}=0 {A} \else {B}\fi
+
+		      \item \verb|\ifodd\value{num} {A}\else {B}\fi|: \ifodd\value{num} {A} \else {B}\fi
+
+		      \item \verb|\ifthenelse{\(\NOT 4<2 \OR 4>11\)\AND\isodd{4}}{A}{B}|: \ifthenelse{\(\NOT 4<2 \OR 4>11\)\AND\isodd{4}}{A}{B}
+	      \end{itemize}
+
+	\item \verb|loops|:
+
+	      \begin{itemize}
+		      \item \verb|@for|:
+		            \makeatletter
+		            \@for\sun:={rising,setting}\do{The sun is \sun. }
+		            \makeatother
+
+
+
+		      \item \verb|@whilenum|:
+		            \newcounter{int}
+		            \setcounter{int}{0}
+		            \makeatletter
+		            \@whilenum\value{int}<20\do{\stepcounter{int}\ifthenelse{\isodd{\value{int}}}{\theint\text{ }\symbol{\value{int}}\quad}{}}
+		            \makeatother
+
+		      \item \verb|\loop...\repeat|:
+		            \setcounter{int}{1}
+		            \loop
+		            \theint
+		            \text{ }\addtocounter{int}{1}\fnsymbol{int}\quad\ifnum\value{int}<9
+		            \repeat
+	      \end{itemize}
+
 \end{enumerate}
+
+Soft page break with \verb*|\pagebreak|
+\pagebreak
+
 
 Here is some practical suggestions for mathematical writting.
 \begin{enumerate}
@@ -402,7 +447,12 @@ Here is some practical suggestions for mathematical writting.
 
 	      \verb|sed '/\$\$/{:x;N;/.*\$\$ *$/!bx;s/\$\$\(.*\)\$\$ *$/\\[\1\\]/}'|
 
+	\item Use \verb*|\emph{}| over \verb|\textit{}|
+
+	\item More built-in letters. Hebrew letters: $ \aleph \beth \gimel $; Others: $ \nabla \wp \hbar \box \eth \iota \imath \jmath $
+
 \end{enumerate}
+
 
 \section{Commutative diagrams}
 
@@ -421,6 +471,11 @@ Arrows \verb|@>>>| \verb|@<<<| \verb|@VVV| \verb|@AAA|. Double lines: \verb|@=|.
 		A \arrow[rd] \arrow[r, "\phi"] & B \\
 		& C
 	\end{tikzcd}  \]
+
+
+Hard page break with \verb*|\newpage|
+
+\newpage
 
 \section{reference \& citation}
 Choose a \verb*|natbib| compatible \verb|\bibliographystyle|, e.g.\,\verb|abbrvnat|, \verb|plainnat|.
