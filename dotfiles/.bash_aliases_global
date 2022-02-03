@@ -87,64 +87,6 @@ alias jl='julia'
 alias jl.='julia --project=.'
 alias jlstartup="vim $HOME/.julia/config/startup.jl"
 alias plutorun="julia -e 'using Pluto; Pluto.run()'"
-jlinstall() {
-	# install julia
-	local PATH_DOWNLOAD="$HOME/Downloads"
-	local PATH_USRBIN="/usr/local/bin"
-	local DIR_INSTALL="/opt"
-	local tarball="julia-$1-linux-x86_64.tar.gz"
-	local linkDownload="https://julialang-s3.julialang.org/bin/linux/x64/${1:0:3}/$tarball"
-
-	echo "downloading the julia tar-ball:"
-	wget --directory-prefix $PATH_DOWNLOAD $linkDownload
-	echo ":) download finished!"
-
-	echo ">>> unpacking tarball to $DIR_INSTALL :"
-	sudo tar -xvzf "$PATH_DOWNLOAD/$tarball" --directory=$DIR_INSTALL
-	echo ":) julia tarball unpacked at $DIR_INSTALL/julia-$1/ !"
-
-	echo "creating symbolic link"
-	sudo ln -s "$DIR_INSTALL/julia-$1/bin/julia" "$PATH_USRBIN/julia$1"
-	# replace the default julia command
-	if [ -n "$2" ]; then
-		sudo rm "$PATH_USRBIN/$2"
-		sudo ln -s "$DIR_INSTALL/julia-$1/bin/julia" "$PATH_USRBIN/$2"
-	fi
-	echo ":) symbolic links created!"
-
-	echo "removing the downloaded tarball"
-	rm "$PATH_DOWNLOAD/$tarball"
-	echo ":) tarball removed!"
-
-	if [ -n "$2" ]; then
-		echo -e ":) All finished!!! Please check by running: \033[32mjulia$1\033[0m or \033[32m$2\033[0m "
-	else
-		echo -e ":) All finished!!! Please check by running: \033[32mjulia$1\033[0m "
-	fi
-}
-
-jluninstall() {
-	# remove julia
-	local PATH_USRBIN="/usr/local/bin"
-	local DIR_INSTALL="/opt"
-
-	sudo rm -rf "$DIR_INSTALL/julia-$1"
-	echo "installation dir: $DIR_INSTALL/julia-$1 removed!"
-
-	sudo rm "$PATH_USRBIN/julia$1"
-	echo "symbolic link: $PATH_USRBIN/julia$1 removed!"
-}
-
-jlsetbin() {
-	# set the command link 'julia'
-	local PATH_USRBIN="/usr/local/bin"
-	local DIR_INSTALL="/opt"
-
-	sudo rm "$PATH_USRBIN/julia"
-	sudo ln -s "$DIR_INSTALL/julia-$1/bin/julia" "$PATH_USRBIN/julia"
-
-	echo "Linked \033[32m$DIR_INSTALL/julia-$1/bin/julia\033[0m to \033[32mjulia\033[0m "
-}
 
 # latex
 alias texclean='latexmk -c'

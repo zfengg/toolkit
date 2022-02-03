@@ -10,7 +10,29 @@ alias jabref="/opt/homebrew/Caskroom/jabref/5.3/JabRef.app/Contents/MacOS/JabRef
 alias upbst="sudo cp -R $TOOLKIT/tex/bst /usr/local/texlive/2021/texmf-dist/bibtex/bst/mybst && texhash"
 
 # julia
-alias julia="/Applications/Julia-1.7.app/Contents/Resources/julia/bin/julia"
+# alias julia="/Applications/Julia-1.7.app/Contents/Resources/julia/bin/julia"
+jlsetbin() {
+	# set the command link 'julia'
+	local PATH_USRBIN="/usr/local/bin"
+	local DIR_INSTALL="/Applications"
+
+	sudo ln -s "$DIR_INSTALL/Julia-$1.app/Contents/Resources/julia/bin/julia" "$PATH_USRBIN/julia$1"
+
+	echo "Has linked \033[32m$DIR_INSTALL/julia-$1/bin/julia\033[0m to \033[32mjulia$1\033[0m "
+}
+
+jlupbin() {
+	# set the command link 'julia'
+	local PATH_USRBIN="/usr/local/bin"
+	local DIR_INSTALL="/Applications"
+
+	if [ -L "$PATH_USRBIN/julia" ]; then
+		sudo rm "$PATH_USRBIN/julia"
+	fi
+	sudo ln -s "$DIR_INSTALL/Julia-$1.app/Contents/Resources/julia/bin/julia" "$PATH_USRBIN/julia"
+
+	echo "Has linked \033[32m$DIR_INSTALL/julia-$1/bin/julia\033[0m to \033[32mjulia\033[0m "
+}
 
 # shortcuts
 alias cddb="$HOME/Dropbox"
