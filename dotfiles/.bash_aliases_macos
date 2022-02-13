@@ -38,3 +38,8 @@ jlupbin() {
 alias cddb="$HOME/Dropbox"
 # alias groupay="$HOME/github/groupay/compiled/bin/Groupay"
 alias groupay="$HOME/github/PayGroups.jl/compiled/bin/PayGroups"
+datename() {
+	# attach date to the name of a file as a copy
+	cp $1 "${2:-$(dirname $1)}/$(date +%Y-%m-%d)_$(basename $1)"
+}
+

@@ -48,10 +48,10 @@ mks() {
 	fi
 }
 
-datename() {
-	# attach date to the name of a file as a copy
-	cp $1 "${2:-$(dirname $1)}/$(date -I)_$(basename $1)"
-}
+# datename() {
+#  	# attach date to the name of a file as a copy
+# 	cp $1 "${2:-$(dirname $1)}/$(date -I)_$(basename $1)"
+# }
 
 extname() {
 	# get the extension of a filename
