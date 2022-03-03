@@ -155,7 +155,7 @@ if [ $SHELL = '/usr/bin/bash' ]; then
 	complete -f -o plusdirs -X '!*.@(bib)' edbib
 	complete -f -o plusdirs -X '!*.@(bib)' upbib
 	complete -f -o plusdirs -X '!*.@(pdf)' opdf
-elif [ $SHELL = '/usr/bin/zsh' ]; then
+elif [ $SHELL = '/bin/zsh' ]; then
 	compdef '_files -g "*.tex"' edtex
 	compdef '_files -g "*.bib"' edbib
 	compdef '_files -g "*.bib"' upbib
