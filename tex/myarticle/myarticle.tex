@@ -213,14 +213,16 @@
 \newcommand{\rmR}{\mathrm{R}}
 % math operators
 \DeclareMathOperator*{\Lim}{Lim}
+\DeclareMathOperator*{\llim}{\underline{lim}}
+\DeclareMathOperator*{\ulim}{\overline{lim}}
+\DeclareMathOperator*{\essinf}{ess\,inf}
+\DeclareMathOperator*{\esssup}{ess\,sup}
 \DeclareMathOperator*{\intersect}{\cap}
 \DeclareMathOperator*{\Intersect}{\bigcap}
 \DeclareMathOperator*{\union}{\cup}
 \DeclareMathOperator*{\Union}{\bigcup}
-\DeclareMathOperator*{\essinf}{ess\,inf}
-\DeclareMathOperator*{\esssup}{ess\,sup}
 \DeclareMathOperator{\ex}{ex}
-\DeclareMathOperator{\co}{conv}
+\DeclareMathOperator{\co}{co}
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\Var}{Var}
@@ -246,13 +248,13 @@
 \newcommand{\energy}[2][s]{I_{#1}(#2)}
 \newcommand{\capacity}[2][s]{g_{#1}(#2)}
 % dimensions
-\newcommand{\dimsub}[1]{\dim_{\mathrm{#1}}}
 \newcommand{\dimH}{\dim_{\mathrm{H}}}
 \newcommand{\dimP}{\dim_{\mathrm{P}}}
 \newcommand{\dimB}{\dim_{\mathrm{B}}}
 \newcommand{\dimC}{\dim_{\mathrm{C}}}
 \newcommand{\dimF}{\dim_{\mathrm{F}}}
 \newcommand{\dimE}{\dim_{\mathrm{e}}}
+\newcommand{\dimsub}[1]{\dim_{\mathrm{#1}}}
 \newcommand{\uDim}[1]{\overline{\dim}_{\mathrm{#1}}}
 \newcommand{\lDim}[1]{\underline{\dim}_{\mathrm{#1}}}
 \newcommand{\locDim}[2]{D(#1, #2)}
@@ -549,6 +551,7 @@ More multi-authors citation like \citet*{BenoistQuint2016} and \citet*{FanEtAl20
 
 	Otherwise, all the other default \verb*|bst| styles suffices.
 \end{remark}
+
 
 % ---------------------------------------------------------------------------- %
 %                                   reference                                  %
