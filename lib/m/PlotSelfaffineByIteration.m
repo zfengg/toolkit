@@ -1,9 +1,9 @@
-%% Plot self-affine sets by iterating compact sets
+%% A simple script to plot self-affine sets by iterating compact sets
 % Zhou Feng @ 2020-10-12
 clc, clf, clear
 tic
 
-%% Settings
+%% settings
 % IFS linear parts
 linearMats = {[0.25 0; 0 0.25],...
     [0.25 0; 0 0.25],...
@@ -27,6 +27,7 @@ numItrs = 7; % iteration time
 % plot settings
 showTitle = true;
 showFirstItrs = false;
+
 
 %% Examples
 % ---------------------------------- gaskets --------------------------------- %
@@ -152,7 +153,8 @@ showFirstItrs = false;
 % translations = {[0; 0], [0.75; 0], [0.75; 0.75], [0; 0.75], [0.25; 0.25]};
 % shapeInit = [0 1 1 0; 0 0 1 1];
 
-%% Check the compactibility of the settings
+
+%% Error handling
 isCompactible = false;
 
 if length(linearMats) == length(translations)
@@ -160,13 +162,14 @@ if length(linearMats) == length(translations)
 end
 
 if ~isCompactible
-    error('Illegal settings. Dimensions of the parameter vectors should match!')
+    error('Illegal settings. Dimensions of the parameters does not match!')
 end
 
-sizeIFS = length(linearMats); % the number of fuctions in IFS if the settings are legal
+sizeIFS = length(linearMats);
 [~, numInitPts] = size(shapeInit);
 
-%% Generate the vertice under iterations
+
+%% Generate points
 ptsInit = shapeInit;
 ptsNow = ptsInit;
 sizeNow = numInitPts;
@@ -187,15 +190,16 @@ for levelNow = 1:numItrs
     ptsTotal{levelNow + 1} = ptsNow;
 end
 
-%% Plot the iterated graph
-xCoordPts = reshape(ptsNow(1, :), numInitPts, []); % reshape the x-coord for plotting
-yCoordPts = reshape(ptsNow(2, :), numInitPts, []); % reshape the y-coord for plotting
+
+%% Plot
+xCoordPts = reshape(ptsNow(1, :), numInitPts, []);
+yCoordPts = reshape(ptsNow(2, :), numInitPts, []);
 
 figure(1)
 patch(xCoordPts, yCoordPts, 'black')
 set(gca, 'XColor', 'none', 'YColor', 'none')
 if showTitle
-    title(['Iteration Level=', num2str(numItrs)], 'Interpreter', 'latex');
+    title(['Iteration time = ', num2str(numItrs)], 'Interpreter', 'latex');
 end
 
 if showFirstItrs && numItrs >= 3
@@ -206,11 +210,12 @@ if showFirstItrs && numItrs >= 3
         Ysubplotpts = reshape(ptsTotal{plotposition}(2,:), numInitPts, []);
         patch(Xsubplotpts, Ysubplotpts, 'black')
         set(gca,'XColor', 'none','YColor','none')
-        % title(['Iteration Level=', num2str(plotposition-1)], 'Interpreter', 'latex');
+        % title(['Iteration time = ', num2str(plotposition-1)], 'Interpreter', 'latex');
     end
 end
 
-%% Output the other parameters
+
+%% Show param
 countPtsTotal = sizeNow;
 [~, countShapesTotal] = size(xCoordPts);
 tableResults = table(countPtsTotal, countShapesTotal);
