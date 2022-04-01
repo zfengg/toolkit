@@ -1,5 +1,14 @@
 alias bashaliasmacos="vim $TOOLKIT/dotfiles/.bash_aliases_macos"
 
+# shortcuts
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias cddb="$HOME/Dropbox"
+alias groupay="$HOME/github/PayGroups.jl/compiled/bin/PayGroups"
+datename() {
+	# attach date to the name of a file as a copy
+	cp $1 "${2:-$(dirname $1)}/$(date +%Y-%m-%d)_$(basename $1)"
+}
+
 # macos vs gnu utilities
 # alias sed='gsed'
 alias htop='sudo htop'
@@ -33,14 +42,5 @@ jlupbin() {
 	sudo ln -s "$DIR_INSTALL/Julia-$1.app/Contents/Resources/julia/bin/julia" "$PATH_USRBIN/julia"
 
 	echo "Has linked \033[32m$DIR_INSTALL/julia-$1/bin/julia\033[0m to \033[32mjulia\033[0m "
-}
-
-# shortcuts
-alias cddb="$HOME/Dropbox"
-# alias groupay="$HOME/github/groupay/compiled/bin/Groupay"
-alias groupay="$HOME/github/PayGroups.jl/compiled/bin/PayGroups"
-datename() {
-	# attach date to the name of a file as a copy
-	cp $1 "${2:-$(dirname $1)}/$(date +%Y-%m-%d)_$(basename $1)"
 }
 

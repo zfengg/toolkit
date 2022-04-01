@@ -92,11 +92,19 @@ alias plutorun="julia -e 'using Pluto; Pluto.run()'"
 alias texclean='latexmk -c'
 
 edtex() {
-	texstudio $1 &>/dev/null &
+	# if [[ $(uname) = 'Darwin' ]]; then
+	# 	open -a 'texstudio' $1
+	# else
+		texstudio $1 &>/dev/null &
+	# fi
 }
 
 edmytex() {
-	texstudio $TOOLKIT/tex/my${1:-article}/my${1:-article}.tex &
+	# if [[ $(uname) = 'Darwin' ]]; then
+	# 	open -a 'texstudio' $TOOLKIT/tex/my${1:-article}/my${1:-article}.tex
+	# else
+		texstudio $TOOLKIT/tex/my${1:-article}/my${1:-article}.tex &
+	# fi
 }
 
 edbib() {
