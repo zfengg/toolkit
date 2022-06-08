@@ -44,3 +44,6 @@ jlupbin() {
 	echo "Has linked \033[32m$DIR_INSTALL/julia-$1/bin/julia\033[0m to \033[32mjulia\033[0m "
 }
 
+# python
+alias pip38="/opt/homebrew/opt/python@3.8/bin/pip3"
+
