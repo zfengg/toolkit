@@ -5,24 +5,33 @@ tic
 
 %% settings
 % IFS linear parts
-linearMats = {[0.25 0; 0 0.25],...
-    [0.25 0; 0 0.25],...
-    [0.25 0; 0 0.25],...
-    [0.25 0; 0 0.25],...
-    [0.5 0; 0 0.5]};
+r = 6/13;
+linearMats = cell(1, 5);
+for i = 1:4
+    linearMats{i} = r * eye(2);
+end
+linearMats{end} = 5 / 13 * eye(2);
+linearMats{1} = [r 1; 0 r];
+linearMats{2} = [r 2; 0 r];
+% linearMats = {[0.25 0; 0 0.25],...
+%     [0.25 0; 0 0.25],...
+%     [0.25 0; 0 0.25],...
+%     [0.25 0; 0 0.25],...
+%     [0.5 0; 0 0.5]};
 
 % IFS translations
-translations = {[0; 0],...
-    [0.75; 0],...
-    [0.75; 0.75],...
-    [0; 0.75],...
-    [0.25; 0.25]};
+translations = mat2cell(rand(2,5), [2], ones(1, 5));
+% translations = {[0; 0],...
+%     [0.75; 0],...
+%     [0.75; 0.75],...
+%     [0; 0.75],...
+%     [0.25; 0.25]};
 
 % initial polygon for iteration
 shapeInit = [0 1 1 0;
              0 0 1 1];
 
-numItrs = 5; % iteration time
+numItrs = 7; % iteration time
 
 % plot settings
 showTitle = true;
@@ -58,24 +67,24 @@ showFirstItrs = false;
 % translations = {[0;0], [1;0], [2;0], [0;1], [2;1], [0;2], [1;2], [2;2]};
 % shapeInit = [0 3 3 0; 0 0 3 3];
 
-% Bedford-McMullen carpet
-BMh = 3; % horizontal size
-BMv = 4; % vertical size
-BMselect = [1 0 0 1;
-            0 0 0 0;
-            0 0 0 0;
-            1 0 0 1]; % select positions
-BMmat = flipud(BMselect);
-[oneRows, oneCols] = find(BMmat>0);
-BMsize = length(oneRows);
-BMlinear = [1/BMh 0; 0 1/BMv];
-linearMats = cell(1, BMsize);
-translations = cell(1, BMsize);
-for i = 1:BMsize
-    linearMats{i} = BMlinear;
-    translations{i} = [(oneCols(i)-1)*(1/BMh); (oneRows(i)-1)*(1/BMv)];
-end
-shapeInit = [0 1 1 0; 0 0 1 1];
+% % Bedford-McMullen carpet
+% BMh = 3; % horizontal size
+% BMv = 4; % vertical size
+% BMselect = [1 0 0 1;
+%             0 0 0 0;
+%             0 0 0 0;
+%             1 0 0 1]; % select positions
+% BMmat = flipud(BMselect);
+% [oneRows, oneCols] = find(BMmat>0);
+% BMsize = length(oneRows);
+% BMlinear = [1/BMh 0; 0 1/BMv];
+% linearMats = cell(1, BMsize);
+% translations = cell(1, BMsize);
+% for i = 1:BMsize
+%     linearMats{i} = BMlinear;
+%     translations{i} = [(oneCols(i)-1)*(1/BMh); (oneRows(i)-1)*(1/BMv)];
+% end
+% shapeInit = [0 1 1 0; 0 0 1 1];
 
 % % Baranski carpet
 % Bar_h = [0.1 0.3 0.4 0.2]; % horizontal scales
@@ -196,7 +205,7 @@ xCoordPts = reshape(ptsNow(1, :), numInitPts, []);
 yCoordPts = reshape(ptsNow(2, :), numInitPts, []);
 
 figure(1)
-patch(xCoordPts, yCoordPts, 'black')
+patch(xCoordPts, yCoordPts, 'red')
 set(gca, 'XColor', 'none', 'YColor', 'none')
 if showTitle
     title(['Iteration time = ', num2str(numItrs)], 'Interpreter', 'latex');
