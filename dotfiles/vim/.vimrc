@@ -86,8 +86,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'godlygeek/tabular'
-Plug 'sirver/ultisnips'
-Plug 'lervag/vimtex', { 'for': 'tex' }
+" Plug 'sirver/ultisnips'
+" Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'junegunn/fzf'
 " Plug 'vim-airline/vim-airline'
@@ -105,11 +105,17 @@ let g:vimtex_view_method='zathura'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+set rtp+=/opt/homebrew/opt/fzf
 
 " keybindings
 map <C-n> :NERDTreeToggle<CR>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 let mapleader = " "
 map <leader>w :w<CR>
+map <leader>e :e
 map <leader>q :q!<CR>
 map <leader>Q :qa!<CR>
 map <leader>h :noh<CR>
