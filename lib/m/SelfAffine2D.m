@@ -1,4 +1,4 @@
-%% A simple script to plot self-affine sets by iterating compact sets
+%% A simple script to plot self-affine sets by iterating polygons
 % Zhou Feng @ 2020-10-12
 clc, clf, clear
 tic
@@ -6,27 +6,31 @@ tic
 %% settings
 % IFS linear parts
 linearMats = {[0.25 0; 0 0.25], ...
-        [0.25 0; 0 0.25], ...
-            [0.25 0; 0 0.25], ...
-            [0.25 0; 0 0.25], ...
-            [0.5 0; 0 0.5]};
+              [0.25 0; 0 0.25], ...
+              [0.25 0; 0 0.25], ...
+              [0.25 0; 0 0.25], ...
+              [0.5 0; 0 0.5]};
 
 % IFS translations
 translations = {[0; 0], ...
-            [0.75; 0], ...
+                [0.75; 0], ...
                 [0.75; 0.75], ...
                 [0; 0.75], ...
                 [0.25; 0.25]};
 
 % initial polygon for iteration
 shapeInit = [0 1 1 0;
-        0 0 1 1];
+             0 0 1 1];
 
 numItrs = 5; % iteration time
 
 % plot settings
 showTitle = true;
-showFirstItrs = false;
+showFirstItrs = true;
+numFirstItrs = 2;
+alphaFaces = 1;
+colorFaces = 'k';
+colorEdges = 'none';
 
 %% Examples
 % ---------------------------------- gaskets --------------------------------- %
@@ -38,6 +42,7 @@ showFirstItrs = false;
 % end
 % translations = {[0; 0], [cRatio; 0], [0; cRatio]};
 % shapeInit = [0 1 0; 0 0 1];
+
 
 % % Sierpinski gasket (self-affine)
 % hRatio = 0.25;
@@ -57,28 +62,28 @@ showFirstItrs = false;
 % translations = {[0;0], [1;0], [2;0], [0;1], [2;1], [0;2], [1;2], [2;2]};
 % shapeInit = [0 3 3 0; 0 0 3 3];
 
-% Bedford-McMullen carpet
-BMh = 3; % horizontal size
-BMv = 4; % vertical size
-BMselect = [1 0 0 1;
-        0 0 0 0;
-        0 0 0 0;
-        1 0 0 1]; % select positions
-BMmat = flipud(BMselect);
-[oneRows, oneCols] = find(BMmat > 0);
-BMsize = length(oneRows);
-BMlinear = [1 / BMh 0; 0 1 / BMv];
-linearMats = cell(1, BMsize);
-translations = cell(1, BMsize);
 
-for i = 1:BMsize
-    linearMats{i} = BMlinear;
-    translations{i} = [(oneCols(i) - 1) * (1 / BMh); (oneRows(i) - 1) * (1 / BMv)];
-end
+% % Bedford-McMullen carpet
+% BMh = 3; % horizontal size
+% BMv = 4; % vertical size
+% BMselect = [1 0 0 1;
+%         0 0 0 0;
+%         0 0 0 0;
+%         1 0 0 1]; % select positions
+% BMmat = flipud(BMselect);
+% [oneRows, oneCols] = find(BMmat > 0);
+% BMsize = length(oneRows);
+% BMlinear = [1 / BMh 0; 0 1 / BMv];
+% linearMats = cell(1, BMsize);
+% translations = cell(1, BMsize);
+% for i = 1:BMsize
+%     linearMats{i} = BMlinear;
+%     translations{i} = [(oneCols(i) - 1) * (1 / BMh); (oneRows(i) - 1) * (1 / BMv)];
+% end
+% shapeInit = [0 1 1 0; 0 0 1 1];
 
-shapeInit = [0 1 1 0; 0 0 1 1];
 
-% % Baranski carpet
+% % Baranski carpet (with possible overlaps)
 % Bar_h = [0.1 0.3 0.4 0.2]; % horizontal scales
 % Bar_v = [0.1 0.2 0.4 0.3]; % vertical scales
 % Bar_select = [1 0 1 0;
@@ -107,6 +112,7 @@ shapeInit = [0 1 1 0; 0 0 1 1];
 % translations = {[0; 0], [1-cRatio; 0], [0.5*(1-cRatio); (1-cRatio)*0.5*sqrt(3)]};
 % shapeInit = [0 1 0.5; 0 0 0.5*sqrt(3)];
 
+
 % % Sierpinski triangle (self-affine)
 % ratio1st = 2/3;
 % ratio2nd = 2/3;
@@ -133,6 +139,7 @@ shapeInit = [0 1 1 0; 0 0 1 1];
 %     [0.5; 0.75]};
 % shapeInit = [0 1 1 0; 0 0 1 1];
 
+
 % % product Cantor set
 % linearMats = cell(1, 4);
 % for i = 1:4
@@ -154,6 +161,7 @@ shapeInit = [0 1 1 0; 0 0 1 1];
 % translations = {[0; 0], [0.75; 0], [0.75; 0.75], [0; 0.75], [0.25; 0.25]};
 % shapeInit = [0 1 1 0; 0 0 1 1];
 
+
 %% Error handling
 isCompactible = false;
 
@@ -165,8 +173,12 @@ if ~isCompactible
     error('Illegal settings. Dimensions of the parameters does not match!')
 end
 
+% generate params
+spaceDim = 2;
+numInitFaces = 1;
 sizeIFS = length(linearMats);
-[~, numInitPts] = size(shapeInit);
+numInitPts = size(shapeInit, 2);
+shapeInitFaces = 1:numInitPts;
 
 %% Generate points
 ptsInit = shapeInit;
@@ -177,7 +189,7 @@ ptsTotal{1} = ptsInit;
 
 for levelNow = 1:numItrs
 
-    ptsTmp = zeros(2, sizeNow * sizeIFS);
+    ptsTmp = zeros(spaceDim, sizeNow * sizeIFS);
 
     for indexFct = 1:sizeIFS
         ptsTmp(:, (indexFct - 1) * sizeNow + 1:indexFct * sizeNow) = ...
@@ -185,39 +197,49 @@ for levelNow = 1:numItrs
     end
 
     ptsNow = ptsTmp;
-    [~, sizeNow] = size(ptsNow);
+    sizeNow = size(ptsNow, 2);
 
     ptsTotal{levelNow + 1} = ptsNow;
 end
 
 %% Plot
-xCoordPts = reshape(ptsNow(1, :), numInitPts, []);
-yCoordPts = reshape(ptsNow(2, :), numInitPts, []);
-
+numShapes = sizeNow / numInitPts;
+facesPlot = kron(ones(numShapes, 1), shapeInitFaces) + ...
+    kron((0:(numShapes - 1))' * numInitPts, ones(numInitFaces, 1));
 figure(1)
-patch(xCoordPts, yCoordPts, 'black')
+patch('Faces', facesPlot,...
+    'Vertices', ptsNow' , ...
+    'FaceColor', colorFaces, ...
+    'EdgeColor', colorEdges, ...
+    'FaceAlpha', alphaFaces)
 set(gca, 'XColor', 'none', 'YColor', 'none')
 
 if showTitle
     title(['Iteration time = ', num2str(numItrs)], 'Interpreter', 'latex');
 end
 
-if showFirstItrs && numItrs >= 3
+if showFirstItrs && numItrs >= numFirstItrs
     figure(2)
 
-    for plotposition = 1:3
-        subplot(1, 3, plotposition)
-        Xsubplotpts = reshape(ptsTotal{plotposition}(1, :), numInitPts, []);
-        Ysubplotpts = reshape(ptsTotal{plotposition}(2, :), numInitPts, []);
-        patch(Xsubplotpts, Ysubplotpts, 'black')
+    for i = 1:numFirstItrs
+        subplot(1, numFirstItrs, i)
+        sizeTmp = size(ptsTotal{i}, 2);
+        numShapesTmp = sizeTmp / numInitPts;
+        facesPlot = kron(ones(numShapesTmp, 1), shapeInitFaces) + ...
+            kron((0:(numShapesTmp - 1))' * numInitPts, ones(numInitFaces, 1));
+        patch('Faces', facesPlot, ...
+            'Vertices', ptsTotal{i}', ...
+            'FaceColor', colorFaces, ...
+            'EdgeColor', colorEdges, ...
+            'FaceAlpha', alphaFaces)
         set(gca, 'XColor', 'none', 'YColor', 'none')
-        % title(['Iteration time = ', num2str(plotposition-1)], 'Interpreter', 'latex');
+        % title(['Iteration time = ', num2str(i-1)], 'Interpreter', 'latex');
     end
 
 end
 
 %% Show param
 countPtsTotal = sizeNow;
-[~, countShapesTotal] = size(xCoordPts);
+countShapesTotal = numShapes;
 tableResults = table(countPtsTotal, countShapesTotal);
 disp(tableResults)
