@@ -5,15 +5,15 @@ tic
 
 %% settings
 % IFS linear parts
-linearMats = {diag([1/6, 1/4, 1/3]),...
-              diag([1/2, 1/2, 1/3]),...
-              diag([1/3, 1/4, 2/3]),...
-              diag([1/2, 1/4, 1/3])};
+linearMats = {diag([1/6, 1/4, 1/3]), ...
+        diag([1/2, 1/2, 1/3]), ...
+            diag([1/3, 1/4, 2/3]), ...
+            diag([1/2, 1/4, 1/3])};
 
 % IFS translations
-translations = {[0 0 0]',...
-                [1/6 1/4 0]',...
-                [2/3, 3/4, 1/3]',...
+translations = {[0 0 0]', ...
+            [1/6 1/4 0]', ...
+                [2/3, 3/4, 1/3]', ...
                 [1/6, 0, 0]'};
 
 % initial polyhedron for iteration
@@ -44,7 +44,6 @@ colorEdges = 'w'; % 'none'
 % shapeInit = [0 0 0; 1 0 0; 1 1 0; 0 1 0; 0 0 1; 1 0 1; 1 1 1; 0 1 1]';
 % shapeInitFaces = [4 8 5 1; 1 5 6 2; 2 6 7 3; 3 7 8 4; 5 8 7 6; 1 4 3 2];
 
-
 % % Sierpinski-Menger sponge
 % ratio = 1/3;
 % linearMats = cell(20, 1);
@@ -64,7 +63,6 @@ colorEdges = 'w'; % 'none'
 % translations = mat2cell(translations', [3], ones(20, 1));
 % shapeInit = [0 0 0; 1 0 0; 1 1 0; 0 1 0; 0 0 1; 1 0 1; 1 1 1; 0 1 1]';
 % shapeInitFaces = [4 8 5 1; 1 5 6 2; 2 6 7 3; 3 7 8 4; 5 8 7 6; 1 4 3 2];
-
 
 % % Baranski menger
 % linearMats = {diag([1/6, 1/4, 1/3]),...
@@ -90,7 +88,6 @@ colorEdges = 'w'; % 'none'
 %     [1/4, sqrt(3)/12, sqrt(6)/6]'};
 % shapeInit = [0 0 0; 1 0 0; 1/2 sqrt(3)/2 0; 1/2 1/sqrt(12) sqrt(6)/3]';
 % shapeInitFaces = [1 2 3; 1 2 4; 1 3 4; 2 3 4];
-
 
 %% Error handling
 isCompactible = false;
@@ -149,6 +146,7 @@ end
 
 if showFirstItrs && numItrs >= numFirstItrs
     figure(2)
+
     for i = 1:numFirstItrs
         subplot(1, numFirstItrs, i)
         sizeTmp = size(ptsTotal{i}, 2);
@@ -164,6 +162,7 @@ if showFirstItrs && numItrs >= numFirstItrs
         set(gca, 'XColor', 'none', 'YColor', 'none', 'ZColor', 'none')
         % title(['Iteration time = ', num2str(i-1)], 'Interpreter', 'latex');
     end
+
 end
 
 %% Show param

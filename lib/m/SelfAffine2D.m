@@ -6,21 +6,21 @@ tic
 %% settings
 % IFS linear parts
 linearMats = {[0.25 0; 0 0.25], ...
-              [0.25 0; 0 0.25], ...
-              [0.25 0; 0 0.25], ...
-              [0.25 0; 0 0.25], ...
-              [0.5 0; 0 0.5]};
+        [0.25 0; 0 0.25], ...
+            [0.25 0; 0 0.25], ...
+            [0.25 0; 0 0.25], ...
+            [0.5 0; 0 0.5]};
 
 % IFS translations
 translations = {[0; 0], ...
-                [0.75; 0], ...
+            [0.75; 0], ...
                 [0.75; 0.75], ...
                 [0; 0.75], ...
                 [0.25; 0.25]};
 
 % initial polygon for iteration
 shapeInit = [0 1 1 0;
-             0 0 1 1];
+        0 0 1 1];
 
 numItrs = 5; % iteration time
 
@@ -43,7 +43,6 @@ colorEdges = 'none';
 % translations = {[0; 0], [cRatio; 0], [0; cRatio]};
 % shapeInit = [0 1 0; 0 0 1];
 
-
 % % Sierpinski gasket (self-affine)
 % hRatio = 0.25;
 % vRatio = 0.7;
@@ -61,7 +60,6 @@ colorEdges = 'none';
 % end
 % translations = {[0;0], [1;0], [2;0], [0;1], [2;1], [0;2], [1;2], [2;2]};
 % shapeInit = [0 3 3 0; 0 0 3 3];
-
 
 % % Bedford-McMullen carpet
 % BMh = 3; % horizontal size
@@ -81,7 +79,6 @@ colorEdges = 'none';
 %     translations{i} = [(oneCols(i) - 1) * (1 / BMh); (oneRows(i) - 1) * (1 / BMv)];
 % end
 % shapeInit = [0 1 1 0; 0 0 1 1];
-
 
 % % Baranski carpet (with possible overlaps)
 % Bar_h = [0.1 0.3 0.4 0.2]; % horizontal scales
@@ -112,7 +109,6 @@ colorEdges = 'none';
 % translations = {[0; 0], [1-cRatio; 0], [0.5*(1-cRatio); (1-cRatio)*0.5*sqrt(3)]};
 % shapeInit = [0 1 0.5; 0 0 0.5*sqrt(3)];
 
-
 % % Sierpinski triangle (self-affine)
 % ratio1st = 2/3;
 % ratio2nd = 2/3;
@@ -139,7 +135,6 @@ colorEdges = 'none';
 %     [0.5; 0.75]};
 % shapeInit = [0 1 1 0; 0 0 1 1];
 
-
 % % product Cantor set
 % linearMats = cell(1, 4);
 % for i = 1:4
@@ -160,7 +155,6 @@ colorEdges = 'none';
 %               [0.25 0; 0 0.25], [0.5 0; 0 0.5]};
 % translations = {[0; 0], [0.75; 0], [0.75; 0.75], [0; 0.75], [0.25; 0.25]};
 % shapeInit = [0 1 1 0; 0 0 1 1];
-
 
 %% Error handling
 isCompactible = false;
@@ -207,8 +201,8 @@ numShapes = sizeNow / numInitPts;
 facesPlot = kron(ones(numShapes, 1), shapeInitFaces) + ...
     kron((0:(numShapes - 1))' * numInitPts, ones(numInitFaces, 1));
 figure(1)
-patch('Faces', facesPlot,...
-    'Vertices', ptsNow' , ...
+patch('Faces', facesPlot, ...
+    'Vertices', ptsNow', ...
     'FaceColor', colorFaces, ...
     'EdgeColor', colorEdges, ...
     'FaceAlpha', alphaFaces)

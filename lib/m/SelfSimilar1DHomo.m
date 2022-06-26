@@ -29,7 +29,6 @@ thickness = 30;
 % trans = [0, 2/3];
 % intervalInit = [0, 1];
 
-
 % % lambda Cantor set
 % numMaps = 3;
 % ratio = 1/3;
@@ -37,13 +36,11 @@ thickness = 30;
 % trans = [0, 2/3, lambda / 3];
 % intervalInit = [0, 1];
 
-
 % % Bernoulli convolutions
 % numMaps = 2;
 % ratio = 0.4;
 % trans = [0, 1 - ratio];
 % intervalInit = [0, 1];
-
 
 % % an example
 % numMaps = 5;
@@ -54,9 +51,11 @@ thickness = 30;
 
 %% prepare params & error handling
 isCompact = false;
+
 if numMaps == length(trans)
     isCompact = true;
 end
+
 if ~isCompact
     error('Illegal settings. Dimensions of the parameters does not match!')
 end
@@ -81,7 +80,7 @@ for levelNow = 1:numItrs
 end
 
 %% plot
-lenBasic = ratio ^ numItrs * lenInit;
+lenBasic = ratio^numItrs * lenInit;
 ptsDiff = diff(ptsNow);
 indexGaps = ptsDiff > lenBasic;
 ptsLeft = ptsNow([true indexGaps]);
@@ -89,7 +88,7 @@ numSegments = length(ptsLeft);
 ptsRight = [ptsNow([false, indexGaps]) - ptsDiff(indexGaps), ptsNow(end)] + lenBasic;
 
 figure(1)
-plot([ptsLeft; ptsRight],...
+plot([ptsLeft; ptsRight], ...
     zeros(2, numSegments), ...
     color, "LineWidth", thickness)
 set(gca, 'XColor', 'none', 'YColor', 'none')
@@ -100,27 +99,30 @@ end
 
 if showFirstItrs && numItrs + 1 >= numFirstItrs
     figure(2)
+
     for i = 1:numFirstItrs
-        lenBasicTmp = ratio ^ (i-1) * lenInit;
+        lenBasicTmp = ratio^(i - 1) * lenInit;
         ptsDiffTmp = diff(ptsTotal{i});
         indexGapsTmp = ptsDiffTmp > lenBasicTmp;
         ptsLeftTmp = ptsTotal{i}([true indexGapsTmp]);
         numSegmentsTmp = length(ptsLeftTmp);
-        ptsRightTmp = [ptsTotal{i}([false, indexGapsTmp]) - ptsDiffTmp(indexGapsTmp),...
-            ptsTotal{i}(end)] + lenBasicTmp;
-        plot([ptsLeftTmp; ptsRightTmp],...
+        ptsRightTmp = [ptsTotal{i}([false, indexGapsTmp]) - ptsDiffTmp(indexGapsTmp), ...
+                                    ptsTotal{i}(end)] + lenBasicTmp;
+        plot([ptsLeftTmp; ptsRightTmp], ...
             zeros(2, numSegmentsTmp) - i, ...
             color, "LineWidth", thickness)
         hold on
     end
+
     hold off
     set(gca, 'XColor', 'none', 'YColor', 'none', 'ZColor', 'none')
+
     if showTitle
-        title(['Iteration time = ', num2str(numFirstItrs - 1 )], 'Interpreter', 'latex');
+        title(['Iteration time = ', num2str(numFirstItrs - 1)], 'Interpreter', 'latex');
     end
+
     ylim([- numFirstItrs - 0.5 * thickness / 50, 0])
 end
-
 
 %% show param
 countPtsTotal = sizeNow;
