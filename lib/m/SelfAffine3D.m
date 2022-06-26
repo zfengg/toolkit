@@ -4,32 +4,32 @@ clc, clf, clear
 tic
 
 %% settings
-% IFS linear parts
-ratio = 1/3;
-linearMats = cell(8, 1);
-
-for i = 1:8
-    linearMats{i} = ratio * eye(3);
-end
+% % IFS linear parts
+linearMats = {diag([1/6, 1/4, 1/3]),...
+              diag([1/2, 1/2, 1/3]),...
+              diag([1/3, 1/4, 2/3]),...
+              diag([1/2, 1/4, 1/3])};
 
 % IFS translations
-translations = {[0 0 0]', [0 2/3 0]', [2/3, 2/3, 0]', [2/3, 0, 0]', ...
-            [0 0 2/3]', [0 2/3 2/3]', [2/3, 2/3, 2/3]', [2/3, 0, 2/3]'};
+translations = {[0 0 0]',...
+                [1/6 1/4 0]',...
+                [2/3, 3/4, 1/3]',...
+                [1/6, 0, 0]'};
 
 % initial polygon for iteration
 shapeInit = [0 0 0; 1 0 0; 1 1 0; 0 1 0; 0 0 1; 1 0 1; 1 1 1; 0 1 1]';
 shapeInitFaces = [4 8 5 1; 1 5 6 2; 2 6 7 3; 3 7 8 4; 5 8 7 6; 1 4 3 2];
 
 % iteration time
-numItrs = 4;
+numItrs = 8;
 
 % plot settings
 spaceDim = 3;
 showTitle = true;
 showFirstItrs = false;
-alphaPlot = 1;
+alphaPlot = 0.6;
 colorPlot = 'k';
-colorEdge = 'k'; % 'none'
+colorEdge = 'w'; % 'none'
 
 %% Examples
 % ---------------------------------- sponges --------------------------------- %
@@ -64,6 +64,20 @@ colorEdge = 'k'; % 'none'
 % translations = mat2cell(translations', [3], ones(20, 1));
 % shapeInit = [0 0 0; 1 0 0; 1 1 0; 0 1 0; 0 0 1; 1 0 1; 1 1 1; 0 1 1]';
 % shapeInitFaces = [4 8 5 1; 1 5 6 2; 2 6 7 3; 3 7 8 4; 5 8 7 6; 1 4 3 2];
+
+
+% % Baranski menger
+% linearMats = {diag([1/6, 1/4, 1/3]),...
+%               diag([1/2, 1/2, 1/3]),...
+%               diag([1/3, 1/4, 2/3]),...
+%               diag([1/2, 1/4, 1/3])};
+% translations = {[0 0 0]',...
+%                 [1/6 1/4 0]',...
+%                 [2/3, 3/4, 1/3]',...
+%                 [1/6, 0, 0]'};
+% shapeInit = [0 0 0; 1 0 0; 1 1 0; 0 1 0; 0 0 1; 1 0 1; 1 1 1; 0 1 1]';
+% shapeInitFaces = [4 8 5 1; 1 5 6 2; 2 6 7 3; 3 7 8 4; 5 8 7 6; 1 4 3 2];
+
 
 %% Error handling
 isCompactible = false;
