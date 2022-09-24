@@ -22,19 +22,29 @@
 %\useoutertheme{serif}
 %\usefonttheme{shadow} 	% tree
 
+
+%% headline & footline & nav symbol
 %\setbeamercolor{myheadline}{fg=white,bg=blue}
-%\setbeamertemplate{headline}
-%{%
+%\setbeamertemplate{headline}{%
 %	\leavevmode%
 %	\begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=1.125ex]{frametitle}%
-%	\centering \footnotesize\color{blue!70!green}\insertsection\par
+%	\centering \footnotesize\color{white}\insertsection\par
 %	\end{beamercolorbox}%
 %}
+\setbeamertemplate{headline}{}
 
-\beamertemplatenavigationsymbolsempty 						% Remove the navigation bar
-%\setbeamertemplate{navigation symbols}{}					% headline, symbols
-%\setbeamertemplate{footline}{}								% remove footline
-\setbeamertemplate{headline}{}								% remove headline
+\beamertemplatenavigationsymbolsempty 						% remove the navigation bar
+%\setbeamertemplate{navigation symbols}{}				% headline, symbols
+\setbeamertemplate{footline}[frame number]			% remove footline
+%\setbeamertemplate{footline}{
+%	\usebeamercolor[fg]{page number in head/foot}%
+%	\usebeamerfont{page number in head/foot}%
+%	\quad {\hhmm \tdtime} \hfill
+%	\setbeamertemplate{page number in head/foot}[framenumber]%
+%	\setbeamertemplate{page number in head/foot}[totalframenumber]
+%	\usebeamertemplate*{page number in head/foot}\kern1em\vskip2pt%
+%}
+
 
 %\setbeamertemplate{section in toc}[sections numbered]		% style of section in toc
 %\setbeamertemplate{subsection in toc}[triangle unnumbered] % style of subsection in toc, ball/square/circle/default
@@ -47,6 +57,11 @@
 %\logo{\pgfuseimage{university−logo}}
 
 %\usepackage[orientation=landscape,size=custom,width=16,height=9,scale=0.5,debug]{beamerposter} % change the size of beamer
+
+%\usepackage[font=Times,
+%			timeinterval=59,
+%			timeduration=3,
+%			timewarningfirst=90]{tdclock}
 
 % -------------------------- hyperlinks & bookmarks -------------------------- %
 \hypersetup{pdfusetitle,
@@ -141,10 +156,11 @@
 % ---------------------------------------------------------------------------- %
 %                                   document                                   %
 % ---------------------------------------------------------------------------- %
+
 \begin{document}
-
-
+	
 \begin{frame}[plain]
+%	\initclock
 	\maketitle
 \end{frame}
 
@@ -154,8 +170,8 @@
 \end{frame}
 
 
-
 \section{Introduction} \label{sec:intro}
+
 \subsection{Basic Environments}
 \begin{frame}
 	\frametitle{List}
@@ -204,7 +220,6 @@
 		
 		\item \citeauthor{Erdoes1939}
 	\end{itemize}
-
 	
 \end{frame}
 
