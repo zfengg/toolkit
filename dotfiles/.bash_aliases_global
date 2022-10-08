@@ -3,6 +3,7 @@
 export GITHUB=$(dirname $TOOLKIT)
 alias cdtoolkit="cd $TOOLKIT"
 alias cdgh="cd $GITHUB"
+export PATH="$TOOLKIT/bin:$PATH"
 
 # shortcuts
 alias bashrc='vim ~/.bashrc'
