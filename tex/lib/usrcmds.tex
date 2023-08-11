@@ -1,28 +1,28 @@
-% cali
-\newcommand{\calF}{\mathcal{F}}
+% cali characters
+\newcommand{\calA}{\mathcal{A}}
 \newcommand{\calB}{\mathcal{B}}
-\newcommand{\calP}{\mathcal{P}}
-\newcommand{\calT}{\mathcal{T}}
 \newcommand{\calD}{\mathcal{D}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calG}{\mathcal{G}}
+\newcommand{\calI}{\mathcal{I}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calP}{\mathcal{P}}
 \newcommand{\calQ}{\mathcal{Q}}
 \newcommand{\calR}{\mathcal{R}}
-\newcommand{\calM}{\mathcal{M}}
-\newcommand{\calL}{\mathcal{L}}
-\newcommand{\calI}{\mathcal{I}}
-\newcommand{\calG}{\mathcal{G}}
+\newcommand{\calT}{\mathcal{T}}
 \newcommand{\calW}{\mathcal{W}}
-\newcommand{\calH}{\mathcal{H}}
-% scurf
-\newcommand{\scrB}{\mathscr{B}}
-\newcommand{\scrD}{\mathscr{D}}
-\newcommand{\scrP}{\mathscr{P}}
+% scurf characters
 \newcommand{\scrA}{\mathscr{A}}
-\newcommand{\scrE}{\mathscr{E}}
+\newcommand{\scrB}{\mathscr{B}}
 \newcommand{\scrC}{\mathscr{C}}
-\newcommand{\scrT}{\mathscr{T}}
-\newcommand{\scrQ}{\mathscr{Q}}
+\newcommand{\scrD}{\mathscr{D}}
+\newcommand{\scrE}{\mathscr{E}}
 \newcommand{\scrF}{\mathscr{F}}
 \newcommand{\scrG}{\mathscr{G}}
+\newcommand{\scrP}{\mathscr{P}}
+\newcommand{\scrQ}{\mathscr{Q}}
+\newcommand{\scrT}{\mathscr{T}}
 \newcommand{\scrW}{\mathscr{W}}
 % blackboad characters
 \newcommand{\bbQ}{\mathbb{Q}}
@@ -32,27 +32,25 @@
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\bbP}{\mathbb{P}}
 \newcommand{\bbT}{\mathbb{T}}
-\newcommand{\bbI}{\mathbb{I}}
-% frak
+% frak characters
 \newcommand{\frX}{\mathfrak{X}}
-% rome
+% rome characters
 \newcommand{\rmN}{\mathrm{N}}
 \newcommand{\rmR}{\mathrm{R}}
-% operators
+% math operators
 \DeclareMathOperator*{\Lim}{Lim}
 \DeclareMathOperator*{\llim}{\underline{lim}}
 \DeclareMathOperator*{\ulim}{\overline{lim}}
 \DeclareMathOperator*{\essinf}{ess\,inf}
 \DeclareMathOperator*{\esssup}{ess\,sup}
-\DeclareMathOperator*{\intersect}{\cap}
-\DeclareMathOperator*{\Intersect}{\bigcap}
+\DeclareMathOperator*{\intxn}{\cap}
+\DeclareMathOperator*{\Intxn}{\bigcap}
 \DeclareMathOperator*{\union}{\cup}
 \DeclareMathOperator*{\Union}{\bigcup}
 \DeclareMathOperator{\ex}{ex}
 \DeclareMathOperator{\co}{co}
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\supp}{supp}
-\DeclareMathOperator{\spt}{spt}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\Exp}{Exp}
 \DeclareMathOperator{\Dim}{Dim}
@@ -65,19 +63,24 @@
 \providecommand{\Abs}[1]{\left\lvert#1\right\rvert}
 \providecommand{\norm}[2][]{\lVert#2\rVert_{#1}}
 \providecommand{\Norm}[2][]{\left\lVert#2\right\rVert_{#1}}
+\newcommand{\ndiml}[1][n]{$#1$\nobreakdash-dim}
+\newcommand{\padic}{$p$\nobreakdash-adic}
+\newcommand{\kOrder}[1]{$#1$\nobreakdash-order}
 \newcommand{\mDash}[2]{$#1$\nobreakdash-#2}
 \newcommand{\euclid}[1][d]{\mathbb{R}^{#1}}
 \newcommand{\innp}[2]{\langle #1, #2 \rangle}
 \newcommand{\pairing}[2]{\left(#1, #2\right)}
 \newcommand{\oneOver}[1]{\frac{1}{#1}}
-\newcommand{\energy}[2][s]{I_{#1}(#2)}
-\newcommand{\capacity}[2][s]{g_{#1}(#2)}
+\newcommand{\aew}[1]{#1\nobreakdash-a.e.}
 \newcommand{\wt}[1]{\widetilde{#1}}
 \newcommand{\wh}[1]{\widehat{#1}}
 \newcommand{\cl}[1]{\overline{#1}}
-\newcommand{\ol}[1]{\overline{#1}}
 \newcommand{\ul}[1]{\underline{#1}}
-\newcommand{\aew}[1]{#1\nobreakdash-a.e.}
+\newcommand{\ol}[1]{\overline{#1}}
+% texts in math env
+\newcommand{\mFor}{\quad\text{for }}
+\newcommand{\mAnd}{\quad\text{ and }\quad}
+\newcommand{\mForall}{\quad\text{for all }}
 % dimensions
 \newcommand{\dimH}{\dim_{\mathrm{H}}}
 \newcommand{\dimP}{\dim_{\mathrm{P}}}
@@ -108,3 +111,8 @@
 \newcommand{\Pack}[1]{\mathcal{P}^{#1}}
 \newcommand{\PackP}[1]{\mathcal{P}^{#1}_{0}}
 \newcommand{\PackC}[2]{\mathcal{P}^{#1}_{#2}}
+% quantities
+\newcommand{\energy}[2][s]{I_{#1}(#2)}
+\newcommand{\capacity}[2][s]{g_{#1}(#2)}
+% misc
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}

@@ -133,7 +133,7 @@ texrmbak() {
 	/usr/bin/find $1 -name '*.bak*' -exec rm {} \;
 }
 
-mkmytex() {
+mktex() {
 	# create a .tex from myarticle.tex
 	local default3=$(pwd)
 	local default2=$(basename $default3)
@@ -153,6 +153,14 @@ mkmytex() {
 				fi
 				# update .bib with global .bib
 				cp $TOOLKIT/tex/bib/global.$extTmp ${3:-$default3}/${2:-$default2}.$extTmp
+			fi
+			if [[ "$extTmp" = 'tex' ]]; then
+				# insert the user commands
+				if [ `uname` = Darwin ]; then
+				gsed -i -e "/% -------------------------------- fast-typing ------------------------------- %/r $TOOLKIT/tex/lib/usrcmds.tex" ${3:-$default3}/${2:-$default2}.tex
+				else
+				sed -i -e "/% -------------------------------- fast-typing ------------------------------- %/r $TOOLKIT/tex/lib/usrcmds.tex" ${3:-$default3}/${2:-$default2}.tex
+				fi
 			fi
 		fi
 	done
