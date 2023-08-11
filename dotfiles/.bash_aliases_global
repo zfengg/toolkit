@@ -28,6 +28,7 @@ alias gbc='git add -A && git commit -m "bored commit"'
 alias gupignore='git rm -r --cached . ; git add . &&  git commit -m "update .gitignore"'
 
 # vim
+alias v='vim'
 alias vimrc='vim ~/.vimrc'
 alias vimconf='vim $TOOLKIT/dotfiles/vim/my_configs.vim'
 alias cdvimrun='cd ~/.vim_runtime'
