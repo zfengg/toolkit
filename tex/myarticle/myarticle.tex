@@ -34,15 +34,16 @@
 \usepackage{tikz-cd} % lib for powerful commutative diagrams
 
 % ---------------------------------- layout ---------------------------------- %
-\textheight 8.in
-\textwidth 6.in
-%\topmargin -.25in
-%\oddsidemargin .25in
-%\evensidemargin .25in
-\footskip 4.ex
-\parskip 1.ex
-\renewcommand{\baselinestretch}{1.0858}
-\usepackage[a4paper,margin=1in]{geometry}
+\footskip 5.ex
+\parskip 0.9 ex
+\renewcommand{\baselinestretch}{1.1}
+\usepackage[a4paper,%
+			margin=1in,%
+			top=1.2in,
+			bottom=1.2in,
+%			textwidth=15cm,%
+%			textheight=22cm,%
+			]{geometry}
 %\usepackage{fullpage}	% fit more on a page without having to set margins manually
 
 % ----------------------------- fonts and colors ----------------------------- %
@@ -107,7 +108,7 @@
 \usepackage{aliascnt} % for the correct \autoref
 \usepackage[pdfusetitle,
 		bookmarks=true,
-		pagebackref,
+		pagebackref=false,
 		colorlinks,
 		linkcolor=blue,
 		citecolor=blue,
@@ -162,10 +163,11 @@
 \numberwithin{equation}{section} % \numberwithin also works for other counters
 
 % --------------------------------- pagestyle -------------------------------- %
-%\pagestyle{plain}
+\pagestyle{plain}
 
 % ---------------------------------- autoref --------------------------------- %
 \renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Section}
 %\renewcommand{\equationautorefname}{Equation}
 
 % ------------------------------------ misc ----------------------------------- %
