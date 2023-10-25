@@ -14,8 +14,8 @@ datename() {
 alias htop='sudo htop'
 
 # bin for tex workflow 
-alias texstudio="/opt/homebrew/Caskroom/texstudio/4.2.2/texstudio.app/Contents/MacOS/texstudio"
-alias jabref="/opt/homebrew/Caskroom/jabref/5.7/JabRef.app/Contents/MacOS/JabRef"
+alias texstudio="/opt/homebrew/Caskroom/texstudio/4.6.3/texstudio.app/Contents/MacOS/texstudio"
+alias jabref="/opt/homebrew/Caskroom/jabref/5.11/JabRef.app/Contents/MacOS/JabRef"
 alias upbst="sudo cp -R $TOOLKIT/tex/bst/ /usr/local/texlive/2021/texmf-dist/bibtex/bst/mybst && texhash"
 alias matlab="/Applications/MATLAB_R2021b.app/bin/matlab"
 
