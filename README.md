@@ -1,7 +1,7 @@
 # toolkit
 To store dotfiles, templates...
 
-:wrench: WIP...
+:wrench: work in progress
 
 </details>
 

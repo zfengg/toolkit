@@ -212,3 +212,6 @@ runm() {
 
 	matlab -nosplash -nodesktop -r "run('$1');"
 }
+
+# autojump with z
+. /c/Users/zfeng/github/z/z.sh
