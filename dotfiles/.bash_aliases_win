@@ -27,3 +27,6 @@ texindent() {
 export PATH="/c/Users/zfeng/scoop/shims:$PATH"
 export PATH="/c/Users/zfeng/scoop/apps/python/current:$PATH"
 export PATH="/c/Users/zfeng/scoop/apps/python/current/Scripts:$PATH"
+
+# autojump with z
+. /c/Users/zfeng/github/z/z.sh
