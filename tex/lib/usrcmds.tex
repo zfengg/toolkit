@@ -1,6 +1,7 @@
 % cali characters
 \newcommand{\calA}{\mathcal{A}}
 \newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C}}
 \newcommand{\calD}{\mathcal{D}}
 \newcommand{\calF}{\mathcal{F}}
 \newcommand{\calG}{\mathcal{G}}
@@ -63,6 +64,23 @@
 \DeclareMathOperator{\Dim}{Dim}
 \DeclareMathOperator{\ldim}{\underline{\dim}}
 \DeclareMathOperator{\udim}{\overline{\dim}}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\dist}{dist}
+% entropy related
+\newcommand{\Hof}[1]{H\!\left(#1\right)}
+\newcommand{\Pof}[1]{\bfP\!\left\{#1\right\}}
+\newcommand{\Eof}[2][]{\bfE_{#1}\!\left(#2\right)}
+\newcommand{\Iof}[2][]{\bfI_{#1}\!\left(#1\right)}
+\newcommand{\bbPof}[2][]{\bbP_{#1}\!\left\{#2\right\}}
+\newcommand{\bbEof}[2][]{\bbE_{#1}\!\left(#2\right)}
+% classic groups
+\newcommand{\GLR}[1][d]{\mathrm{GL}_{#1}(\mathbb{R})}
+\newcommand{\GLC}[1][d]{\mathrm{GL}_{#1}(\mathbb{C})}
+\newcommand{\Ogrp}[1]{\mathrm{O}_{#1}(\mathbb{R})}
+\newcommand{\Ugrp}[1]{\mathrm{U}_{#1}(\mathbb{C})}
+\newcommand{\MatR}[1][2d]{\mathrm{M}_{#1}(\mathbb{R})}
+\newcommand{\MatC}[1][d]{\mathrm{M}_{#1}(\mathbb{C})}
 % commonly used
 \newcommand{\Ndash}{\nobreakdash--}
 \newcommand{\sigmaAlg}{$\sigma$\nobreakdash-algebra }
@@ -84,10 +102,13 @@
 \newcommand{\cl}[1]{\overline{#1}}
 \newcommand{\ul}[1]{\underline{#1}}
 \newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\bigO}[1]{O\!\left(#1\right)}
+\newcommand{\smlO}[1]{o\!\left(#1\right)}
 % texts in math env
 \newcommand{\mFor}{\quad\text{for }}
 \newcommand{\mAnd}{\quad\text{ and }\quad}
 \newcommand{\mForall}{\quad\text{for all }}
+\newcommand{\by}[1]{\text{(by #1)}}
 % dimensions
 \newcommand{\dimH}{\dim_{\mathrm{H}}}
 \newcommand{\dimP}{\dim_{\mathrm{P}}}
@@ -118,9 +139,5 @@
 \newcommand{\Pack}[1]{\mathcal{P}^{#1}}
 \newcommand{\PackP}[1]{\mathcal{P}^{#1}_{0}}
 \newcommand{\PackC}[2]{\mathcal{P}^{#1}_{#2}}
-% quantities
-\newcommand{\energy}[2][s]{I_{#1}(#2)}
-\newcommand{\capacity}[2][s]{g_{#1}(#2)}
 % misc
 \newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
-
