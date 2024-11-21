@@ -1,0 +1,223 @@
+
+
+
+A good introduction to fractal geometry is Falconer~\cite{Falconer2003}. There is \verb|smallmatrix| environment (e.g, $\big(\begin{smallmatrix}
+	a & b\\ c&d
+\end{smallmatrix}\big)$). It is recommended to use $ \dotsc, \dotsb, \dotsm, \dotsi, \dotso $ instead of $ \ldots \text{and} \cdots$. Then we test the \verb|\nobreakdash|: \padic, page 1\Ndash9, \ndiml, \ndiml[1], \sigmaAlg.
+What about a text-mode fractional: $ \tfrac{\log_{k} H}{1212} $.\\[20pt]
+Then for the \verb|\xleftarrow|:
+
+\begin{equation}\label{eq:arrow}
+	A \xleftarrow{n+\mu-1} B \xrightarrow[T]{n\pm i-1 \text{bla, bla, bla}}	C \intxn_{i\geq 1} A_{i} \Union_{k=1}^{100}\Upsilon_{k}
+\end{equation}
+\[ \Leftarrow \mspace{-18.0mu} \Rightarrow \] % 18mu=1em
+
+Compare the \verb|\choose| and \verb|\binom| : $ {n \choose k} \binom{n}{k}$. $ \abs{z}, \norm{v}, \norm[\infty]{v} $.
+
+About the user-defined math operators:
+\[ \ex(\co(A_{i})) \operatorname*{abc}_{x\to 0} \Lim_{n\to \infty}\]
+Then the \verb|mod|: $ \gcd(n,m\bmod n); \quad x \equiv y \pmod b, x \equiv y \mod c, x \equiv y \pod d $.
+
+See the following default math environments:
+
+\begin{multline}\label{eq:newton}
+	\vec{F} = m\vec{a} \\
+	\vec{F} = G \dfrac{m_{1}m_{2}}{r^{2}}
+\end{multline}
+
+\begin{subequations}\label{eq:maxwell}
+	\begin{gather}
+		\nabla\cdot \vec{E} = \varepsilon_{0}\rho \\
+		\nabla \cdot \vec{B} = 0 \\
+		\nabla \times \vec{E} = -\dfrac{\partial \vec{B}}{\partial t}\\
+		\nabla \times \vec{B} = \mu_{0}\varepsilon_{0} \vec{J} + \dfrac{\partial \vec{E}}{\partial t}
+	\end{gather}
+\end{subequations}
+
+\begin{equation}\label{eq:einstein}
+	\begin{split}
+		E& =\gamma mc^{2}
+		\\
+		\calR_{\mu\nu} - \dfrac{\calR}{2}g_{\mu\nu} + \Lambda g_{\mu\nu} & = \dfrac{8\pi G}{c^{4}} T_{\mu\nu}
+	\end{split}
+\end{equation}
+
+$\bullet$ \verb|\substack{}| and \verb|\begin{subarray}|
+	\begin{gather}
+		\Lim_{\substack{0\leq i \leq m\\ 0<j<n} } P(i,j)\\
+		\sum_{\begin{subarray}{r}
+				i\in \Lambda \\ 0<j<n
+		\end{subarray}} P(i,j)
+	\end{gather}
+	
+	$\heartsuit$ \verb|\sideset{text}{right}{symbol}|
+	
+	\[
+	a_0+\cfrac{1}{a_1+\cfrac{1}{a_2+\cfrac{1}{a_3+\cdots}}}
+	\]
+	
+	\begin{equation}
+		\sideset{_\ast^\ast}{_\ast^\ast}\prod_{n=1}^{\infty} \left.	\begin{aligned}
+			\begin{bmatrix}
+				\sideset{_\ast^\ast}{_\ast^\ast}\prod_{n=1}^{\infty} & \sum & \prod_{n=1}^{\infty} \\
+				& \ex  & \lim_{n\to \infty}
+			\end{bmatrix}
+		\end{aligned} \right \rbrace \lim_{n\to \infty} \text{Quantum Computing}
+	\end{equation}
+	
+	The \verb|\mathbf| command is commonly used to obtain bold Latin letters in math, but for most other kinds of math symbols it has no effect.
+	
+	\verb|\mid| and \verb|\mathbin{}|	:$ P(A \mid B) P(A \mathbin{\vert} B )  P(A | B)  $
+	\begin{enumerate}[(a)]
+		\item \verb|f : X\to Y| vs. \verb|f\colon X\to Y|: $ f : X\to Y $ vs. $ f\colon X\to Y $.
+		
+		\item \verb|:=| vs. \verb|\coloneqq| : $ :=  $ vs. $ \coloneqq $.
+		
+		\item $ \lbrace z : z \in \bbZ \rbrace $ vs. $ \lbrace z \colon z \in \bbZ \rbrace $.
+		
+		\item $ v_{1}, v_{2}, \dotsc,v_{n} $ vs. $ v_{1},\dotsc,v_{n} $.
+		
+		\item $ f(n) = O(n) $ vs. $ f(n) \text{ is } O(n)$ or $ f(n)\in O(n) $.
+		
+		\item $ A\setminus B $ vs. $ A\backslash B $ vs. $ A-B $.
+		
+		\item There is a \verb|\,| spacing between integrand and measure
+		\[ \int_{a}^{b} x^2 \,dx \]
+		
+		\item Use \verb|Serre et al.\ proved|: Serre et al.\ proved.
+		
+		\verb|Serre et al. proved|: Serre et al. proved.
+		
+		\item \fbox{text box} \& $ \boxed{\text{math box } \boxed{\bbR}} $.
+		
+		\item \verb|\vv{AB}| $ \vv{AB} $ vs.\ \verb|\overrightarrow{AB}|  $ \overrightarrow{AB} $
+		
+		\item \verb|if...| statements: \newcounter{num}
+		\begin{itemize}
+			\item \verb|\ifnum\value{num}>n {A} \else {B}\fi|:
+			\ifnum\value{num}=0 {A} \else {B}\fi
+			
+			\item \verb|\ifodd\value{num} {A}\else {B}\fi|: \ifodd\value{num} {A} \else {B}\fi
+			
+			\item \verb|\ifthenelse{\(\NOT 4<2 \OR 4>11\)\AND\isodd{4}}{A}{B}|: \ifthenelse{\(\NOT 4<2 \OR 4>11\)\AND\isodd{4}}{A}{B}
+		\end{itemize}
+		
+		\item \verb|loops|:
+		
+		\begin{itemize}
+			\item \verb|@for|:
+			\makeatletter
+			\@for\sun:={rising,setting}\do{The sun is \sun. }
+			\makeatother
+			
+			
+			
+			\item \verb|@whilenum|:
+			\newcounter{int}
+			\setcounter{int}{0}
+			\makeatletter
+			\@whilenum\value{int}<20\do{\stepcounter{int}\ifthenelse{\isodd{\value{int}}}{\theint\text{ }\symbol{\value{int}}\quad}{}}
+			\makeatother
+			
+			\item \verb|\loop...\repeat|:
+			\setcounter{int}{1}
+			\loop
+			\theint
+			\text{ }\addtocounter{int}{1}\fnsymbol{int}\quad\ifnum\value{int}<9
+			\repeat
+		\end{itemize}
+		
+	\end{enumerate}
+	
+	Soft page break with \verb*|\pagebreak|
+	\pagebreak
+	
+	
+	Here is some practical suggestions for mathematical writting.
+	\begin{enumerate}
+		\item The structures for conditional sentences: \verb|If| \ldots\verb|, then|\ldots; \verb|When|\ldots, \ldots; \verb|For| \ldots, \ldots. No \verb|Let|\ldots. \verb|Then|\ldots!
+		
+		\item Avoid using \verb|as| and \verb|for| to introduce reasons after some conclusion.
+		
+		\item \verb|Hence|, \verb|Thus|, and \verb|Therefore,| .
+		
+		\item \verb|, so| is informal and should be used when the conclusion is short.
+		
+		\item A statement that is \verb|assumed| is an axiom, and throughout to be true. Something \verb|supposed| is a hypothesis and more appropriate to introduce a case or an argument by contradition. For example, \verb|Suppose to the contrary that| and \verb|Toward a contradiction, suppose that|.
+		
+		\item No $ v $\verb|'s| or $ a_{i} $\verb|'s|.
+		
+		\item No \textit{nested} proof environments.
+		
+		\item \verb|We induct on n| vs. \verb|We use induction on n|.
+		
+		\item Prefer \verb|pairwise| to \verb|mutually|.
+		
+		\item No contractions like \verb|can't|, \verb|won't|, etc.
+		
+		\item Use \verb|\begingroup\allowdisplaybreaks ... \endgroup| to allow the large chunk of math display environments to be broken into pages.
+		
+		\item Replace \verb|$$ ... $$| with \verb|\[...\]| in \verb|sed|:
+		
+		\verb|sed '/\$\$/{:x;N;/.*\$\$ *$/!bx;s/\$\$\(.*\)\$\$ *$/\\[\1\\]/}'|
+		
+		\item Use \verb*|\emph{}| over \verb|\textit{}|
+		
+		\item More built-in letters. Hebrew letters: $ \aleph \beth \gimel $; Others: $ \nabla \wp \hbar \box \eth \iota \imath \jmath $
+		
+	\end{enumerate}
+	
+	
+	\section{Commutative diagrams}
+	
+	Arrows \verb|@>>>| \verb|@<<<| \verb|@VVV| \verb|@AAA|. Double lines: \verb|@=|. Null arrows: \verb|@|
+	\begin{equation}\label{key}
+		\begin{CD}
+			S^{{\mathcal{W}}_{\Lambda}\otimes T} @>j>> T\\
+			@|  @VV{\operatorname{End} P}V\\
+			(S\otimes T)/I  @= (Z\otimes T)/J
+		\end{CD}
+	\end{equation}
+	
+	
+	\verb|tikzcd| is the ultimate answer to a commutative diagram in \TeX.
+	\[ \begin{tikzcd}
+		A \arrow[rd] \arrow[r, "\phi"] & B \\
+		& C
+	\end{tikzcd}  \]
+	
+	
+	Hard page break with \verb*|\newpage|
+	
+	\newpage
+	
+	\section{reference \& citation}
+	Choose a \verb*|natbib| compatible \verb|\bibliographystyle|, e.g.\,\verb|abbrvnat|, \verb|plainnat|.
+	\begin{itemize}[$\cdot$]
+		\item \verb*|\cite{}|: \cite{AkiyamaEtAl2020}
+		\item \verb*|\citet{}|: \citet{AkiyamaEtAl2020}
+		\item \verb*|\citet*{}|: \citet*{AkiyamaEtAl2020}
+		\item \verb*|\citep{}|: \citep{AkiyamaEtAl2020}
+		\item \verb*|\citep*{}|: \citep*{AkiyamaEtAl2020}
+		\item \verb*|\citealt*{}|: \citealt*{AkiyamaEtAl2020}
+		\item \verb*|\citeyear{}|: \citeyear{AkiyamaEtAl2020}
+		\item \verb*|\citeauthor{}|: \citeauthor{AkiyamaEtAl2020}
+		\item \verb*|\citeauthor*{}|: \citeauthor*{AkiyamaEtAl2020}
+		\item \verb*|\cite[text]{keylist}| \cite[Theorem 1]{AkiyamaEtAl2020}
+		\item \verb*|\cite[prefix][suffix]{keylist}|: \cite[see e.g.\!][p.\,123]{AkiyamaEtAl2020}
+		\item \verb*|\citenum{}|: \citenum{AkiyamaEtAl2020}
+		\item \verb*|\citeyearpar{}|: \citeyearpar{AkiyamaEtAl2020}
+		\item \verb*|\citefullauthor{}|: \citefullauthor{AkiyamaEtAl2020}
+	\end{itemize}
+	
+	See also a book \citet*{Parry1981} and an arXiv preprint \cite{Feng2020}.
+	More multi-authors citation like \citet*{BenoistQuint2016} and \citet*{FanEtAl2002}.
+	
+	\begin{remark}
+		For the use of \verb*|natbib| and format of arXiv preprint, it is recommended to use the \verb*|.bst| files \verb*|*nat.bst| or \verb*|*natDOI.bst| at
+		
+		\href{https://github.com/zfengg/toolkit/tree/master/tex/bst}{https://github.com/zfengg/toolkit/tree/master/tex/bst}.
+		
+		Otherwise, all the other default \verb*|bst| styles suffices.
+	\end{remark}
+	
