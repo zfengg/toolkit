@@ -10,6 +10,12 @@ alias opdf='/c/Program\ Files/Adobe/Acrobat\ DC/Acrobat/Acrobat.exe'
 alias cdtex="cd $HOME/Dropbox/tex"
 alias groupay="/d/GitHub/PayGroups.jl/compiled/bin/PayGroups"
 
+# bin for tex workflow 
+alias texstudio="/c/Program\ Files/texstudio/texstudio.exe"
+alias jabref="/c/Program\ Files/JabRef/JabRef.exe"
+alias upbst="sudo cp -R $TOOLKIT/tex/bst/ /c/texlive/2024/texmf-dist/bibtex/bst/mybst && texhash"
+# alias matlab="/Applications/MATLAB_R2021b.app/bin/matlab"
+
 # python
 # alias python='/c/Users/zfeng/AppData/Local/Programs/Python/Python38/python.exe'
 # alias pip='pip3'
@@ -24,9 +30,9 @@ texindent() {
 }
 
 #
-export PATH="/c/Users/zfeng/scoop/shims:$PATH"
-export PATH="/c/Users/zfeng/scoop/apps/python/current:$PATH"
-export PATH="/c/Users/zfeng/scoop/apps/python/current/Scripts:$PATH"
+# export PATH="/c/Users/zfeng/scoop/shims:$PATH"
+# export PATH="/c/Users/zfeng/scoop/apps/python/current:$PATH"
+# export PATH="/c/Users/zfeng/scoop/apps/python/current/Scripts:$PATH"
 
 # autojump with z
-. /c/Users/zfeng/github/z/z.sh
+. /c/Users/fract/GitHub/z/z.sh
