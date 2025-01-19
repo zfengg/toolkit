@@ -13,7 +13,7 @@ alias groupay="/d/GitHub/PayGroups.jl/compiled/bin/PayGroups"
 # bin for tex workflow 
 alias texstudio="/c/Program\ Files/texstudio/texstudio.exe"
 alias jabref="/c/Program\ Files/JabRef/JabRef.exe"
-alias upbst="sudo cp -R $TOOLKIT/tex/bst/ /c/texlive/2024/texmf-dist/bibtex/bst/mybst && texhash"
+alias upbst="cp -R $TOOLKIT/tex/bst/ /c/Users/fract/AppData/Local/Programs/MiKTeX/bibtex/bst/mybst && texhash"
 # alias matlab="/Applications/MATLAB_R2021b.app/bin/matlab"
 
 # python
