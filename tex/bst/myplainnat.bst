@@ -299,7 +299,7 @@ FUNCTION {format.title}
 FUNCTION {format.eprint}
 { eprint empty$
     { "" }
-    { "{\em arXiv preprint \burlalt{arXiv:" eprint * "}{http://arxiv.org/abs/" * eprint * "}}" * }
+    { "{\em arXiv preprint \href{http://arxiv.org/abs/" eprint * "}{arXiv:" * eprint * "}}" * }
   if$
 }
 
@@ -954,6 +954,19 @@ FUNCTION {misc}
   empty.misc.check
 }
 
+% { output.bibitem
+  % format.authors "author" output.check
+  % author format.key output
+  % new.block
+  % format.title "title" output.check
+  % new.block
+  % format.eprint output
+  % new.block
+  % note output
+  % fin.entry
+% }
+
+
 FUNCTION {phdthesis}
 { output.bibitem
   format.authors "author" output.check
@@ -1436,26 +1449,26 @@ FUNCTION {begin.bib}
   if$
   "\begin{thebibliography}{" number.label int.to.str$ * "}" *
   write$ newline$
-  "\providecommand{\natexlab}[1]{#1}"
-  write$ newline$
- "\expandafter\ifx\csname url\endcsname\relax"
-  write$ newline$
-  "  \def\url#1{\texttt{#1}}\fi"
-  write$ newline$
-  "\expandafter\ifx\csname doi\endcsname\relax"
-  write$ newline$
-  "  \def\doi#1{\burlalt{doi:#1}{http://dx.doi.org/#1}}\fi"
-  write$ newline$
-  "\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi"
-  write$ newline$
-  "\expandafter\ifx\csname href\endcsname\relax"
-  write$ newline$
-  "  \def\href#1#2{#2}\fi"
-  write$ newline$
-  "\expandafter\ifx\csname burlalt\endcsname\relax"
-  write$ newline$
-  "  \def\burlalt#1#2{\href{#2}{#1}}\fi"
-  write$ newline$
+  % "\providecommand{\natexlab}[1]{#1}"
+  % write$ newline$
+  % "\expandafter\ifx\csname url\endcsname\relax"
+  % write$ newline$
+  % "  \def\url#1{\texttt{#1}}\fi"
+  % write$ newline$
+  % "\expandafter\ifx\csname doi\endcsname\relax"
+  % write$ newline$
+  % "  \def\doi#1{\burlalt{doi:#1}{http://dx.doi.org/#1}}\fi"
+  % write$ newline$
+  % "\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi"
+  % write$ newline$
+  % "\expandafter\ifx\csname href\endcsname\relax"
+  % write$ newline$
+  % "  \def\href#1#2{#2}\fi"
+  % write$ newline$
+  % "\expandafter\ifx\csname burlalt\endcsname\relax"
+  % write$ newline$
+  % "  \def\burlalt#1#2{\href{#2}{#1}}\fi"
+  % write$ newline$
 }
 
 EXECUTE {begin.bib}
