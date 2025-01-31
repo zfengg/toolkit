@@ -13,6 +13,7 @@
 \newcommand{\calQ}{\mathcal{Q}}
 \newcommand{\calR}{\mathcal{R}}
 \newcommand{\calT}{\mathcal{T}}
+\newcommand{\calU}{\mathcal{U}}
 \newcommand{\calW}{\mathcal{W}}
 % scurf characters
 \newcommand{\scrA}{\mathscr{A}}
@@ -36,16 +37,21 @@
 \newcommand{\bbP}{\mathbb{P}}
 \newcommand{\bbT}{\mathbb{T}}
 % frak characters
-\newcommand{\frX}{\mathfrak{X}}
+\newcommand{\frkX}{\mathfrak{X}}
 % rome characters
 \newcommand{\rmN}{\mathrm{N}}
 \newcommand{\rmR}{\mathrm{R}}
+\newcommand{\diff}{\mathrm{d}}
 % bold chars
-\newcommand{\bfT}{\mathbf{T}}
 \newcommand{\bfa}{\mathbf{a}}
-\newcommand{\bfP}{\mathbf{P}}
+\newcommand{\bfr}{\mathbf{r}}
+\newcommand{\bft}{\mathbf{t}}
 \newcommand{\bfE}{\mathbf{E}}
 \newcommand{\bfI}{\mathbf{I}}
+\newcommand{\bfP}{\mathbf{P}}
+\newcommand{\bfQ}{\mathbf{Q}}
+\newcommand{\bfT}{\mathbf{T}}
+
 % math operators
 \DeclareMathOperator*{\Lim}{Lim}
 \DeclareMathOperator*{\llim}{\underline{lim}}
@@ -69,6 +75,7 @@
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\spn}{span}
 % entropy related
 \newcommand{\Hof}[1]{H\!\left(#1\right)}
 \newcommand{\Pof}[1]{\bfP\!\left\{#1\right\}}
@@ -84,21 +91,17 @@
 \newcommand{\MatR}[1][2d]{\mathrm{M}_{#1}(\mathbb{R})}
 \newcommand{\MatC}[1][d]{\mathrm{M}_{#1}(\mathbb{C})}
 % commonly used
-\newcommand{\Ndash}{\nobreakdash--}
-\newcommand{\sigmaAlg}{$\sigma$\nobreakdash-algebra }
 \providecommand{\abs}[1]{\lvert#1\rvert}
 \providecommand{\Abs}[1]{\left\lvert#1\right\rvert}
 \providecommand{\norm}[2][]{\lVert#2\rVert_{#1}}
 \providecommand{\Norm}[2][]{\left\lVert#2\right\rVert_{#1}}
-\newcommand{\ndiml}[1][n]{$#1$\nobreakdash-dim}
-\newcommand{\padic}{$p$\nobreakdash-adic}
-\newcommand{\kOrder}[1]{$#1$\nobreakdash-order}
-\newcommand{\mDash}[2]{$#1$\nobreakdash-#2}
+\providecommand{\flr}[1]{\lfloor#1\rfloor}
+\providecommand{\Flr}[1]{\left\lfloor#1\right\rfloor}
+\providecommand{\ceil}[1]{\lceil#1\rceil}
+\providecommand{\Ceil}[1]{\left\lceil#1\right\rceil}
 \newcommand{\euclid}[1][d]{\mathbb{R}^{#1}}
 \newcommand{\innp}[2]{\langle #1, #2 \rangle}
 \newcommand{\pairing}[2]{\left(#1, #2\right)}
-\newcommand{\oneOver}[1]{\frac{1}{#1}}
-\newcommand{\aew}[1]{#1\nobreakdash-a.e.}
 \newcommand{\aev}{\text{-a.e.\@ }}
 \newcommand{\wt}[1]{\widetilde{#1}}
 \newcommand{\wh}[1]{\widehat{#1}}
@@ -107,7 +110,8 @@
 \newcommand{\ol}[1]{\overline{#1}}
 \newcommand{\bigO}[1]{O\!\left(#1\right)}
 \newcommand{\smlO}[1]{o\!\left(#1\right)}
-\newcommand{\indicator}[1]{\textbf{\large 1}_{#1}}
+\newcommand{\indctr}[1]{\textbf{\large 1}_{#1}}
+\newcommand{\Ball}[2]{B\!\left(#1,#2\right)}
 % texts in math env
 \newcommand{\mFor}{\quad\text{for }}
 \newcommand{\mAnd}{\quad\text{ and }\quad}
