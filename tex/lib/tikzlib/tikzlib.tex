@@ -1,0 +1,499 @@
+% myarticle.tex @ https://github.com/zfengg/toolkit/tree/master/tex/myarticle
+%
+% 	A simple tex template based on amsmath-userguide for daily tasks.
+%
+% Copyright: Zhou Feng @ 08/11/2020
+% ---------------------------------------------------------------------------- %
+%                                   preamble                                   %
+% ---------------------------------------------------------------------------- %
+\documentclass[a4paper,11pt]{amsart}
+% leqno; reqno for changing the position of number of equations
+
+% --------------------------------- pacakges --------------------------------- %
+\usepackage{amsmath}
+\usepackage{amsfonts}	% \mathscr \mathbb \mathfrak
+\usepackage{amssymb}  	% special symbols
+\usepackage{mathrsfs}
+\usepackage{mathtools}	% e.g., \coloneqq
+\usepackage{savesym}
+\usepackage{esvect}		% \vv
+\usepackage{ifthen}		% \ifthenelse
+\usepackage{color} 	 	% colors
+\usepackage{graphicx}  	% include figures
+\usepackage{caption}  	% caption dealing
+\usepackage{amscd} 	  	% basic commutative diagrams; complex ones: kuvio, XY-pic
+\usepackage{float} 	  	% table figure positioning
+%\usepackage{booktabs}	% thick rules
+
+% -------------------------- packages with settings -------------------------- %
+% modify lists
+\usepackage[shortlabels,inline]{enumitem} % smart enumeration
+%\newlist{inlinelist}{enumerate*}{1}
+% plot diagrams
+\usepackage{tikz}    % draw general diagrams
+\usepackage{tikz-cd} % lib for powerful commutative diagrams
+\usetikzlibrary{arrows,shapes,bending}
+
+% ---------------------------------- layout ---------------------------------- %
+\footskip 5.ex
+\parskip 0.9 ex
+\renewcommand{\baselinestretch}{1.1}
+\usepackage[a4paper,%
+			margin=1in,%
+			top=1.2in,
+			bottom=1.2in,
+%			textwidth=15cm,%
+%			textheight=22cm,%
+			]{geometry}
+%\usepackage{fullpage}	% fit more on a page without having to set margins manually
+
+% ----------------------------- fonts and colors ----------------------------- %
+%\usepackage{fontspec}% Then you can use the fonts installed at your device.
+%\setmainfont{Times New Roman}
+%\setsansfont{Times New Roman}
+%\setmonofont{Times New Roman}
+%\setsansfont{[foo.ttf]} % for the fonts at this default path.
+%\usepackage{xcolor}
+%\definecolor{MSBlue}{rgb}{.204,.353,.541}
+%\definecolor{MSLightBlue}{rgb}{.31,.506,.741}
+
+% ----------------------------- header and footer ---------------------------- %
+% \usepackage{fancyhdr}
+% % def headstyles
+% \newcommand{\headstyle}{%
+% 	\fancyhead[L]{}
+% 	\fancyhead[C]{}
+% 	\fancyhead[R]{}
+% }
+% % def footstyles
+% \makeatletter
+% \newcommand{\footstyle}{%
+% 	\fancyfoot[L]{}
+% 	\fancyfoot[C]{\thepage}
+% 	\fancyfoot[R]{}
+% }
+% \newcommand{\authorfootstyle}{%
+% 	\fancyfoot[L]{}
+% 	\fancyfoot[C]{\thepage}
+% 	\fancyfoot[R]{\textit{\footnotesize Prepared by \@author}}
+% }
+% \makeatother
+% % set global pagestyle
+% \pagestyle{fancy}
+% \fancyhf{} % clear the orginal headfoot style
+% \headstyle
+% \footstyle
+% % def first-page pagestyle
+% \fancypagestyle{firstpage}{%
+% 	\fancyhf{}
+% 	\headstyle
+% 	\authorfootstyle
+% }
+% % def main pagestyle
+% \fancypagestyle{main}{%
+% 	\fancyhf{}
+% 	\headstyle
+% 	\footstyle
+% }
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{0.4pt}
+%\renewcommand{\headrule}{\rule{\textwidth}{0.4pt}}
+
+% ------------------------------ reference style ----------------------------- %
+\usepackage[numbers,sort]{natbib} 	% automatically sort the citations
+\newcommand{\seeeg}[1]{see e.g.\ #1}
+\newcommand{\seep}[1]{(see #1)}
+\newcommand{\seepeg}[1]{(see e.g.\ #1)}
+
+% -------------------------- hyperlinks & bookmarks -------------------------- %
+\usepackage{aliascnt} % for the correct \autoref
+\usepackage[pdfusetitle,
+		bookmarks=true,
+		pagebackref=false,
+		colorlinks,
+		linkcolor=black,
+		citecolor=black,
+		urlcolor=black]{hyperref}
+
+% -------------------------------- environment ------------------------------- %
+\usepackage{amsthm}
+\newtheorem{dummy}{***}[section]
+
+\theoremstyle{plain}
+\newaliascnt{theorem}{dummy}
+\newtheorem{theorem}[theorem]{Theorem}
+\aliascntresetthe{theorem}
+\providecommand*{\theoremautorefname}{Theorem}
+\newaliascnt{proposition}{dummy}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+\providecommand*{\propositionautorefname}{Proposition}
+\newaliascnt{corollary}{dummy}
+\newtheorem{corollary}[corollary]{Corollary}
+\aliascntresetthe{corollary}
+\providecommand*{\corollaryautorefname}{Corollary}
+\newaliascnt{lemma}{dummy}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+\providecommand*{\lemmaautorefname}{Lemma}
+\newaliascnt{conjecture}{dummy}
+\newtheorem{conjecture}[conjecture]{Conjecture}
+\aliascntresetthe{conjecture}
+\providecommand*{\conjectureautorefname}{Conjecture}
+
+\theoremstyle{definition}
+\newaliascnt{definition}{dummy}
+\newtheorem{definition}[definition]{Definition}
+\aliascntresetthe{definition}
+\providecommand*{\definitionautorefname}{Definition}
+\newaliascnt{example}{dummy}
+\newtheorem{example}[example]{Example}
+\aliascntresetthe{example}
+\providecommand*{\exampleautorefname}{Example}
+
+\theoremstyle{remark}
+\newaliascnt{remark}{dummy}
+\newtheorem{remark}[remark]{Remark}
+\aliascntresetthe{remark}
+\providecommand*{\remarkautorefname}{Remark}
+
+\newtheorem{exercise}{Exercise}[section]
+\providecommand*{\exerciseautorefname}{Exercise}
+
+% --------------------------------- counters --------------------------------- %
+\numberwithin{equation}{section} % \numberwithin also works for other counters
+
+% --------------------------------- pagestyle -------------------------------- %
+\pagestyle{plain}
+
+% ---------------------------------- autoref --------------------------------- %
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Section}
+%\renewcommand{\equationautorefname}{Equation}
+
+% ------------------------------------ misc ----------------------------------- %
+%\setcounter{MaxMatrixCols}{11} % the maximal cols that a matrix can have
+\allowdisplaybreaks
+
+% -------------------------------- fast-typing ------------------------------- %
+% cali characters
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calG}{\mathcal{G}}
+\newcommand{\calI}{\mathcal{I}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calW}{\mathcal{W}}
+% scurf characters
+\newcommand{\scrA}{\mathscr{A}}
+\newcommand{\scrB}{\mathscr{B}}
+\newcommand{\scrC}{\mathscr{C}}
+\newcommand{\scrD}{\mathscr{D}}
+\newcommand{\scrE}{\mathscr{E}}
+\newcommand{\scrF}{\mathscr{F}}
+\newcommand{\scrG}{\mathscr{G}}
+\newcommand{\scrP}{\mathscr{P}}
+\newcommand{\scrQ}{\mathscr{Q}}
+\newcommand{\scrT}{\mathscr{T}}
+\newcommand{\scrW}{\mathscr{W}}
+% blackboad characters
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbT}{\mathbb{T}}
+% frak characters
+\newcommand{\frkX}{\mathfrak{X}}
+% rome characters
+\newcommand{\rmN}{\mathrm{N}}
+\newcommand{\rmR}{\mathrm{R}}
+\newcommand{\diff}{\mathrm{d}}
+% bold chars
+\newcommand{\bfa}{\mathbf{a}}
+\newcommand{\bfr}{\mathbf{r}}
+\newcommand{\bft}{\mathbf{t}}
+\newcommand{\bfE}{\mathbf{E}}
+\newcommand{\bfI}{\mathbf{I}}
+\newcommand{\bfP}{\mathbf{P}}
+\newcommand{\bfQ}{\mathbf{Q}}
+\newcommand{\bfT}{\mathbf{T}}
+
+% math operators
+\DeclareMathOperator*{\Lim}{Lim}
+\DeclareMathOperator*{\llim}{\underline{lim}}
+\DeclareMathOperator*{\ulim}{\overline{lim}}
+\DeclareMathOperator*{\essinf}{ess\,inf}
+\DeclareMathOperator*{\esssup}{ess\,sup}
+\DeclareMathOperator*{\intxn}{\cap}
+\DeclareMathOperator*{\Intxn}{\bigcap}
+\DeclareMathOperator*{\union}{\cup}
+\DeclareMathOperator*{\Union}{\bigcup}
+\DeclareMathOperator{\ex}{ex}
+\DeclareMathOperator{\co}{co}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Exp}{Exp}
+\DeclareMathOperator{\Dim}{Dim}
+\DeclareMathOperator{\ldim}{\underline{\dim}}
+\DeclareMathOperator{\udim}{\overline{\dim}}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\spn}{span}
+% entropy related
+\newcommand{\Hof}[1]{H\!\left(#1\right)}
+\newcommand{\Pof}[1]{\bfP\!\left\{#1\right\}}
+\newcommand{\Eof}[2][]{\bfE_{#1}\!\left(#2\right)}
+\newcommand{\Iof}[2][]{\bfI_{#1}\!\left(#2\right)}
+\newcommand{\bbPof}[2][]{\bbP_{#1}\!\left\{#2\right\}}
+\newcommand{\bbEof}[2][]{\bbE_{#1}\!\left(#2\right)}
+% classic groups
+\newcommand{\GLR}[1][d]{\mathrm{GL}_{#1}(\mathbb{R})}
+\newcommand{\GLC}[1][d]{\mathrm{GL}_{#1}(\mathbb{C})}
+\newcommand{\Ogrp}[1]{\mathrm{O}_{#1}(\mathbb{R})}
+\newcommand{\Ugrp}[1]{\mathrm{U}_{#1}(\mathbb{C})}
+\newcommand{\MatR}[1][2d]{\mathrm{M}_{#1}(\mathbb{R})}
+\newcommand{\MatC}[1][d]{\mathrm{M}_{#1}(\mathbb{C})}
+% commonly used
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\Abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[2][]{\lVert#2\rVert_{#1}}
+\providecommand{\Norm}[2][]{\left\lVert#2\right\rVert_{#1}}
+\providecommand{\flr}[1]{\lfloor#1\rfloor}
+\providecommand{\Flr}[1]{\left\lfloor#1\right\rfloor}
+\providecommand{\ceil}[1]{\lceil#1\rceil}
+\providecommand{\Ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\euclid}[1][d]{\mathbb{R}^{#1}}
+\newcommand{\innp}[2]{\langle #1, #2 \rangle}
+\newcommand{\pairing}[2]{\left(#1, #2\right)}
+\newcommand{\aev}{\text{-a.e.\@ }}
+\newcommand{\wt}[1]{\widetilde{#1}}
+\newcommand{\wh}[1]{\widehat{#1}}
+\newcommand{\cl}[1]{\overline{#1}}
+\newcommand{\ul}[1]{\underline{#1}}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\bigO}[1]{O\!\left(#1\right)}
+\newcommand{\smlO}[1]{o\!\left(#1\right)}
+\newcommand{\indctr}[1]{\textbf{\large 1}_{#1}}
+\newcommand{\Ball}[2]{B\!\left(#1,#2\right)}
+% texts in math env
+\newcommand{\mFor}{\quad\text{for }}
+\newcommand{\mAnd}{\quad\text{ and }\quad}
+\newcommand{\mForall}{\quad\text{for all }}
+\newcommand{\by}[1]{\text{(by #1)}}
+% dimensions
+\newcommand{\dimH}{\dim_{\mathrm{H}}}
+\newcommand{\dimP}{\dim_{\mathrm{P}}}
+\newcommand{\dimB}{\dim_{\mathrm{B}}}
+\newcommand{\dimC}{\dim_{\mathrm{C}}}
+\newcommand{\dimF}{\dim_{\mathrm{F}}}
+\newcommand{\dimE}{\dim_{\mathrm{e}}}
+\newcommand{\dimsub}[1]{\dim_{\mathrm{#1}}}
+\newcommand{\uDim}[1]{\overline{\dim}_{\mathrm{#1}}}
+\newcommand{\lDim}[1]{\underline{\dim}_{\mathrm{#1}}}
+\newcommand{\locDim}[2]{D(#1, #2)}
+\newcommand{\ulocDim}[2]{\overline{D}(#1, #2)}
+\newcommand{\llocDim}[2]{\underline{D}(#1, #2)}
+\newcommand{\uTau}{\overline{\tau}}
+\newcommand{\lTau}{\underline{\tau}}
+% measures
+\newcommand{\leb}[1]{\mathcal{L}(#1)}
+\newcommand{\lebRes}[1]{\mathcal{L}\vert_{#1}}
+\newcommand{\haus}[2]{\mathcal{H}^{#1}(#2)}
+\newcommand{\hausC}[2]{\mathcal{H}^{#1}_{\infty}(#2)}
+\newcommand{\hausO}[3]{\mathcal{H}^{#1}_{#2}({#3})}
+\newcommand{\Haus}[1]{\mathcal{H}^{#1}}
+\newcommand{\HausC}[1]{\mathcal{H}^{#1}_{\infty}}
+\newcommand{\HausO}[2]{\mathcal{H}^{#1}_{#2}}
+\newcommand{\pack}[2]{\mathcal{P}^{#1}(#2)}
+\newcommand{\packP}[2]{\mathcal{P}^{#1}_{0}(#2)}
+\newcommand{\packC}[3]{\mathcal{P}^{#1}_{#2}(#3)}
+\newcommand{\Pack}[1]{\mathcal{P}^{#1}}
+\newcommand{\PackP}[1]{\mathcal{P}^{#1}_{0}}
+\newcommand{\PackC}[2]{\mathcal{P}^{#1}_{#2}}
+% misc
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
+
+% special for this article
+
+% --------------------------------- titlepage -------------------------------- %
+\title{A collection of \texttt{tikz} pictures}
+% remove any unused author tags.
+% author one information
+%\author{Zhou Feng}
+%\address{Faculty of Mathematics \\
+%	Technion - Israel Institute of Technonlogy\\
+%	Haifa, Israel}
+%\curraddr{}
+%\email{\href{mailto: zfeng@campus.technion.ac.il}{zfeng@campus.technion.ac.il}}
+%\thanks{}
+
+%% author two information
+%\author{}
+%\address{}
+%\curraddr{}
+%\email{}
+%\thanks{}
+
+%----for the footnotes of titlepage-----%
+%\subjclass[2010]{Primary 28A80, 42A85}
+%\keywords{Self-similar measure}
+%\date{}
+%\dedicatory{}
+%\thanks{}
+
+% ---------------------------------------------------------------------------- %
+%                                   document                                   %
+% ---------------------------------------------------------------------------- %
+\begin{document}
+
+\maketitle
+
+\section{IFS templates}
+
+\begin{figure}[H] \label{fig:1}
+	\begin{tikzpicture}[scale=0.7]
+		\draw[fill=black!10!white, draw=black] (0,2.5) -- (7.5,2.5) -- (7.5,0) -- (0,0) -- cycle;
+		\draw[fill=black!10!white, draw=black] (2.5,10) -- (2.5,7.5) -- (10,7.5) -- (10,10) -- cycle;
+		\draw[fill=black!10!white, draw=black] (2,3) -- (6,4) -- (7,7) -- (3,6) -- cycle;
+		
+		\draw (0,2.5) -- (0,10) -- (2.5,10);
+		\draw (7.5,0) -- (10,0) -- (10,7.5);
+		
+		\node[align=center] at (3.75,1.25) {$\varphi_1([0,1]^2)$};
+		\node[align=center] at (6.25,8.75) {$\varphi_2([0,1]^2)$};
+		\node[align=center] at (4.5,5) {$\varphi_3([0,1]^2)$};
+		
+		\node[align=center] at (3.75,-0.4) {$\lambda$};
+		\node[align=center] at (-0.4,1.25) {$\gamma$};
+		\node[align=center] at (6.25,10.4) {$\lambda$};
+		\node[align=center] at (10.4,8.75) {$\gamma$};
+	\end{tikzpicture}
+	\caption{Images of the unit square under the mappings $\varphi_i$.}
+\end{figure}
+
+\begin{figure}[H] \label{fig:SelfAff-carpets}
+	\scalebox{0.45}{
+		\begin{tikzpicture}[line cap=round,line join=rounr]
+			\clip(-1,-1) rectangle (7,7);
+			\fill[gray] (0,0) -- (0,3) -- (2,3) -- (2,0) -- cycle;
+			\fill[gray] (2,3) -- (2,6) -- (4,6) -- (4,3) -- cycle;
+			\fill[gray] (4,0) -- (4,3) -- (6,3) -- (6,0) -- cycle;
+			\draw (0,0)-- (0,6);
+			\draw (2,0)-- (2,6);
+			\draw (4,0)-- (4,6);
+			\draw (6,0)-- (6,6);
+			\draw (0,0)-- (6,0);
+			\draw (0,3)-- (6,3);
+			\draw (0,6)-- (6,6);
+	\end{tikzpicture}}
+	\scalebox{0.45}{
+		\begin{tikzpicture}[line cap=round,line join=rounr]
+			\clip(-1,-1) rectangle (7,7);
+			\fill[gray] (0,0) -- (0,2) -- (3,2) -- (3,0) -- cycle;
+			\fill[gray] (0,4) -- (0,5.5) -- (3,5.5) -- (3,4) -- cycle;
+			\fill[gray] (4,1) -- (4,2) -- (6,2) -- (6,1) -- cycle;
+			\fill[gray] (4,5) -- (4,6) -- (6,6) -- (6,5) -- cycle;
+			\fill[gray] (3,3) -- (3,3.5) -- (4,3.5) -- (4,3) -- cycle;
+			\draw (0,0)-- (0,6);
+			\draw (6,0)-- (6,6);
+			\draw (0,0)-- (6,0);
+			\draw (0,6)-- (6,6);
+			\draw (0,0) -- (0,2) -- (3,2) -- (3,0) -- cycle;
+			\draw (0,4) -- (0,5.5) -- (3,5.5) -- (3,4) -- cycle;
+			\draw (4,1) -- (4,2) -- (6,2) -- (6,1) -- cycle;
+			\draw (4,5) -- (4,6) -- (6,6) -- (6,5) -- cycle;
+			\draw (3,3) -- (3,3.5) -- (4,3.5) -- (4,3) -- cycle;
+			\draw (3,0)-- (3,6);
+			\draw (4,0)-- (4,6);
+	\end{tikzpicture}}
+	\scalebox{0.45}{
+		\begin{tikzpicture}[line cap=round,line join=rounr]
+			\clip(-1,-1) rectangle (7,7);
+			\fill[gray] (0,0) -- (0,3) -- (3,3) -- (3,0) -- cycle;
+			\fill[gray] (3,3) -- (3,5) -- (4,5) -- (4,3) -- cycle;
+			\fill[gray] (4,0) -- (4,3) -- (6,3) -- (6,0) -- cycle;
+			\fill[gray] (0,5) -- (0,6) -- (3,6) -- (3,5) -- cycle;
+			\draw (0,0)-- (0,6);
+			\draw (3,0)-- (3,6);
+			\draw (4,0)-- (4,6);
+			\draw (6,0)-- (6,6);
+			\draw (0,0)-- (6,0);
+			\draw (0,3)-- (6,3);
+			\draw (0,5)-- (6,5);
+			\draw (0,6)-- (6,6);
+	\end{tikzpicture}}
+	\scalebox{0.45}{
+		\begin{tikzpicture}[line cap=round,line join=rounr]
+			\clip(-1,-1) rectangle (7,7);
+			\fill[gray] (0,0) -- (0,2) -- (3,2) -- (3,0) -- cycle;
+			\fill[gray] (1,5) -- (1,6) -- (4,6) -- (4,5) -- cycle;
+			\fill[gray] (2,3) -- (2,4) -- (6,4) -- (6,3) -- cycle;
+			\draw (0,0)-- (0,6);
+			\draw (6,0)-- (6,6);
+			\draw (0,0)-- (6,0);
+			\draw (0,6)-- (6,6);
+			\draw (0,0) -- (0,2) -- (3,2) -- (3,0) -- cycle;
+			\draw (1,5) -- (1,6) -- (4,6) -- (4,5) -- cycle;
+			\draw (2,3) -- (2,4) -- (6,4) -- (6,3) -- cycle;
+	\end{tikzpicture}}
+	\caption{Self-affine carpets: Bedford-McMullen, Gatzouras-Lalley, Bara\'nski, Feng-Wang. From \cite{DasSimmons2017}}
+\end{figure}
+
+\section{Misc}
+
+\begin{figure}[htbp]
+	\centering
+	\begin{tikzpicture}[>=stealth]
+		\coordinate[label = $1$] (1) at (0, 0);
+		\node at (1)[circle,fill,inner sep=2pt]{};
+		\coordinate[label = $2$] (2) at (3, 0);
+		\node at (2)[circle,fill,inner sep=2pt]{};
+		\draw[-{>[flex=1]},thick] (-0.1,0.12) arc (20:340:.3cm);
+		\draw[-{>[flex=1]},thick] (3.1,0.12) arc (160:-160:.3cm);
+		\draw[-{>[flex=1]},thick] (0.15,0.12) arc (120:60:2.7cm);
+		\draw[-{>[flex=1]},thick] (2.85,-0.12) arc (-60:-120:2.7cm);
+		%\draw[->,thick] (0.2,0) to (2.8,0);
+		\node at (-0.9,0)[circle,inner sep=2pt]{$e_2$};
+		\node at (3.9,0)[circle,inner sep=2pt]{$e_3$};
+		\node at (1.5,0.7)[circle,inner sep=2pt]{$e_1$};
+		\node at (1.5,-0.7)[circle,inner sep=2pt]{$e_4$};
+	\end{tikzpicture}
+	\caption{Directed graph }
+	\label{fig:digraphofexa}
+\end{figure}
+
+
+
+
+% ---------------------------------------------------------------------------- %
+%                                   reference                                  %
+% ---------------------------------------------------------------------------- %
+% Get my*.bst from https://github.com/zfengg/toolkit/tree/master/tex/bst
+\bibliographystyle{myplainnat}
+\bibliography{tikzlib}\label{sec:ref}
+
+% otherwise, copy .bbl file to here
+%\begin{thebibliography}{99999}
+%
+%	\bibitem{Falconer2003}K. J. Falconer.
+%	{\em Fractal geometry. Mathematical foundations and applications.}  Wiley, 2003.
+%
+%\end{thebibliography}
+
+
+\end{document}
