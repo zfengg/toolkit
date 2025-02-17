@@ -172,6 +172,36 @@ if [ $SHELL = '/usr/bin/bash' ]; then
 	complete -f -o plusdirs -X '!*.@(bib)' edbib
 	complete -f -o plusdirs -X '!*.@(bib)' upbib
 	complete -f -o plusdirs -X '!*.@(pdf)' opdf
+
+	# git-bash autocomplete
+	_edtex_completion() {
+    		local cur
+    		cur="${COMP_WORDS[COMP_CWORD]}"
+    		COMPREPLY=( $(compgen -f -- "$cur" | grep '\.tex$') )
+	}
+	complete -F _edtex_completion edtex
+
+	# _dynamic_file_completion() {
+	#     local cur exts regex cmd
+	#     cur="${COMP_WORDS[COMP_CWORD]}"
+	#     cmd="${COMP_WORDS[0]}"  # Get the command being used
+	#     # Lookup allowed extensions based on the command
+	#     case "$cmd" in
+	# 		edtex) exts="tex" ;;
+	# 		upbib) exts="bib" ;;
+	# 		edbib) exts="bib" ;;
+	# 		*) exts="*" ;;  # Default: all files
+	# 	    esac
+	# 	    # Construct regex for grep
+	# 	    regex="\.($exts)$"
+	# 	    # Generate file completions and filter by allowed extensions
+	# 	    COMPREPLY=( $(compgen -f -- "$cur" | grep -E "$regex") )
+	# 	}
+	# 	# Enable the function for specific commands
+	# 	complete -F _dynamic_file_completion edtex
+	# 	complete -F _dynamic_file_completion edbib
+	# 	complete -F _dynamic_file_completion upbib
+
 elif [ $SHELL = '/bin/zsh' ]; then
 	compdef '_path_files -g "*.tex"' edtex
 	compdef '_path_files -g "*.bib"' edbib
