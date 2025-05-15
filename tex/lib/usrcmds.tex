@@ -3,6 +3,7 @@
 \newcommand{\calB}{\mathcal{B}}
 \newcommand{\calC}{\mathcal{C}}
 \newcommand{\calD}{\mathcal{D}}
+\newcommand{\calE}{\mathcal{E}}
 \newcommand{\calF}{\mathcal{F}}
 \newcommand{\calG}{\mathcal{G}}
 \newcommand{\calI}{\mathcal{I}}
@@ -52,7 +53,6 @@
 \newcommand{\bfP}{\mathbf{P}}
 \newcommand{\bfQ}{\mathbf{Q}}
 \newcommand{\bfT}{\mathbf{T}}
-
 % math operators
 \DeclareMathOperator*{\Lim}{Lim}
 \DeclareMathOperator*{\llim}{\underline{lim}}
@@ -77,6 +77,7 @@
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\dist}{dist}
 \DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\PSL}{PSL}
 % entropy related
 \newcommand{\Hof}[1]{H\!\left(#1\right)}
 \newcommand{\Pof}[1]{\bfP\!\left\{#1\right\}}
@@ -85,7 +86,16 @@
 \newcommand{\bbPof}[2][]{\bbP_{#1}\!\left\{#2\right\}}
 \newcommand{\bbEof}[2][]{\bbE_{#1}\!\left(#2\right)}
 \newcommand{\expof}[1]{\exp\left(#1\right)}
-% classic groups
+% Lq norm related
+\newcommand{\qHof}[2][q]{H^{#1}\!\left(#2\right)}
+\newcommand{\qnorm}[1]{\norm[q]{#1}}
+\newcommand{\qnormq}[1]{\norm[q]{#1}^{q}}
+\newcommand{\qNorm}[1]{\Norm[q]{#1}}
+\newcommand{\qNormq}[1]{\Norm[q]{#1}^{q}}
+\newcommand{\qSum}[1]{S^{q}\!\left(#1\right)}
+\newcommand{\qSpec}[2][q]{\tau\!\left(#2,#1\right)}
+\newcommand{\qhRW}{h_{RW}^{q}(\Phi, p)}
+% classic groups 
 \newcommand{\GLR}[1][d]{\mathrm{GL}_{#1}(\mathbb{R})}
 \newcommand{\GLC}[1][d]{\mathrm{GL}_{#1}(\mathbb{C})}
 \newcommand{\Ogrp}[1]{\mathrm{O}_{#1}(\mathbb{R})}
@@ -140,9 +150,8 @@
 \newcommand{\llocDim}[2]{\underline{D}(#1, #2)}
 \newcommand{\uTau}{\overline{\tau}}
 \newcommand{\lTau}{\underline{\tau}}
-% measures
+% geometric measures
 \newcommand{\leb}[1]{\mathcal{L}(#1)}
-\newcommand{\lebRes}[1]{\mathcal{L}\vert_{#1}}
 \newcommand{\haus}[2]{\mathcal{H}^{#1}(#2)}
 \newcommand{\hausC}[2]{\mathcal{H}^{#1}_{\infty}(#2)}
 \newcommand{\hausO}[3]{\mathcal{H}^{#1}_{#2}({#3})}
