@@ -443,6 +443,69 @@ md"""
 Color: $(@bind mc_Weier ColorStringPicker(default="#0053FA"))
 """
 
+# ╔═╡ 37d05059-ea3f-42c0-8cc2-1fece7c146e7
+md"""
+## Sunflower
+"""
+
+# ╔═╡ eac96959-8b97-4538-81ee-b4ee6a4dc171
+begin
+	R = 12 # num of pedals
+	L = 30 # num of maps in each pedal
+
+	# prep
+	rot(θ) = [cos(θ) -sin(θ); sin(θ) cos(θ)]
+	
+	# inner rotation and translation
+	angInner = π / 4
+	ratioCtr = 1 # > 1
+	sep = 0.0001 # sep of maps in each pedal
+	xStart = ratioCtr
+	f_sf = Function[]
+	for i in 1:L
+		push!(f_sf, x -> ratioCtr * rot(angInner * i) * x + [xStart + (i-1) * 2 * ratioCtr, ratioCtr])
+	end
+	
+	# Mobius
+	Mob(x) = 1/2 * 1/(x[1]^2 + (x[2]+1)^2) * [x[1]^2+x[2]^2-1, 2*x[1]] - [1/2, 0]
+	
+	# nonconformal strech
+	ratioAff = 1.2
+	Aff(x) = [1 0; 0 ratioAff] * x
+	
+	# outer rotation
+	angOuter = 2 * pi / R
+	g_sf = Function[]
+	for j in 1:R
+		push!(g_sf, x -> rot(angOuter * j) * x)
+	end
+
+	# construct IFS
+	IFS_sf = Function[]
+	for i in 1:L, j in 1:R
+		push!(IFS_sf, g_sf[j] ∘ Aff ∘ Mob ∘ f_sf[i])
+	end
+	y = IFS_sf[1]([xStart + L * (sep + 2 * ratioCtr), ratioCtr])
+	push!(IFS_sf, x -> sqrt(y[1]^2+y[2]^2) * x)
+	numMapSF = R * L + 1
+	weightSF = ones(numMapSF) ./ numMapSF
+	
+	sunflowerIFS = IFSs.IFSNonlinear(IFS_sf, weightSF, numMapSF)
+	
+	# plot setting
+	initPtSF = [0., 0.]
+end;
+
+# ╔═╡ a1fee67a-dad9-48d1-9c33-937f206e22e3
+md"""
+numPts: $(@bind numPtsSF Slider(10000 : 10000 : 10 * 10^5; default= 500000, show_value=true))
+"""
+
+# ╔═╡ b8421623-1e8d-43b8-9661-dbeb03afcf3b
+md"""
+Color: $(@bind mcSF ColorStringPicker(default="#0053FA"))
+"""
+
 # ╔═╡ c728a74d-1c6b-4f49-861c-94609a7047e9
 md"""
 ## Ikeda map
@@ -566,6 +629,9 @@ nlplt = plot_ptsSet(IFSs.itrPtsProb(nlIFS, numPtsNL, initPtNL), mcNL)
 
 # ╔═╡ 6b6b2b17-d990-4d88-8fd5-bbd389bfe604
 graph_Weier = plot_ptsSet(IFSs.itrPtsProb(WeierIFS, numPts_Weier, initPt_Weier), mc_Weier)
+
+# ╔═╡ adfa6e0c-9a05-4ad5-b7b5-24e5d7888d31
+sunflower = plot_ptsSet(IFSs.itrPtsProb(sunflowerIFS, numPtsSF, initPtSF), mcSF)
 
 # ╔═╡ b6777b5a-b68b-469a-bedd-aed88066eae5
 pltIkeda = plot_ptsSet(IFSs.itrPtsProb(IFSikeda, numPtsIkeda), mcIkeda)
@@ -1791,7 +1857,7 @@ version = "1.4.1+2"
 """
 
 # ╔═╡ Cell order:
-# ╟─e8e2c9d5-15a6-4a3a-81b7-a10c32290f79
+# ╠═e8e2c9d5-15a6-4a3a-81b7-a10c32290f79
 # ╟─03386e5e-937b-4e32-b034-e1689834e0dc
 # ╟─fe69d7ee-aa66-11eb-0e4e-e16fc28be586
 # ╟─df738342-cb99-4a8e-9565-2b9422caaee2
@@ -1835,6 +1901,11 @@ version = "1.4.1+2"
 # ╟─17609d92-37b3-42fc-afa9-476d4478f5bb
 # ╟─fe3f5cf4-90a6-47f0-b856-3f9a88e00b8d
 # ╟─6b6b2b17-d990-4d88-8fd5-bbd389bfe604
+# ╟─37d05059-ea3f-42c0-8cc2-1fece7c146e7
+# ╠═eac96959-8b97-4538-81ee-b4ee6a4dc171
+# ╟─a1fee67a-dad9-48d1-9c33-937f206e22e3
+# ╟─b8421623-1e8d-43b8-9661-dbeb03afcf3b
+# ╟─adfa6e0c-9a05-4ad5-b7b5-24e5d7888d31
 # ╟─c728a74d-1c6b-4f49-861c-94609a7047e9
 # ╟─429c2276-5b98-48c5-b41b-f67ddf40c760
 # ╟─009ff44d-e429-45ee-b681-a96c7d2e77d6
