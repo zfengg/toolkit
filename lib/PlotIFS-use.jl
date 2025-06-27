@@ -200,6 +200,14 @@ begin
 				[0, 1.6],
 				[0, 0.44]]
 	weights = [0.01, 0.84, 0.08, 0.07]
+
+	# linearIFS = [[1/3 0; 0 1/2],
+	# 			 [1/3 0; 0 1/2],
+	# 			 [1/3 0; 0 1/2]]
+	# transIFS = [[0, 0],
+	# 			[2/3, 0],
+	# 			[1/3, 1/2]]
+	# weights = [15/32, 15/32, 1/16]
 end;
 
 # ╔═╡ 52ea8214-351a-4685-b4c6-feeda6df60a0
@@ -299,7 +307,7 @@ Below please input the filename to save the figure:
 """
 
 # ╔═╡ ce4d9abb-a298-424c-a532-c8bc0c96fade
-fn = "Takagi.png";
+fn = "Barnsley.png";
 
 # ╔═╡ 6f2306ed-320f-45dc-a5ac-9407d6e4d5e9
 md"""
@@ -1857,7 +1865,7 @@ version = "1.4.1+2"
 """
 
 # ╔═╡ Cell order:
-# ╠═e8e2c9d5-15a6-4a3a-81b7-a10c32290f79
+# ╟─e8e2c9d5-15a6-4a3a-81b7-a10c32290f79
 # ╟─03386e5e-937b-4e32-b034-e1689834e0dc
 # ╟─fe69d7ee-aa66-11eb-0e4e-e16fc28be586
 # ╟─df738342-cb99-4a8e-9565-2b9422caaee2
