@@ -6,7 +6,9 @@
 \newcommand{\calE}{\mathcal{E}}
 \newcommand{\calF}{\mathcal{F}}
 \newcommand{\calG}{\mathcal{G}}
+\newcommand{\calH}{\mathcal{H}}
 \newcommand{\calI}{\mathcal{I}}
+\newcommand{\calK}{\mathcal{K}}
 \newcommand{\calL}{\mathcal{L}}
 \newcommand{\calM}{\mathcal{M}}
 \newcommand{\calN}{\mathcal{N}}
@@ -16,6 +18,7 @@
 \newcommand{\calS}{\mathcal{S}}
 \newcommand{\calT}{\mathcal{T}}
 \newcommand{\calU}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
 \newcommand{\calW}{\mathcal{W}}
 % scurf characters
 \newcommand{\scrA}{\mathscr{A}}
@@ -25,34 +28,49 @@
 \newcommand{\scrE}{\mathscr{E}}
 \newcommand{\scrF}{\mathscr{F}}
 \newcommand{\scrG}{\mathscr{G}}
+\newcommand{\scrH}{\mathscr{H}}
 \newcommand{\scrP}{\mathscr{P}}
 \newcommand{\scrQ}{\mathscr{Q}}
 \newcommand{\scrT}{\mathscr{T}}
+\newcommand{\scrU}{\mathscr{U}}
 \newcommand{\scrW}{\mathscr{W}}
 % blackboad characters
-\newcommand{\bbQ}{\mathbb{Q}}
-\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbD}{\mathbb{D}}
 \newcommand{\bbC}{\mathbb{C}}
 \newcommand{\bbE}{\mathbb{E}}
-\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbK}{\mathbb{K}}
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
 \newcommand{\bbT}{\mathbb{T}}
-% frak characters
-\newcommand{\frkX}{\mathfrak{X}}
-% rome characters
-\newcommand{\rmN}{\mathrm{N}}
-\newcommand{\rmR}{\mathrm{R}}
-\newcommand{\diff}{\mathrm{d}}
-% bold chars
+\newcommand{\bbZ}{\mathbb{Z}}
+% bold characters
 \newcommand{\bfa}{\mathbf{a}}
 \newcommand{\bfr}{\mathbf{r}}
 \newcommand{\bft}{\mathbf{t}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfv}{\mathbf{v}}
 \newcommand{\bfE}{\mathbf{E}}
 \newcommand{\bfI}{\mathbf{I}}
 \newcommand{\bfP}{\mathbf{P}}
 \newcommand{\bfQ}{\mathbf{Q}}
 \newcommand{\bfT}{\mathbf{T}}
+% frak characters
+\newcommand{\frka}{\mathfrak{a}}
+\newcommand{\frkb}{\mathfrak{b}}
+\newcommand{\frkg}{\mathfrak{g}}
+\newcommand{\frkh}{\mathfrak{h}}
+\newcommand{\frkgl}{\mathfrak{gl}}
+\newcommand{\frksl}{\mathfrak{sl}}
+\newcommand{\frkX}{\mathfrak{X}}
+% rome characters
+\newcommand{\rmN}{\mathrm{N}}
+\newcommand{\rmR}{\mathrm{R}}
+\newcommand{\diff}{\mathrm{d}}
 % math operators
 \DeclareMathOperator*{\Lim}{Lim}
 \DeclareMathOperator*{\llim}{\underline{lim}}
@@ -77,7 +95,13 @@
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\dist}{dist}
 \DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\Lie}{Lie}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Gal}{Gal}
 % entropy related
 \newcommand{\Hof}[1]{H\!\left(#1\right)}
 \newcommand{\Pof}[1]{\bfP\!\left\{#1\right\}}
@@ -98,14 +122,14 @@
 % classic groups 
 \newcommand{\GLR}[1][d]{\mathrm{GL}_{#1}(\mathbb{R})}
 \newcommand{\GLC}[1][d]{\mathrm{GL}_{#1}(\mathbb{C})}
-\newcommand{\Ogrp}[1]{\mathrm{O}_{#1}(\mathbb{R})}
-\newcommand{\SOgrp}[1]{\mathrm{SO}_{#1}(\mathbb{R})}
-\newcommand{\Ugrp}[1]{\mathrm{U}_{#1}(\mathbb{C})}
-\newcommand{\SUgrp}[1]{\mathrm{SU}_{#1}(\mathbb{C})}
-\newcommand{\MatR}[1][2d]{\mathrm{M}_{#1}(\mathbb{R})}
-\newcommand{\MatC}[1][d]{\mathrm{M}_{#1}(\mathbb{C})}
 \newcommand{\SLR}[1][d]{\mathrm{SL}_{#1}(\mathbb{R})}
 \newcommand{\SLZ}[1][d]{\mathrm{SL}_{#1}(\mathbb{Z})}
+\newcommand{\Ogp}[1]{\mathrm{O}(#1)}
+\newcommand{\SOgp}[1]{\mathrm{SO}(#1)}
+\newcommand{\Ugp}[1]{\mathrm{U}(#1)}
+\newcommand{\SUgp}[1]{\mathrm{SU}(#1)}
+\newcommand{\MatR}[1][2d]{\mathrm{M}_{#1}(\mathbb{R})}
+\newcommand{\MatC}[1][d]{\mathrm{M}_{#1}(\mathbb{C})}
 % commonly used
 \providecommand{\brkt}[1]{(#1)}
 \providecommand{\Brkt}[1]{\left(#1\right)}
@@ -166,3 +190,4 @@
 \newcommand{\PackC}[2]{\mathcal{P}^{#1}_{#2}}
 % misc
 \newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
+\newcommand{\tr}[1]{\textcolor{red}{#1}}

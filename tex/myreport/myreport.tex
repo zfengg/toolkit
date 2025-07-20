@@ -1,8 +1,8 @@
-% myarticle.tex @ https://github.com/zfengg/toolkit/tree/master/tex/myarticle
+% myreport.tex @ https://github.com/zfengg/toolkit/tree/master/tex/myreport
 %
 % 	A simple tex template based on amsmath-userguide for daily tasks.
 %
-% Zhou Feng @ 08/11/2020
+% Zhou Feng @ 20/07/2025
 % ---------------------------------------------------------------------------- %
 %                                   preamble                                   %
 % ---------------------------------------------------------------------------- %
@@ -179,16 +179,16 @@
 % special for this article
 
 % --------------------------------- titlepage -------------------------------- %
-\title[small title]{Title}
+\title{Report: Title of the manuscript}
 % remove any unused author tags.
 % author one information
-\author{Zhou Feng}
-\address{Faculty of Mathematics \\
-	Technion - Israel Institute of Technonlogy\\
-	Haifa, Israel}
-\curraddr{}
-\email{\href{mailto: zfeng@campus.technion.ac.il}{zfeng@campus.technion.ac.il}}
-\thanks{}
+%\author{Zhou Feng}
+%\address{Faculty of Mathematics \\
+%	Technion - Israel Institute of Technonlogy\\
+%	Haifa, Israel}
+%\curraddr{}
+%\email{\href{mailto: zfeng@campus.technion.ac.il}{zfeng@campus.technion.ac.il}}
+%\thanks{}
 
 %% author two information
 %\author{}
@@ -208,14 +208,36 @@
 %                                   document                                   %
 % ---------------------------------------------------------------------------- %
 \begin{document}
-\begin{abstract}
+	
+	\maketitle
+	
+	\section*{Summary}
+	
+	\begin{itemize}
+		
+		\item Summary of main results.
+		
+		\item Major contribution.
+		
+		\item Strong recommendation.
+		
+	\end{itemize}
+	
+	
+	\section*{Suggestions}
+	
+	Although I find the proofs to be mathematically correct, I believe that some minor points could benefit from further elaboration and explanation. These points, along with a few typographical errors, are listed below.
+	
+	\begin{enumerate}
+		\setlength{\itemsep}{0.8em}
+		
+		\item 
+		
+		\item
+		
+	\end{enumerate}
 
-\end{abstract}
-\maketitle
-
-% ------------------------------- introduction ------------------------------- %
-\section{Introduction}\label{sec:intro}
-
+	
 
 
 
@@ -224,7 +246,7 @@
 % ---------------------------------------------------------------------------- %
 % Get my*.bst from https://github.com/zfengg/toolkit/tree/master/tex/bst
 \bibliographystyle{myplainnat}
-\bibliography{myarticle}\label{sec:ref}
+\bibliography{myreport}\label{sec:ref}
 
 % otherwise, copy .bbl file to here
 %\begin{thebibliography}{99999}
