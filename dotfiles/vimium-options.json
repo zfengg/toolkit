@@ -1,0 +1,41 @@
+{
+  "settingsVersion": "2.3",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://mail.google.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "http://localhost:8888/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://replit.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://github.dev/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https://www.gradescope.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "http://localhost:8889/*"
+    },
+    {
+      "passKeys": "/",
+      "pattern": "https?://ethereum.org/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://vpn.oulu.fi/*"
+    },
+    {
+      "passKeys": "/",
+      "pattern": "https?://github.com/*"
+    }
+  ]
+}
