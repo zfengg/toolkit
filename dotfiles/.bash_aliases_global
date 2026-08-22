@@ -140,6 +140,9 @@ mktex() {
 	for extTmp in tex bib; do
 		if [[ -f "$TOOLKIT/tex/my$1/my$1.$extTmp" ]]; then
 			cp $TOOLKIT/tex/my$1/my$1.$extTmp ${3:-$default3}/${2:-$default2}.$extTmp
+			if [[ $1 = 'beamer' ]]; then
+				cp -R $TOOLKIT/tex/my$1/lib/ ${3:-$default3}/lib/
+			fi
 			# update the name of .bib file in .tex
 			if [[ "$extTmp" = 'bib' ]]; then
 				if [ `uname` = Darwin ]; then

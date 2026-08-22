@@ -63,6 +63,23 @@
 %			timeduration=3,
 %			timewarningfirst=90]{tdclock}
 
+\usepackage{qrcode}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+%\usepackage{enumitem}
+\usepackage{relsize}
+
+\definecolor{Accent}{HTML}{1F4E9A}
+\definecolor{Ink}{HTML}{202124}
+\definecolor{Muted}{HTML}{6B7280}
+\definecolor{Rule}{HTML}{E5E7EB}
+\definecolor{Soft}{HTML}{F7F8FA}
+\definecolor{IlBlue}{HTML}{0038B8}
+\definecolor{FinBlue}{HTML}{003580}
+\definecolor{CnRed}{HTML}{DE2910}
+\definecolor{TechBlue}{HTML}{003A8F}
+
 % -------------------------- hyperlinks & bookmarks -------------------------- %
 \hypersetup{pdfusetitle,
 			colorlinks=false,
@@ -80,17 +97,49 @@
 \allowdisplaybreaks
 
 % -------------------------------- fast-typing ------------------------------- %
+\newcommand{\circledref}[1]{%
+	\tikz[baseline=(char.base)]{
+		\node[shape=circle,fill=blue!50!black,inner sep=0.3pt] (char) {\color{white}\ref{#1}};
+}}
+
+\setbeamertemplate{enumerate item}{%
+	\tikz[baseline=(char.base)]{
+		\node[
+		shape=circle,
+		fill=blue!50!black,
+		inner sep=0.3pt,   % ← increase circle size
+		font=\small      % ← increase number size
+		] (char) {\color{white}\insertenumlabel};
+	}
+}
 
 % special for this article
 
 % --------------------------------- titlepage -------------------------------- %
-\title[Short Title]{My Beamer Template}
-\subtitle{A subtitle}
-\author[Z. Feng]{Zhou Feng}
-\institute[CUHK]{The Chinese University of Hong Kong}
-\date{\today}
-%	\\ \vspace{1em}
-%	\footnotesize{Joint work with A and B}}
+\title[]{On dimension rigidity of planar self-conformal measures}
+%\subtitle{A subtitle}
+\author[Z. Feng]{Zhou Feng \\ \vspace{0.5em} Joint work with Coauthors}
+\institute[Technion]{Technion -- Israel Institute of Technology}
+\date{\footnotesize{Event, place, date} %}
+%	\\ 
+} % end of \date
+
+\titlegraphic{%
+\centering
+\begin{tabular}{c@{\hspace{2em}}c}
+	\includegraphics[height=5em,width=10em,keepaspectratio]{lib/LOGO_ERC-FLAG_EU.png}
+	&
+	\includegraphics[height=4.2em,width=4.2em,keepaspectratio]{lib/Technion-Eng_Ver_Blue.png}
+	\\[0.1em]
+	\parbox[t]{0.38\textwidth}{\centering\scriptsize
+		\textcolor{Muted}{\tiny Funded by the European Union.\\ ERC grant DIM-FRACTAL.}	
+	}
+	&
+	\parbox[t]{0.38\textwidth}{\centering\scriptsize
+		\textcolor{Muted}{\tiny  Supported in part by a Technion fellowship.}
+	}
+\end{tabular}
+}
 
 
 % ---------------------------------------------------------------------------- %
