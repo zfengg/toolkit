@@ -52,10 +52,6 @@
 %\setbeamertemplate{items}[default] 						% chevron/default
 
 
-%\usepackage{tikz}											% draw advanced graphics in latex
-%\pgfdeclareimage[height=0.5cm]{university−logo}{.data/MapQM.pdf}
-%\logo{\pgfuseimage{university−logo}}
-
 %\usepackage[orientation=landscape,size=custom,width=16,height=9,scale=0.5,debug]{beamerposter} % change the size of beamer
 
 %\usepackage[font=Times,
@@ -101,14 +97,15 @@
 	\tikz[baseline=(char.base)]{
 		\node[shape=circle,fill=blue!50!black,inner sep=0.3pt] (char) {\color{white}\ref{#1}};
 }}
+% autoref by \circledref{itm:label}
 
 \setbeamertemplate{enumerate item}{%
 	\tikz[baseline=(char.base)]{
 		\node[
 		shape=circle,
 		fill=blue!50!black,
-		inner sep=0.3pt,   % ← increase circle size
-		font=\small      % ← increase number size
+		inner sep=0.3pt,   % increase circle size
+		font=\small      % increase number size
 		] (char) {\color{white}\insertenumlabel};
 	}
 }
@@ -116,8 +113,8 @@
 % special for this article
 
 % --------------------------------- titlepage -------------------------------- %
-\title[]{On dimension rigidity of planar self-conformal measures}
-%\subtitle{A subtitle}
+\title[]{Title}
+\subtitle{A subtitle}
 \author[Z. Feng]{Zhou Feng \\ \vspace{0.5em} Joint work with Coauthors}
 \institute[Technion]{Technion -- Israel Institute of Technology}
 \date{\footnotesize{Event, place, date} %}
